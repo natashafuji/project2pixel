@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Project2Pixel</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="images/project2pixel-logo.png" alt="Project2Pixel Logo" class="logo">
+            </a>
+            <span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <div class="hero-small">
+        <h1>📩 Contact Me</h1>
+        <p>Have a project in mind? Let's make it a reality.</p>
+    </div>
+
+    <section class="contact-section">
+        <div style="display:flex; flex-wrap:wrap; gap:30px; align-items:flex-start; justify-content:center;">
+            
+            <!-- Contact Form -->
+            <div style="flex:1; min-width:300px;">
+                <h2>Send a Message</h2>
+                <form action="https://formspree.io/f/mdkdwjrq" method="POST">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="_replyto" required>
+
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div style="flex:1; min-width:250px;">
+                <h2>Direct Contact</h2>
+                <p>📧 Email: <a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
+                <p>📍 Cape Town, South Africa</p>
+                <p>💬 Expect a response within 24 hours.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Project2Pixel | Built by Natasha Fredericks</p>
+    </footer>
+</body>
+</html>

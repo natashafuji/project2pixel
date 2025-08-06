@@ -1,0 +1,242 @@
+/* ========================
+   GLOBAL STYLES
+======================== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFFFFF; /* White background */
+    color: #000000; /* Black text */
+    line-height: 1.6;
+}
+
+/* ========================
+   HEADER
+======================== */
+header {
+    background-color: #0C0C0C;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 70px; /* Increased logo size */
+    max-height: 75px;
+    width: auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 5px 0;
+}
+
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+}
+
+.logo-text .highlight-2 {
+    color: #1DD1A1; /* Teal color for the "2" */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #FFFFFF; /* Default white */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #1DD1A1; /* Teal on hover */
+}
+
+nav ul li a.active {
+    color: #FFFFFF; /* Highlighted active page */
+    font-weight: 600;
+}
+
+/* Future-proof hover override for active links */
+nav ul li a.active:hover {
+    color: #1DD1A1;
+}
+
+/* ========================
+   HERO SECTIONS
+======================== */
+.hero {
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #1DD1A1;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 10px auto;
+    font-size: 1.1rem;
+}
+
+.hero-small {
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-small h1 {
+    font-size: 2rem;
+    color: #1DD1A1;
+}
+
+/* ========================
+   BUTTONS
+======================== */
+.btn, .btn-large {
+    background-color: #ffffff; /* Default background white */
+    color: #1DD1A1; /* Teal text */
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 10px;
+    border: 2px solid #1DD1A1; /* Teal border */
+}
+
+.btn:hover, .btn-large:hover {
+    background-color: #1DD1A1; /* Teal background on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+/* ========================
+   SECTIONS
+======================== */
+section {
+    padding: 40px 20px;
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #1DD1A1;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ========================
+   FEATURE CARDS
+======================== */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.feature-card {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.tick {
+    color: #1DD1A1;
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ========================
+   SERVICE LIST
+======================== */
+.services-list .service {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* ========================
+   CONTACT FORM
+======================== */
+.contact-section {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.contact-section input,
+.contact-section textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.contact-section button {
+    background-color: #1DD1A1;
+    color: #000;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-section button:hover {
+    background-color: #17b68d;
+}
+
+.direct-contact {
+    margin-top: 20px;
+}
+
+/* ========================
+   FOOTER
+======================== */
+footer {
+    background-color: #0C0C0C;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #1DD1A1;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

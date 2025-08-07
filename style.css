@@ -30,6 +30,12 @@ header {
   transition: padding 0.3s ease, box-shadow 0.3s ease;
 }
 
+header.shrink {
+  padding: 6px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
 
   
 .logo {

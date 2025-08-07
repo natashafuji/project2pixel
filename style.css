@@ -109,4 +109,278 @@ nav ul li a.active {
 .hero-services::before,
 .hero-contact::before {
   content: "";
-  positio
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero h1, .hero p,
+.hero-services h1, .hero-services p,
+.hero-contact h1, .hero-contact p {
+  position: relative;
+  z-index: 2;
+  color: #FFFFFF;
+}
+
+/* ========================
+   BUTTON
+======================== */
+.btn-consultation {
+  background-color: #1DD1A1;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.btn-consultation:hover {
+  background-color: #ffffff;
+  color: #1DD1A1;
+  border: 2px solid #1DD1A1;
+  transform: translateY(-2px);
+}
+
+/* ========================
+   SECTIONS
+======================== */
+section {
+  padding: 40px 20px;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #1DD1A1;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ========================
+   FEATURE & SERVICE CARDS
+======================== */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.feature-card, .service-card {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  margin: 0 0 10px;
+}
+
+.service-card p {
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.service-card .btn-consultation {
+  margin-top: auto;
+  align-self: center;
+}
+
+/* ========================
+   CONTACT SECTION
+======================== */
+.contact-section {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 20px;
+}
+
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contact-section input,
+.contact-section textarea {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.contact-section textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-section button {
+  background-color: #1DD1A1;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  width: fit-content;
+  transition: background-color 0.3s ease;
+}
+
+.contact-section button:hover {
+  background-color: #17b68d;
+}
+
+.direct-contact {
+  margin-top: 30px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ========================
+   FOOTER
+======================== */
+footer {
+  background-color: #0C0C0C;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #1DD1A1;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ========================
+   HAMBURGER MENU
+======================== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ========================
+   RESPONSIVE DESIGN
+======================== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .hero h1, .hero p,
+  .hero-services h1, .hero-services p,
+  .hero-contact h1, .hero-contact p {
+    font-size: 1.2rem;
+    padding: 0 10px;
+  }
+
+  .btn-consultation,
+  .service-card .btn-consultation {
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+    padding: 12px 20px;
+    margin: 15px auto 0;
+    display: block;
+    text-align: center;
+  }
+
+  .features, .service-card-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card, .service-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact-section {
+    padding: 10px;
+  }
+
+  .contact-section input, .contact-section textarea {
+    width: 100%;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+  }
+
+  .hamburger {
+    display: flex;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    z-index: 1001;
+  }
+
+  nav ul.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background-color: #0C0C0C;
+    text-align: center;
+    padding: 20px 0;
+    gap: 20px;
+    z-index: 1000;
+  }
+
+  nav ul.nav-links.show {
+    display: flex;
+  }
+}

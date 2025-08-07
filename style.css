@@ -345,7 +345,7 @@ footer a:hover {
 
 /* Ensure hero headers are all the same size */
 .hero-contact, .hero-services, .hero {
-  min-height: 220px;
+  min-height: 330px;
 }
 
 /* On mobile, give a bit more spacing */

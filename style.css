@@ -1,6 +1,5 @@
-
 /* ========================
-   GLOBAL RESET & SPILL FIX
+   GLOBAL RESET & BASE
 ======================== */
 * {
   box-sizing: border-box;
@@ -12,7 +11,7 @@ body {
   background-color: #FFFFFF;
   color: #000000;
   line-height: 1.6;
-  padding-top: 100px;
+  padding-top: 100px; /* offset for fixed header */
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -21,20 +20,6 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
-}
-
-.feature-card ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  text-align: left;
-  margin: 0 auto;
-  max-width: 240px;
-}
-
-.feature-card ul li {
-  text-align: left;
-  line-height: 1.5;
-  margin-bottom: 8px;
 }
 
 /* ========================
@@ -54,17 +39,10 @@ header {
   width: 100%;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: padding 0.3s ease, box-shadow 0.3s ease;
-}
-
-header.shrink {
-  padding: 6px 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
   height: 80px;
-  max-height: 90px;
   width: auto;
 }
 
@@ -72,7 +50,6 @@ header.shrink {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 5px 0;
 }
 
 .logo-text {
@@ -80,7 +57,6 @@ header.shrink {
   font-size: 1.8rem;
   font-weight: 700;
   color: #FFFFFF;
-  letter-spacing: 1px;
 }
 
 .logo-text .highlight-2 {
@@ -130,7 +106,8 @@ nav ul li a.active {
 }
 
 .hero-contact {
-  background: url('nf.png') no-repeat center center/cover;
+  background: url('nf_about_final.png') no-repeat top center/cover;
+  min-height: 600px;
 }
 
 .hero::before,
@@ -195,7 +172,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ========================
-   FEATURE & SERVICE CARDS
+   FEATURES & SERVICES
 ======================== */
 .features {
   display: flex;
@@ -306,4 +283,54 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* ========================
+   RESPONSIVE
+======================== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .hero-contact {
+    min-height: 500px;
+    background-position: center top;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card, .service-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .btn-consultation {
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+    padding: 12px 20px;
+    margin: 15px auto 0;
+    display: block;
+    text-align: center;
+  }
 }

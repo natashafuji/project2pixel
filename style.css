@@ -90,7 +90,7 @@ nav ul li a.active {
 /* ========================
    HERO SECTIONS
 ======================== */
-.hero, .hero-services, .hero-contact {
+.hero, .hero-services, .hero-contact, .hero-about{
   position: relative;
   text-align: center;
   padding: 60px 20px;
@@ -110,10 +110,6 @@ nav ul li a.active {
 }
 
 .hero-about {
-  position: relative;
-  text-align: center;
-  padding: 60px 20px;
-  color: #FFFFFF;
   background: url('nf.png') no-repeat center center/cover;
 }
 

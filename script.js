@@ -14,3 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+[...document.body.querySelectorAll('*')].forEach(el => {
+  if (el.offsetWidth > document.documentElement.clientWidth) {
+    console.log('Overflowing Element:', el);
+  }
+});
+

@@ -1,3 +1,4 @@
+
 /* ========================
    GLOBAL RESET & SPILL FIX
 ======================== */
@@ -11,7 +12,7 @@ body {
   background-color: #FFFFFF;
   color: #000000;
   line-height: 1.6;
-  padding-top: 100px; /* offset for fixed header */
+  padding-top: 100px;
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -35,7 +36,6 @@ img {
   line-height: 1.5;
   margin-bottom: 8px;
 }
-
 
 /* ========================
    HEADER
@@ -130,7 +130,7 @@ nav ul li a.active {
 }
 
 .hero-contact {
-  background: url('contact-bg.png') no-repeat center center/cover;
+  background: url('nf.png') no-repeat center center/cover;
 }
 
 .hero::before,
@@ -307,123 +307,3 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-
-/* ========================
-   RESPONSIVE DESIGN
-======================== */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .hero h1, .hero p,
-  .hero-services h1, .hero-services p,
-  .hero-contact h1, .hero-contact p {
-    font-size: 1.2rem;
-    padding: 0 10px;
-  }
-
-  .btn-consultation,
-  .service-card .btn-consultation {
-    width: 100%;
-    max-width: 300px;
-    font-size: 1rem;
-    padding: 12px 20px;
-    margin: 15px auto 0;
-    display: block;
-    text-align: center;
-  }
-
-  .features, .service-card-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .feature-card, .service-card {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .contact-section {
-    padding: 10px;
-  }
-
-  .contact-section input, .contact-section textarea {
-    width: 100%;
-  }
-
-  .logo {
-    height: 60px;
-  }
-
-  .logo-text {
-    font-size: 1.5rem;
-  }
-
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-    position: absolute;
-    top: 25px;
-    right: 20px;
-    z-index: 1001;
-  }
-
-  .hamburger span {
-    width: 25px;
-    height: 3px;
-    background: #fff;
-    border-radius: 2px;
-    transition: 0.3s;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    background-color: #0C0C0C;
-    text-align: center;
-    padding: 20px 0;
-    gap: 20px;
-    z-index: 1000;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-}
-
-/* ABOUT PAGE CUSTOMIZATION */
-.about-hero {
-  background: url('images/natasha-bg.jpg') no-repeat center center/cover;
-  position: relative;
-}
-
-.about-hero::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.about-hero h1,
-.about-hero p {
-  position: relative;
-  z-index: 2;
-}
-

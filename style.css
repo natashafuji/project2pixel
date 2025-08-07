@@ -82,16 +82,16 @@ body {
   }
   
   .hero {
-    background: url('images/home-bg.png') no-repeat center center/cover;
+    background: url('home-bg.png') no-repeat center center/cover;
   }
   
   .hero-services {
-    background: url('images/services-bg.png') no-repeat center center/cover;
+    background: url('services-bg.png') no-repeat center center/cover;
     padding: 40px 20px;
   }
   
   .hero-contact {
-    background: url('images/contact-bg.png') no-repeat center center/cover;
+    background: url('contact-bg.png') no-repeat center center/cover;
     padding: 40px 20px;
   }
   

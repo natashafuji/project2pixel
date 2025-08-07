@@ -7,97 +7,98 @@ body {
     background-color: #FFFFFF;
     color: #000000;
     line-height: 1.6;
-  }
-  
-  /* ========================
-     HEADER
-  ======================== */
-  header {
+}
+
+/* ========================
+   HEADER
+======================== */
+header {
     background-color: #0C0C0C;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .logo {
+    flex-wrap: wrap;
+}
+
+.logo {
     height: 80px;
     max-height: 90px;
     width: auto;
-  }
-  
-  .logo-container {
+}
+
+.logo-container {
     display: flex;
     align-items: center;
     gap: 12px;
     padding: 5px 0;
-  }
-  
-  .logo-text {
+}
+
+.logo-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
     color: #FFFFFF;
     letter-spacing: 1px;
-  }
-  
-  .logo-text .highlight-2 {
+}
+
+.logo-text .highlight-2 {
     color: #1DD1A1;
-  }
-  
-  nav ul {
+}
+
+nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
     margin: 0;
     padding: 0;
-  }
-  
-  nav ul li a {
+}
+
+nav ul li a {
     color: #FFFFFF;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
-  }
-  
-  nav ul li a:hover {
+}
+
+nav ul li a:hover {
     color: #1DD1A1;
-  }
-  
-  nav ul li a.active {
+}
+
+nav ul li a.active {
     color: #FFFFFF;
     font-weight: 600;
-  }
-  
-  /* ========================
-     HERO SECTIONS WITH BACKGROUND
-  ======================== */
-  .hero,
-  .hero-services,
-  .hero-contact {
+}
+
+/* ========================
+   HERO SECTIONS WITH BACKGROUND
+======================== */
+.hero,
+.hero-services,
+.hero-contact {
     position: relative;
     text-align: center;
     padding: 60px 20px;
     color: #FFFFFF;
-  }
-  
-  .hero {
+}
+
+.hero {
     background: url('home-bg.png') no-repeat center center/cover;
-  }
-  
-  .hero-services {
+}
+
+.hero-services {
     background: url('services-bg.png') no-repeat center center/cover;
     padding: 40px 20px;
-  }
-  
-  .hero-contact {
+}
+
+.hero-contact {
     background: url('contact-bg.png') no-repeat center center/cover;
     padding: 40px 20px;
-  }
-  
-  .hero::before,
-  .hero-services::before,
-  .hero-contact::before {
+}
+
+.hero::before,
+.hero-services::before,
+.hero-contact::before {
     content: "";
     position: absolute;
     top: 0;
@@ -106,23 +107,23 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
-  }
-  
-  .hero h1,
-  .hero p,
-  .hero-services h1,
-  .hero-services p,
-  .hero-contact h1,
-  .hero-contact p {
+}
+
+.hero h1,
+.hero p,
+.hero-services h1,
+.hero-services p,
+.hero-contact h1,
+.hero-contact p {
     position: relative;
     z-index: 2;
     color: #FFFFFF;
-  }
-  
-  /* ========================
-     BUTTONS
-  ======================== */
-  .btn-consultation {
+}
+
+/* ========================
+   BUTTONS
+======================== */
+.btn-consultation {
     background-color: #1DD1A1;
     color: #ffffff;
     font-weight: 700;
@@ -136,64 +137,63 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 2;
-  }
-  
-  .btn-consultation:hover {
+}
+
+.btn-consultation:hover {
     background-color: #ffffff;
     color: #1DD1A1;
     border: 2px solid #1DD1A1;
     transform: translateY(-2px);
-  }
-  
-  /* ========================
-     SECTIONS
-  ======================== */
-  section {
+}
+
+/* ========================
+   SECTIONS
+======================== */
+section {
     padding: 40px 20px;
     background-color: #FFFFFF;
     color: #000000;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
+}
+
+h1, h2, h3, h4, h5, h6 {
     color: #1DD1A1;
     font-family: 'Montserrat', sans-serif;
-  }
-  
-  /* ========================
-     FEATURE CARDS (Home Page)
-  ======================== */
-  .features {
+}
+
+/* ========================
+   FEATURE CARDS (Home Page)
+======================== */
+.features {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-  }
-  
-  .feature-card {
+}
+
+.feature-card {
     background-color: #f8f8f8;
     padding: 20px;
     border-radius: 8px;
     width: 280px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  }
+}
 
-  .feature-card ul {
+.feature-card ul {
     list-style-type: disc;
     text-align: left;
     padding-left: 20px;
     margin: 0 auto;
     max-width: 240px;
-  }
-  
-  .feature-card ul li {
+}
+
+.feature-card ul li {
     margin-bottom: 8px;
     line-height: 1.5;
     color: #000000;
-  }
-  
-  
-  /* ========================
+}
+
+/* ========================
    SERVICES PAGE CARDS
 ======================== */
 .service-card {
@@ -208,53 +208,54 @@ body {
     justify-content: space-between;
     height: 500px;
     margin-bottom: 20px;
-  }
-  
-  .service-card h3 {
+}
+
+.service-card h3 {
     margin: 0 0 10px;
-  }
-  
-  .service-card p {
+}
+
+.service-card p {
     flex-grow: 1;
     margin-bottom: 20px;
-  }
-  
-  .service-card .btn-consultation {
+}
+
+.service-card .btn-consultation {
     margin-top: auto;
     align-self: center;
-  }
-  
-  
-  
-  .contact-section {
+}
+
+/* ========================
+   CONTACT FORM
+======================== */
+.contact-section {
     max-width: 600px;
     margin: 0 auto;
     text-align: left;
     padding: 20px;
-  }
-  
-  .contact-section form {
+}
+
+.contact-section form {
     display: flex;
     flex-direction: column;
     gap: 15px;
     margin-top: 20px;
-  }
-  
-  .contact-section input,
-  .contact-section textarea {
+}
+
+.contact-section input,
+.contact-section textarea {
     padding: 12px;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: inherit;
-  }
-  
-  .contact-section textarea {
+}
+
+.contact-section textarea {
     resize: vertical;
     min-height: 120px;
-  }
-  
-  .contact-section button {
+}
+
+.contact-section button {
     background-color: #1DD1A1;
     color: #fff;
     border: none;
@@ -264,39 +265,41 @@ body {
     cursor: pointer;
     width: fit-content;
     transition: background-color 0.3s ease;
-  }
-  
-  .contact-section button:hover {
+}
+
+.contact-section button:hover {
     background-color: #17b68d;
-  }
-  
-  .direct-contact {
+}
+
+.direct-contact {
     margin-top: 30px;
     line-height: 1.6;
     text-align: center;
-  }
-  
-  
-  /* ========================
-     FOOTER
-  ======================== */
-  footer {
+}
+
+/* ========================
+   FOOTER
+======================== */
+footer {
     background-color: #0C0C0C;
     color: #FFFFFF;
     text-align: center;
     padding: 20px;
     font-size: 0.9rem;
-  }
-  
-  footer a {
+}
+
+footer a {
     color: #1DD1A1;
     text-decoration: none;
-  }
-  
-  footer a:hover {
-    text-decoration: underline;
-  }
+}
 
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ========================
+   RESPONSIVE DESIGN
+======================== */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -318,23 +321,19 @@ body {
         font-size: 1rem;
     }
 
-    .features {
+    .features,
+    .service-card-wrapper {
         flex-direction: column;
         align-items: center;
     }
 
-    .feature-card {
+    .feature-card,
+    .service-card {
         width: 90%;
     }
 
     .contact-section form {
-        width: 90%;
-        margin: auto;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
+        width: 100%;
     }
 
     .logo {
@@ -345,5 +344,3 @@ body {
         font-size: 1.5rem;
     }
 }
-
-  

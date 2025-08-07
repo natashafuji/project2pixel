@@ -1,86 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Project2Pixel </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Project2Pixel</title>
+  <meta name="description" content="Reach out for admin support, web development, or digital services.">
 
-  <!--  Favicon Links -->
-<link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
-<link rel="shortcut icon" href="favicon.png" type="image/png">
-<link rel="apple-touch-icon" href="favicon.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="favicon.png">
 
-
-  <!--  Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-  <div class="logo-container">
-    <a href="index.html">
-      <img src="project2pixel-logo.png" alt="Project2Pixel Logo" class="logo">
-    </a>
-    <span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
+  <!-- HEADER -->
+  <header>
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="project2pixel-logo.png" alt="Project2Pixel Logo" class="logo">
+      </a>
+      <span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
+    </div>
+
+    <nav>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero-contact">
+    <h1>Contact Me</h1>
+    <p>Have a project in mind? Let's make it a reality.</p>
   </div>
 
-  <nav id="main-nav">
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+  <!-- CONTACT FORM -->
+  <section class="contact-section">
+    <form action="https://formspree.io/f/mnqkqrqa" method="POST">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="_replyto" required>
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="direct-contact">
+      <p>📧 Email: <a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
+      <p>📍 Cape Town, South Africa</p>
+      <p>💬 Expect a response within 24 hours.</p>
     </div>
-  </nav>
-</header>
+  </section>
 
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Project2Pixel | Built by Natasha Fredericks</p>
+    <p><a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
+  </footer>
 
-
-    <div class="hero-contact">
-        <h1>Contact Me</h1>
-        <p>Have a project in mind? Let's make it a reality.</p>
-    </div>
-
-    <section class="contact-section">
-        <form
-  action="https://formspree.io/f/mdkdwjrq"
-  method="POST"
->
-  <label>
-    Your Name:
-    <input type="name" name="name">
-  </label>
-  <label>
-    Your Email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your Message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send Message</button>
-</form>
-      
-        <div class="direct-contact">
-          <p>📧 Email: <a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
-          <p>📍 Cape Town, South Africa</p>
-          <p>💬 Expect a response within 24 hours.</p>
-        </div>
-      </section>
-      
-
-    <footer>
-        <p>&copy; 2025 Project2Pixel | Built by Natasha Fredericks</p>
-    </footer>
-
-    <script src="script.js"></script>
-
-
+  <script src="script.js"></script>
 </body>
 </html>

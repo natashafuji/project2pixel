@@ -19,8 +19,14 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
+  
 .logo {
   height: 80px;
   max-height: 90px;

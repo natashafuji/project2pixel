@@ -7,6 +7,55 @@
   <meta name="description" content="Get to know Natasha Fredericks and the mission behind Project2Pixel.">
   <link rel="stylesheet" href="style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    .hero-contact {
+      position: relative;
+      text-align: center;
+      padding: 60px 20px;
+      color: #FFFFFF;
+      background-image: url('nf.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-contact::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .hero-contact h1,
+    .hero-contact p {
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-consultation {
+      background-color: #1DD1A1;
+      color: #ffffff;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 15px;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-consultation:hover {
+      background-color: #ffffff;
+      color: #1DD1A1;
+      border: 2px solid #1DD1A1;
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
 <body>
 
@@ -28,12 +77,12 @@
   </header>
 
   <!-- HERO ABOUT -->
-  <div class="hero-contact" style="background: url('images/IMG_5917.png') no-repeat center center/cover;">
+  <div class="hero-contact">
     <h1>About Me</h1>
     <p>Helping businesses shine through admin, code, and creative energy.</p>
   </div>
 
-  <!-- ABOUT CONTENT -->
+  <!-- ABOUT SECTION -->
   <section class="contact-section">
     <h2>Meet Natasha Fredericks</h2>
     <p>

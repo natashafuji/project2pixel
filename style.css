@@ -334,3 +334,24 @@ footer a:hover {
     text-align: center;
   }
 }
+
+/* Profile Picture (About Page) */
+.profile-pic {
+  display: block;
+  margin: 20px auto;
+  max-width: 180px;
+  border-radius: 8px;
+}
+
+/* Ensure hero headers are all the same size */
+.hero-contact, .hero-services, .hero {
+  min-height: 220px;
+}
+
+/* On mobile, give a bit more spacing */
+@media (max-width: 768px) {
+  .profile-pic {
+    max-width: 140px;
+  }
+}
+

@@ -331,16 +331,8 @@ footer a:hover {
   }
 }
 
-/* Profile Picture (About Page) */
-.profile-pic {
-  display: block;
-  margin: 20px auto;
-  max-width: 180px;
-  border-radius: 8px;
-}
-
 /* Ensure hero headers are all the same size */
-.hero-contact, .hero-services, .hero {
+.hero-contact, .hero-services, .hero, .hero-about {
   min-height: 330px;
 }
 

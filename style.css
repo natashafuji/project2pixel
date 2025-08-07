@@ -1,7 +1,10 @@
-
 /* ========================
-   GLOBAL STYLES
+   GLOBAL RESET & SPILL FIX
 ======================== */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -13,19 +16,19 @@ body {
   overflow-x: hidden;
 }
 
-/* ========================
-   GLOBAL RESET & IMAGE FIX
-======================== */
-* {
-  box-sizing: border-box;
-}
-
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
+.feature-card ul {
+  padding-left: 20px;
+  list-style-type: disc;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
 
 /* ========================
    HEADER
@@ -395,40 +398,3 @@ footer a:hover {
     display: flex;
   }
 }
-
-* {
-  box-sizing: border-box;
-}
-
-
-/* ========================
-   FINAL SPILL FIXES
-======================== */
-
-/* Global box-sizing for consistent layout */
-* {
-  box-sizing: border-box;
-}
-
-/* Prevent horizontal scroll on mobile */
-body {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-
-/* Ensure images don’t overflow */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Fix list wrapping inside feature cards */
-.feature-card ul {
-  padding-left: 20px;
-  list-style-type: disc;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
-}
-

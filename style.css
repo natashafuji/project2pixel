@@ -11,7 +11,7 @@ body {
   background-color: #FFFFFF;
   color: #000000;
   line-height: 1.6;
-  padding-top: 100px; /* offset for fixed header */
+  padding-top: 100px;
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -109,9 +109,18 @@ nav ul li a.active {
   background: url('contact-bg.png') no-repeat top center/cover;
 }
 
+.hero-about {
+  position: relative;
+  text-align: center;
+  padding: 60px 20px;
+  color: #FFFFFF;
+  background: url('nf.png') no-repeat center center/cover;
+}
+
 .hero::before,
 .hero-services::before,
-.hero-contact::before {
+.hero-contact::before,
+.hero-about::before {
   content: "";
   position: absolute;
   top: 0;
@@ -124,7 +133,8 @@ nav ul li a.active {
 
 .hero h1, .hero p,
 .hero-services h1, .hero-services p,
-.hero-contact h1, .hero-contact p {
+.hero-contact h1, .hero-contact p,
+.hero-about h1, .hero-about p {
   position: relative;
   z-index: 2;
   color: #FFFFFF;
@@ -147,6 +157,7 @@ nav ul li a.active {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 2;
+  white-space: nowrap;
 }
 
 .btn-consultation:hover {
@@ -178,6 +189,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  align-items: stretch;
 }
 
 .feature-card, .service-card {
@@ -187,28 +199,17 @@ h1, h2, h3, h4, h5, h6 {
   width: 280px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.service-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 500px;
-  margin-bottom: 20px;
+  min-height: 500px;
 }
 
-.service-card h3 {
-  margin: 0 0 10px;
-}
-
-.service-card p {
-  flex-grow: 1;
-  margin-bottom: 20px;
-}
-
+.feature-card .btn-consultation,
 .service-card .btn-consultation {
   margin-top: auto;
   align-self: center;
+  white-space: nowrap;
 }
 
 /* ========================
@@ -332,32 +333,4 @@ footer a:hover {
     display: block;
     text-align: center;
   }
-}
-
-/* ========================
-   ABOUT PAGE HERO SECTION
-======================== */
-.hero-about {
-  position: relative;
-  text-align: center;
-  padding: 60px 20px;
-  color: #FFFFFF;
-  background: url('nf.png') no-repeat center center/cover;
-}
-
-.hero-about::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.hero-about h1,
-.hero-about p {
-  position: relative;
-  z-index: 2;
 }

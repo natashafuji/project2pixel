@@ -355,3 +355,49 @@ footer a:hover {
   }
 }
 
+/* HAMBURGER BUTTON (Mobile only) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* NAVIGATION TOGGLE FOR MOBILE */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    z-index: 1001;
+  }
+
+  nav ul.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background-color: #0C0C0C;
+    text-align: center;
+    padding: 20px 0;
+    gap: 20px;
+    z-index: 1000;
+  }
+
+  nav ul.nav-links.show {
+    display: flex;
+  }
+}
+
+

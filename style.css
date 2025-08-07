@@ -23,12 +23,19 @@ img {
 }
 
 .feature-card ul {
-  padding-left: 20px;
   list-style-type: disc;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
+  padding-left: 20px;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 240px;
 }
+
+.feature-card ul li {
+  text-align: left;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
 
 /* ========================
    HEADER

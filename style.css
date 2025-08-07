@@ -296,4 +296,54 @@ body {
   footer a:hover {
     text-decoration: underline;
   }
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .btn-consultation {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card {
+        width: 90%;
+    }
+
+    .contact-section form {
+        width: 90%;
+        margin: auto;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .logo {
+        height: 60px;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+    }
+}
+
   

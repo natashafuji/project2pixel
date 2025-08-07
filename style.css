@@ -277,6 +277,34 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+/* Contact Page Layout Fix for Desktop */
+@media (min-width: 769px) {
+  .contact-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 500px;
+    margin: 0 auto;
+  }
+
+  .contact-section form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+
+  .contact-section input,
+  .contact-section textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contact-section button {
+    margin-top: 10px;
+  }
+}
+
+
 /* ========================
    FOOTER
 ======================== */

@@ -107,7 +107,6 @@ nav ul li a.active {
 
 .hero-contact {
   background: url('contact-bg.png') no-repeat top center/cover;
-  min-height: 600px;
 }
 
 .hero-about {

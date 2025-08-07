@@ -109,11 +109,6 @@ nav ul li a.active {
   background: url('contact-bg.png') no-repeat top center/cover;
 }
 
-.hero-about {
-  background: url('nf.png') no-repeat top center/cover;
-  min-height: 600px;
-}
-
 .hero::before,
 .hero-services::before,
 .hero-contact::before {
@@ -342,11 +337,18 @@ footer a:hover {
 /* ========================
    ABOUT PAGE HERO SECTION
 ======================== */
+.hero-about {
+  position: relative;
+  text-align: center;
+  padding: 60px 20px;
+  color: #FFFFFF;
+  background: url('nf.png') no-repeat center center/cover;
+}
 
 .hero-about::before {
   content: "";
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -359,4 +361,3 @@ footer a:hover {
   position: relative;
   z-index: 2;
 }
-

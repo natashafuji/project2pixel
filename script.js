@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelector(".nav-links");
   const header = document.querySelector("header");
 
-  // ✅ Add null check before using hamburger
+  // Hamburger toggle with null check
   if (hamburger) {
     hamburger.addEventListener("click", function () {
       navLinks.classList.toggle("show");
@@ -19,28 +19,41 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Smooth scroll + reveal correct section
+  // Smooth scroll and reveal correct section
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const targetID = this.getAttribute('href').substring(1);
-    const targetSection = document.getElementById(targetID);
-    const allSections = document.querySelectorAll('.package-section');
+    anchor.addEventListener('click', function (e) {
+      const targetID = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetID);
+      const allSections = document.querySelectorAll('.package-section');
 
+      if (targetSection) {
+        e.preventDefault();
+        allSections.forEach(section => section.classList.remove('active'));
+        targetSection.classList.add('active');
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+
+        // Optional: close mobile nav on link click
+        if (navLinks.classList.contains('show')) {
+          navLinks.classList.remove('show');
+        }
+      }
+    });
+  });
+
+  // Default active section on load based on hash
+  const allSections = document.querySelectorAll('.package-section');
+  if (window.location.hash) {
+    const hash = window.location.hash.substring(1);
+    const targetSection = document.getElementById(hash);
     if (targetSection) {
-      e.preventDefault();
       allSections.forEach(section => section.classList.remove('active'));
       targetSection.classList.add('active');
-      targetSection.scrollIntoView({ behavior: 'smooth' });
     }
-  });
-});
-
-
-  // Default active section when page loads via hash
-  if (window.location.hash === "#all-packages") {
-  const allPackages = document.getElementById("all-packages");
-  if (allPackages) {
-    allPackages.classList.add("active");
+  } else {
+    // If no hash, show the first package section by default
+    if (allSections.length) {
+      allSections.forEach(section => section.classList.remove('active'));
+      allSections[0].classList.add('active');
+    }
   }
-}
-
+});

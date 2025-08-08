@@ -429,6 +429,32 @@
     <p><a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetID = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetID);
+      const allSections = document.querySelectorAll('.package-section');
+
+      if (targetSection) {
+        e.preventDefault();
+        allSections.forEach(section => section.classList.remove('active'));
+        targetSection.classList.add('active');
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Default show if page is opened with hash
+  if (window.location.hash) {
+    const targetSection = document.getElementById(window.location.hash.substring(1));
+    if (targetSection) {
+      targetSection.classList.add('active');
+    }
+  }
+});
+</script>
+
 </body>
 </html>

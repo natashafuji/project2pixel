@@ -88,6 +88,13 @@
           <a href="#branding-packages" class="btn-consultation">Shape My Brand</a>
         </div>
 
+        <div class="feature-card">
+        <h3>Curated Bundles</h3>
+        <p>“Pre-built value packs designed to save you time and money.”<br>Grab a launch kit that fits your goals — from visibility to branding to full site setup.</p>
+        <a href="#bundle-kits" class="btn-consultation">View Bundle Kits</a>
+        </div>
+
+
       </div>
     </section>
 
@@ -114,30 +121,15 @@
       <a href="contact.html" class="btn-consultation">Book This Bundle</a>
     </div>
 
-    <section id="bundle-digital" class="package-section">
+   
+</section> 
+
+<section id="bundle-digital" class="package-section">
   <h2>🚀 Digital Kickstart Bundle</h2>
   <p style="text-align: center; max-width: 750px; margin: 0 auto 30px;">
     A starter pack for solo creators or professionals who need a lightweight online presence without the fluff.
   </p>
-
-  <div class="features">
-    <div class="service-card">
-      <h3>🚀 Digital Kickstart</h3>
-      <ul>
-        <li>Landing Page (scrolling design)</li>
-        <li>1 custom email signature</li>
-        <li>3 branded social posts</li>
-        <li>30-minute consult</li>
-      </ul>
-      <p><strong>✅ Save R500 vs individual pricing</strong></p>
-      <strong style="margin-top: 10px; display: block;">R2,250 once-off</strong>
-      <a href="contact.html" class="btn-consultation">Book This Bundle</a>
-    </div>
-  </div>
-</section>
-
-
-  </div>
+  
 </section>
     <section id="admin-packages" class="package-section">
   <h2>Administrative Support Packages</h2>
@@ -438,6 +430,85 @@
   </div>
 </section>
 
+    <section id="bundle-kits" class="package-section">
+  <h2>🎁 Bundle Kits</h2>
+  <p style="text-align: center; max-width: 750px; margin: 0 auto 30px;">
+    Curated once-off combos designed to help you launch or grow — affordably and efficiently.
+  </p>
+
+  <div class="features">
+
+    <!-- Starter Business Launch Bundle -->
+    <div class="service-card">
+      <h3>💼 Starter Business Launch</h3>
+      <ul>
+        <li>1-page Website (Starter Site)</li>
+        <li>Mini Brand Kit (logo, palette, social templates)</li>
+        <li>Admin Setup (once-off)</li>
+        <li>1-hour Consultation (branding tips)</li>
+      </ul>
+      <p><strong>✅ Save R900 vs individual pricing</strong></p>
+      <strong>R3,950 once-off</strong>
+      <a href="contact.html" class="btn-consultation">Book This Bundle</a>
+    </div>
+
+    <!-- Digital Kickstart Bundle -->
+    <div class="service-card">
+      <h3>🚀 Digital Kickstart</h3>
+      <ul>
+        <li>Landing Page</li>
+        <li>Email signature design</li>
+        <li>3 Branded Social Media Posts</li>
+        <li>30-min Strategy Call</li>
+      </ul>
+      <p><strong>✅ Save R500 vs individual pricing</strong></p>
+      <strong>R2,250 once-off</strong>
+      <a href="contact.html" class="btn-consultation">Book This Bundle</a>
+    </div>
+
+    <!-- Visibility Boost Bundle -->
+    <div class="service-card">
+      <h3>📣 Visibility Boost</h3>
+      <ul>
+        <li>6 social posts + captions</li>
+        <li>Canva Template Pack (4 designs)</li>
+        <li>Hashtag Strategy Sheet</li>
+        <li>Voice Note Review</li>
+      </ul>
+      <p><strong>Great for creators or campaigns</strong></p>
+      <strong>R1,350 once-off</strong>
+      <a href="contact.html" class="btn-consultation">Get Started</a>
+    </div>
+
+    <!-- Solo Wellness Pro Kit -->
+    <div class="service-card">
+      <h3>🌿 Solo Wellness Pro Kit</h3>
+      <ul>
+        <li>One-Page Site + Booking Form</li>
+        <li>Logo + Brand Colors</li>
+        <li>4 Instagram Post Templates</li>
+        <li>1-hour Coaching Consult</li>
+      </ul>
+      <strong>R3,700 once-off</strong>
+      <a href="contact.html" class="btn-consultation">Book This Bundle</a>
+    </div>
+
+    <!-- Custom Combo -->
+    <div class="service-card">
+      <h3>🛠️ Custom Combo</h3>
+      <ul>
+        <li>Mix any 3 services from Admin, Branding, or Social</li>
+        <li>1-hour Strategy Session</li>
+        <li>Flexible turnaround time</li>
+      </ul>
+      <strong>Pricing on request</strong>
+      <a href="contact.html" class="btn-consultation">Request a Quote</a>
+    </div>
+
+  </div>
+</section>
+
+
 
   </main>
     
@@ -448,23 +519,47 @@
       <p><a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
     </footer>
 
-    <!-- REVEAL PACKAGES SCRIPT -->
-    <script>
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          const targetID = this.getAttribute('href').substring(1);
-          const targetSection = document.getElementById(targetID);
-          const allSections = document.querySelectorAll('.package-section');
 
-          allSections.forEach(section => section.classList.remove('active'));
-          if (targetSection) {
-            e.preventDefault();
-            targetSection.classList.add('active');
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-          }
-        });
+
+  <script>
+  // Handle package section visibility and smooth scroll
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    const header = document.querySelector("header");
+
+    // Toggle mobile menu
+    hamburger.addEventListener("click", function () {
+      navLinks.classList.toggle("show");
+    });
+
+    // Shrink header on scroll
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 50) {
+        header.classList.add("shrink");
+      } else {
+        header.classList.remove("shrink");
+      }
+    });
+
+    // Smooth scroll + reveal correct section
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetID = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetID);
+        const allSections = document.querySelectorAll('.package-section');
+
+        allSections.forEach(section => section.classList.remove('active'));
+        if (targetSection) {
+          e.preventDefault();
+          targetSection.classList.add('active');
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
       });
-    </script>
+    });
+  });
+</script>
+
 
 </body>
 </html>

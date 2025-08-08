@@ -21,19 +21,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Smooth scroll + reveal correct section
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetID = this.getAttribute('href').substring(1);
-      const targetSection = document.getElementById(targetID);
-      const allSections = document.querySelectorAll('.package-section');
+  anchor.addEventListener('click', function (e) {
+    const targetID = this.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetID);
+    const allSections = document.querySelectorAll('.package-section');
 
-      if (targetSection) {
-        e.preventDefault();
-        allSections.forEach(section => section.classList.remove('active'));
-        targetSection.classList.add('active');
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
+    if (targetSection) {
+      e.preventDefault();
+      allSections.forEach(section => section.classList.remove('active'));
+      targetSection.classList.add('active');
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
   });
+});
+
 
   // Default active section when page loads via hash
   if (window.location.hash === "#all-packages") {

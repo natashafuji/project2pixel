@@ -1,3 +1,4 @@
+<script>
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector("header");
   const hamburger = document.getElementById("hamburger");
@@ -27,9 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
     else header.classList.remove("shrink");
   });
 
-  // Handle 'Explore Services & Pricing' button (and any link to #all-packages)
-  function activateAllPackages() {
-    const targetSection = document.getElementById("all-packages");
+  // Activate section by ID and scroll smoothly
+  function activateSection(id) {
+    const targetSection = document.getElementById(id);
     const allSections = document.querySelectorAll(".package-section");
     if (targetSection) {
       allSections.forEach(s => s.classList.remove("active"));
@@ -38,16 +39,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  document.querySelectorAll('a[href="#all-packages"]').forEach(link => {
+  // Listen for all anchor links to package sections
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener("click", function (e) {
-      e.preventDefault();
-      activateAllPackages();
+      const targetID = this.getAttribute("href").substring(1);
+      if (document.getElementById(targetID)) {
+        e.preventDefault();
+        activateSection(targetID);
+      }
     });
   });
 
-  // Show #all-packages if URL hash matches on load
-  if (window.location.hash === "#all-packages") {
-    const ap = document.getElementById("all-packages");
-    if (ap) ap.classList.add("active");
+  // On page load, activate the section if hash matches
+  const hash = window.location.hash.substring(1);
+  if (document.getElementById(hash)) {
+    activateSection(hash);
   }
 });
+</script>

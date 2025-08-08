@@ -163,6 +163,10 @@ nav ul li a.active {
   transform: translateY(-2px);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* ========================
    SECTIONS
 ======================== */

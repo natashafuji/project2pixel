@@ -335,6 +335,17 @@ footer a:hover {
   }
 }
 
+ul {
+  text-align: left;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+
 /* Ensure hero headers are all the same size */
 .hero-contact, .hero-services, .hero, .hero-about {
   min-height: 330px;

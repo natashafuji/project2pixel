@@ -462,6 +462,25 @@ Whether you're refining your visual identity or just need better words, we help 
 
 
 
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetID = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetID);
+      const allSections = document.querySelectorAll('.package-section');
+
+      // Hide all first
+      allSections.forEach(section => section.classList.remove('active'));
+
+      // Show only the clicked one
+      if (targetSection) {
+        e.preventDefault();
+        targetSection.classList.add('active');
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
 
 
 </body>

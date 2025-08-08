@@ -606,13 +606,14 @@
     <p>&copy; 2025 Project2Pixel | Built by Natasha Fredericks</p>
     <p><a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
   </footer>
- <script>
-  document.addEventListener("DOMContentLoaded", function () {
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector("header");
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.querySelector(".nav-links");
 
-  // Hamburger toggle
+  // Mobile menu toggle
   if (hamburger && navLinks) {
     hamburger.addEventListener("click", function () {
       navLinks.classList.toggle("show");
@@ -636,9 +637,9 @@
     else header.classList.remove("shrink");
   });
 
-  // Handle Explore button (links to #all-packages)
-  function activateAllPackages() {
-    const targetSection = document.getElementById("all-packages");
+  // Activate section by ID and scroll smoothly
+  function activateSection(id) {
+    const targetSection = document.getElementById(id);
     const allSections = document.querySelectorAll(".package-section");
     if (targetSection) {
       allSections.forEach(s => s.classList.remove("active"));
@@ -647,22 +648,24 @@
     }
   }
 
-  document.querySelectorAll('a[href="#all-packages"]').forEach(link => {
+  // Listen for all anchor links to package sections
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener("click", function (e) {
-      e.preventDefault();
-      activateAllPackages();
+      const targetID = this.getAttribute("href").substring(1);
+      if (document.getElementById(targetID)) {
+        e.preventDefault();
+        activateSection(targetID);
+      }
     });
   });
 
-  // Show #all-packages if URL hash matches on load
-  if (window.location.hash === "#all-packages") {
-    const ap = document.getElementById("all-packages");
-    if (ap) ap.classList.add("active");
+  // On page load, activate the section if hash matches
+  const hash = window.location.hash.substring(1);
+  if (document.getElementById(hash)) {
+    activateSection(hash);
   }
 });
-   </script>
- 
-
+</script>
 
 
 </body>

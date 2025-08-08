@@ -416,5 +416,13 @@ li {
   transform: translateY(0);
 }
 
+.service-card ul,
+.feature-card ul {
+  text-align: left;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+
 
 

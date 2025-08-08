@@ -378,30 +378,23 @@ li {
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
-    position: absolute;
-    top: 25px;
-    right: 20px;
-    z-index: 1001;
   }
 
-  nav ul.nav-links {
+  .nav-links {
     display: none;
     flex-direction: column;
+    width: 100%;
+    background-color: #0C0C0C;
     position: absolute;
     top: 70px;
     right: 0;
-    width: 100%;
-    background-color: #0C0C0C;
     text-align: center;
     padding: 20px 0;
     gap: 20px;
     z-index: 1000;
   }
 
-  nav ul.nav-links.show {
-    display: flex;
-  }
-}
+
 
 .package-section {
   display: none;
@@ -421,6 +414,15 @@ li {
   text-align: left;
   padding-left: 20px;
   list-style-type: disc;
+}
+
+.nav-links {
+  display: none;
+}
+
+.nav-links.show {
+  display: flex;
+  flex-direction: column;
 }
 
 

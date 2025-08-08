@@ -1,59 +1,53 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector("header");
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.querySelector(".nav-links");
-  const header = document.querySelector("header");
 
-  // Hamburger toggle with null check
-  if (hamburger) {
+  // Mobile menu toggle
+  if (hamburger && navLinks) {
     hamburger.addEventListener("click", function () {
       navLinks.classList.toggle("show");
     });
   }
 
+  // Auto-close mobile menu on nav link click
+  if (navLinks) {
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (navLinks.classList.contains("show")) {
+          navLinks.classList.remove("show");
+        }
+      });
+    });
+  }
+
   // Shrink header on scroll
   window.addEventListener("scroll", function () {
-    if (window.scrollY > 50) {
-      header.classList.add("shrink");
-    } else {
-      header.classList.remove("shrink");
-    }
+    if (window.scrollY > 50) header.classList.add("shrink");
+    else header.classList.remove("shrink");
   });
 
-  // Smooth scroll and reveal correct section
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetID = this.getAttribute('href').substring(1);
-      const targetSection = document.getElementById(targetID);
-      const allSections = document.querySelectorAll('.package-section');
+  // Handle 'Explore Services & Pricing' button (and any link to #all-packages)
+  function activateAllPackages() {
+    const targetSection = document.getElementById("all-packages");
+    const allSections = document.querySelectorAll(".package-section");
+    if (targetSection) {
+      allSections.forEach(s => s.classList.remove("active"));
+      targetSection.classList.add("active");
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 
-      if (targetSection) {
-        e.preventDefault();
-        allSections.forEach(section => section.classList.remove('active'));
-        targetSection.classList.add('active');
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-
-        // Optional: close mobile nav on link click
-        if (navLinks.classList.contains('show')) {
-          navLinks.classList.remove('show');
-        }
-      }
+  document.querySelectorAll('a[href="#all-packages"]').forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      activateAllPackages();
     });
   });
 
-  // Default active section on load based on hash
-  const allSections = document.querySelectorAll('.package-section');
-  if (window.location.hash) {
-    const hash = window.location.hash.substring(1);
-    const targetSection = document.getElementById(hash);
-    if (targetSection) {
-      allSections.forEach(section => section.classList.remove('active'));
-      targetSection.classList.add('active');
-    }
-  } else {
-    // If no hash, show the first package section by default
-    if (allSections.length) {
-      allSections.forEach(section => section.classList.remove('active'));
-      allSections[0].classList.add('active');
-    }
+  // Show #all-packages if URL hash matches on load
+  if (window.location.hash === "#all-packages") {
+    const ap = document.getElementById("all-packages");
+    if (ap) ap.classList.add("active");
   }
 });

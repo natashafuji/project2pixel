@@ -40,20 +40,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Scroll and toggle sections
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetID = this.getAttribute('href').substring(1);
-      const targetSection = document.getElementById(targetID);
-      const allSections = document.querySelectorAll('.package-section');
+  anchor.addEventListener('click', function (e) {
+    const targetID = this.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetID);
 
-      allSections.forEach(section => section.classList.remove('active'));
-      if (targetSection) {
-        e.preventDefault();
-        targetSection.classList.add('active');
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
+    if (targetSection) {
+      e.preventDefault();
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
   });
 });
+
 
 
 

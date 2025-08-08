@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Default active section when page loads via hash
   if (window.location.hash === "#all-packages") {
-    const allPackages = document.getElementById("all-packages");
-    if (allPackages) {
-      allPackages.classList.add("active");
-    }
+  const allPackages = document.getElementById("all-packages");
+  if (allPackages) {
+    allPackages.classList.add("active");
   }
-});
+}
+

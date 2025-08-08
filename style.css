@@ -394,6 +394,15 @@ li {
     z-index: 1000;
   }
 
+   .nav-links {
+  display: none;
+}
+
+.nav-links.show {
+  display: flex;
+  flex-direction: column;
+}
+
 
 
 .package-section {
@@ -416,14 +425,7 @@ li {
   list-style-type: disc;
 }
 
-.nav-links {
-  display: none;
-}
 
-.nav-links.show {
-  display: flex;
-  flex-direction: column;
-}
 
 
 

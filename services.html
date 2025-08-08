@@ -606,6 +606,7 @@
 
   <script>
 document.addEventListener("DOMContentLoaded", function () {
+  // Reveal only when clicking buttons linking to in-page sections
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetID = this.getAttribute('href').substring(1);
@@ -613,7 +614,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const allSections = document.querySelectorAll('.package-section');
 
       if (targetSection) {
-        e.preventDefault();
+        e.preventDefault(); // stop jump
         allSections.forEach(section => section.classList.remove('active'));
         targetSection.classList.add('active');
         targetSection.scrollIntoView({ behavior: 'smooth' });
@@ -621,7 +622,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Default show if page is opened with hash
+  // Show section if page loads with hash
   if (window.location.hash) {
     const targetSection = document.getElementById(window.location.hash.substring(1));
     if (targetSection) {
@@ -630,6 +631,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+
 
 </body>
 </html>

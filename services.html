@@ -477,17 +477,27 @@
     <p>&copy; 2025 Project2Pixel | Built by Natasha Fredericks</p>
     <p><a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
   </footer>
-
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector("header");
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.querySelector(".nav-links");
 
-  // Mobile menu (safe-guarded)
+  // Hamburger toggle
   if (hamburger && navLinks) {
     hamburger.addEventListener("click", function () {
       navLinks.classList.toggle("show");
+    });
+  }
+
+  // Auto-close mobile menu on nav link click
+  if (navLinks) {
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (navLinks.classList.contains("show")) {
+          navLinks.classList.remove("show");
+        }
+      });
     });
   }
 
@@ -497,7 +507,7 @@ document.addEventListener("DOMContentLoaded", function () {
     else header.classList.remove("shrink");
   });
 
-  // ONLY handle Explore button (and any link specifically to #all-packages)
+  // Handle Explore button (links to #all-packages)
   function activateAllPackages() {
     const targetSection = document.getElementById("all-packages");
     const allSections = document.querySelectorAll(".package-section");
@@ -515,13 +525,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // If landing with #all-packages in the URL, show it
+  // Show #all-packages if URL hash matches on load
   if (window.location.hash === "#all-packages") {
     const ap = document.getElementById("all-packages");
     if (ap) ap.classList.add("active");
   }
 });
-</script>
+   </script>
+ 
 
 
 

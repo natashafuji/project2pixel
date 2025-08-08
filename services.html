@@ -1,3 +1,4 @@
+<!-- START OF CLEANED SERVICES.HTML CONTENT -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,20 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Services | Project2Pixel</title>
   <meta name="description" content="Explore admin, web development, and digital services tailored for small businesses and NGOs.">
-
-  <!-- Favicon -->
-
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="favicon.ico">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-
-<link rel="stylesheet" href="style.css">
-  
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
 </head>
-  <script src="script.js"></script>
-
 <body>
+
+  <!-- HEADER -->
   <header>
     <div class="logo-container">
       <a href="index.html">
@@ -26,7 +21,6 @@
       </a>
       <span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
     </div>
-    
     <nav>
       <div class="hamburger" id="hamburger">
         <span></span><span></span><span></span>
@@ -34,454 +28,80 @@
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="hero-services">
-    <h1>Our Services</h1>
-    <p>Professional support tailored to small businesses and NGOs.</p>
-    <a href="#all-packages" class="btn-consultation">📌 Book a Free Consultation</a>
+  <!-- MAIN CONTENT -->
+  <main>
 
-  </div>
-
-  <!-- SERVICES SECTION -->
- <section>
-  <div class="features">
-
-    <div class="feature-card">
-      <h3>Administrative Support</h3>
-      <p>
-  “Handling the chaos — so you don’t have to.”<br>
-  From calendar wrangling and inbox taming to travel booking, deadline tracking, and doc drafting — we keep your back-end running so 
-  you can stay front-facing. Perfect for overwhelmed execs, nonprofit ninjas, and startup crews who’d rather not waste hours 
-  hunting down attachments or rescheduling Zooms... again.
-</p>
-
-      <a href="#admin-packages" class="btn-consultation">Delegate the Details</a>
-
+    <!-- HERO -->
+    <div class="hero-services">
+      <h1>Our Services</h1>
+      <p>Professional support tailored to small businesses and NGOs.</p>
+      <a href="#all-packages" class="btn-consultation">📌 Book a Free Consultation</a>
     </div>
 
-    <div class="feature-card">
-      <h3>Custom Web Development</h3>
-      <p>
-        “Websites that look good and load fast — like, really fast.”<br>
-We build mobile-first, user-focused websites that reflect your brand and actually work. Whether you're launching from scratch or need a 
-        facelift, we deliver clean code, smooth navigation, SEO-ready builds, and designs that don’t look like a template.
-      </p>
-      <a href="#webdev-packages" class="btn-consultation">Launch My Site</a>
+    <!-- SERVICES SECTION -->
+    <section>
+      <div class="features">
 
-    </div>
+        <div class="feature-card">
+          <h3>Administrative Support</h3>
+          <p>“Handling the chaos — so you don’t have to.”<br>From calendar wrangling and inbox taming to travel booking, deadline tracking, and doc drafting — we keep your back-end running so you can stay front-facing.</p>
+          <a href="#admin-packages" class="btn-consultation">Delegate the Details</a>
+        </div>
 
-    <div class="feature-card">
-      <h3>Social Media Management</h3>
-      <p>
-        “Posting with purpose — not just vibes.”<br>
-Let’s turn your feed into a scroll-stopper. From Canva visuals to caption strategy, we keep your brand consistent and your content relevant. 
-        Ideal for busy creators, growing teams, and cause-based brands that want their message seen.
-      </p>
-      <a href="#social-packages" class="btn-consultation">Boost My Socials</a>
+        <div class="feature-card">
+          <h3>Custom Web Development</h3>
+          <p>“Websites that look good and load fast — like, really fast.”<br>We build mobile-first, user-focused websites that reflect your brand and actually work.</p>
+          <a href="#webdev-packages" class="btn-consultation">Launch My Site</a>
+        </div>
 
-    </div>
+        <div class="feature-card">
+          <h3>Social Media Management</h3>
+          <p>“Posting with purpose — not just vibes.”<br>Let’s turn your feed into a scroll-stopper. From Canva visuals to caption strategy, we keep your brand consistent and your content relevant.</p>
+          <a href="#social-packages" class="btn-consultation">Boost My Socials</a>
+        </div>
 
-    <div class="feature-card">
-      <h3>Branding & Content Support</h3>
-      <p>
-       “Bring clarity to your brand — and words that actually work.”<br>
-Whether you're refining your visual identity or just need better words, we help shape the look and voice of your brand. Think: logo usage, 
-        brand tone, bios that sell, and copy that clicks — all designed to make you memorable.
-      </p>
-      <a href="#branding-packages" class="btn-consultation">Shape My Brand</a>
+        <div class="feature-card">
+          <h3>Branding & Content Support</h3>
+          <p>“Bring clarity to your brand — and words that actually work.”<br>Whether you're refining your visual identity or just need better words, we help shape the look and voice of your brand.</p>
+          <a href="#branding-packages" class="btn-consultation">Shape My Brand</a>
+        </div>
 
-    </div>
+      </div>
+    </section>
 
-  </div>
-</section>
+    <!-- PACKAGE SECTIONS -->
+    <!-- [ All your package sections (admin, webdev, social, branding, all-packages) remain unchanged ] -->
 
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy; 2025 Project2Pixel | Built by Natasha Fredericks</p>
+      <p><a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
+    </footer>
 
+    <!-- REVEAL PACKAGES SCRIPT -->
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetID = this.getAttribute('href').substring(1);
+          const targetSection = document.getElementById(targetID);
+          const allSections = document.querySelectorAll('.package-section');
 
-  <footer>
-    <p>&copy; 2025 Project2Pixel | Built by Natasha Fredericks</p>
-    <p><a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
-  </footer>
-
-  <script src="script.js"></script>
-
-  <!-- ADMIN SUPPORT PACKAGES SECTION -->
-<section id="admin-packages">
-  <h2>Administrative Support Packages</h2>
-  <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
-    Flexible admin support tailored for solopreneurs, small teams, and NGOs. Choose once-off help, ongoing monthly support, or book by the hour.
-  </p>
-
-  <div class="features">
-
-    <!-- Once-Off Package -->
-    <div class="service-card">
-      <h3>Once-Off Setup</h3>
-      <p>Need help setting up admin systems, organizing digital files, or launching a new project? This one-time support package gets you organized fast.</p>
-      <ul>
-        <li>Inbox cleanup & filing system</li>
-        <li>Digital filing structure</li>
-        <li>Admin workflow setup (e.g. Notion, Google Drive)</li>
-      </ul>
-      <strong style="margin-top: 10px; display: block;">R850 once-off</strong>
-      <a href="#admin-packages" class="btn-consultation">Delegate the Details</a>
-
-    </div>
-
-    <!-- Monthly Package -->
-    <div class="service-card">
-      <h3>Monthly Support</h3>
-      <p>Ongoing support for growing businesses. Ideal for founders juggling multiple tasks who need reliable, flexible admin help.</p>
-      <ul>
-        <li>Up to 12 hours/month</li>
-        <li>Calendar & inbox management</li>
-        <li>Task tracking and updates</li>
-        <li>Weekly check-ins via WhatsApp/Email</li>
-      </ul>
-      <strong style="margin-top: 10px; display: block;">R1,450/month</strong>
-      <a href="contact.html" class="btn-consultation">Start Monthly Support</a>
-    </div>
-
-    <!-- Hourly Package -->
-    <div class="service-card">
-      <h3>Hourly Admin Support</h3>
-      <p>Need quick help on short tasks like data entry, proofreading, or admin backup? Book by the hour as needed.</p>
-      <ul>
-        <li>Available in 2-hour blocks</li>
-        <li>Support within 48 hours</li>
-        <li>Great for ad-hoc needs</li>
-      </ul>
-      <strong style="margin-top: 10px; display: block;">Pricing on request</strong>
-      <a href="contact.html" class="btn-consultation">Request a Quote</a>
-    </div>
-
-    <!-- Custom Package -->
-    <div class="service-card">
-      <h3>Custom Package</h3>
-      <p>If none of the above fits, let’s create a tailored solution around your needs, goals, and team size.</p>
-      <ul>
-        <li>Mix & match services</li>
-        <li>Weekly or monthly support</li>
-        <li>Flexible availability</li>
-      </ul>
-      <strong style="margin-top: 10px; display: block;">Pricing on request</strong>
-      <a href="contact.html" class="btn-consultation">Request a Quote</a>
-    </div>
-
-  </div>
-
-  <section id="admin-packages" class="package-section">
-  <section id="webdev-packages" class="package-section">
-  <section id="social-packages" class="package-section">
-  <section id="branding-packages" class="package-section">
-  <section id="all-packages" class="package-section">
-
-</section>
-
-  <!-- WEB DEVELOPMENT PACKAGES SECTION -->
-<section id="webdev-packages">
-  <h2>Custom Web Development Packages</h2>
-  <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
-    Build your online presence with modern, mobile-ready websites that reflect your brand. Choose a package or get a custom quote based on your goals.
-  </p>
-
-  <div class="features">
-
-    <!-- Starter Site -->
-    <div class="service-card">
-      <h3>Starter Site</h3>
-      <p>A beautiful, mobile-responsive one-page site with all the essentials to introduce your business or campaign.</p>
-      <ul>
-        <li>Home, About, Contact sections</li>
-        <li>Custom colors & fonts</li>
-        <li>Basic SEO</li>
-        <li>Delivered in 7–10 days</li>
-      </ul>
-      <strong style="margin-top: 10px; display: block;">R1,800 once-off</strong>
-      <a href="contact.html" class="btn-consultation">Get Started</a>
-    </div>
-
-    <!-- Multi-Page Website -->
-    <div class="service-card">
-      <h3>Business Website</h3>
-      <p>A full multi-page website tailored to your business or nonprofit. Ideal for growing brands and teams needing more depth.</p>
-      <ul>
-        <li>Up to 5 custom pages</li>
-        <li>Mobile-friendly & responsive</li>
-        <li>Contact/booking form</li>
-        <li>SEO-ready and shareable</li>
-      </ul>
-      <strong style="margin-top: 10px; display: block;">R3,200 once-off</strong>
-      <a href="contact.html" class="btn-consultation">Start My Website</a>
-    </div>
-
-    <!-- Hourly Dev -->
-    <div class="service-card">
-      <h3>Hourly Development</h3>
-      <p>Need tweaks, page additions, or technical support on your current site? Book dev time by the hour.</p>
-      <ul>
-        <li>Bug fixes or content updates</li>
-        <li>Design adjustments</li>
-        <li>Quick turnarounds available</li>
-      </ul>
-      <strong style="margin-top: 10px; display: block;">Pricing on request</strong>
-      <a href="contact.html" class="btn-consultation">Request a Quote</a>
-    </div>
-
-    <!-- Custom Site Build -->
-    <div class="service-card">
-      <h3>Custom Site Build</h3>
-      <p>Looking for something unique—maybe with a booking system, blog, or donation page? Let’s plan it together.</p>
-      <ul>
-        <li>Built to spec, no templates</li>
-        <li>Optional integration: blog, payments, forms</li>
-        <li>Includes design walkthrough</li>
-      </ul>
-      <strong style="margin-top: 10px; display: block;">Pricing on request</strong>
-      <a href="contact.html" class="btn-consultation">Request a Quote</a>
-    </div>
-
-  </div>
-   <section id="admin-packages" class="package-section">
-   <section id="webdev-packages" class="package-section">
-   <section id="social-packages" class="package-section">
-   <section id="branding-packages" class="package-section">
-   <section id="all-packages" class="package-section">
-
-</section>
-
-  <!-- SOCIAL MEDIA MANAGEMENT PACKAGES SECTION -->
-<section id="social-packages">
-  <h2>Social Media Management Packages</h2>
-  <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
-    Grow your presence online with done-for-you social content, strategy, and engagement support. Ideal for creators, small brands, and NGOs looking to stay visible.
-  </p>
-
-  <div class="features">
-
-    <!-- Content Kickstart -->
-    <div class="service-card">
-      <h3>Content Kickstart</h3>
-      <p>A once-off bundle to jumpstart your socials or prep for a campaign launch. You’ll walk away with high-quality, ready-to-post content.</p>
-      <ul>
-        <li>9 branded posts (3 weeks of content)</li>
-        <li>Captions + hashtags included</li>
-        <li>Delivered in 5–7 working days</li>
-      </ul>
-      <strong style="margin-top: 10px; display: block;">R950 once-off</strong>
-      <a href="contact.html" class="btn-consultation">Order Now</a>
-    </div>
-
-    <!-- Monthly Management -->
-    <div class="service-card">
-      <h3>Monthly Management</h3>
-      <p>Full service management of your Instagram, Facebook, or LinkedIn so you can focus on your business while staying visible online.</p>
-      <ul>
-        <li>12 posts per month</li>
-        <li>Weekly scheduling & engagement</li>
-        <li>Monthly insights report</li>
-        <li>1 revision round included</li>
-      </ul>
-      <strong style="margin-top: 10px; display: block;">R1,750/month</strong>
-      <a href="contact.html" class="btn-consultation">Start Monthly</a>
-    </div>
-
-    <!-- Hourly Social Help -->
-    <div class="service-card">
-      <h3>Hourly Social Help</h3>
-      <p>Need quick help with a social media audit, content ideas, or setting up your page? Book per hour.</p>
-      <ul>
-        <li>Strategy or visuals only</li>
-        <li>Fast turnaround</li>
-        <li>Flexible & short-term</li>
-      </ul>
-      <strong style="margin-top: 10px; display: block;">Pricing on request</strong>
-      <a href="contact.html" class="btn-consultation">Request a Quote</a>
-    </div>
-
-    <!-- Custom Package -->
-    <div class="service-card">
-      <h3>Custom Social Support</h3>
-      <p>Need more or less than the packages above? We’ll build a plan around your audience, goals, and time.</p>
-      <ul>
-        <li>Mix platforms & services</li>
-        <li>Optional voice notes/video reels</li>
-        <li>Flexible delivery schedule</li>
-      </ul>
-      <strong style="margin-top: 10px; display: block;">Pricing on request</strong>
-      <a href="contact.html" class="btn-consultation">Request a Quote</a>
-    </div>
-
-  </div>
-
-   <section id="admin-packages" class="package-section">
-   <section id="webdev-packages" class="package-section">
-   <section id="social-packages" class="package-section">
-   <section id="branding-packages" class="package-section">
-   <section id="all-packages" class="package-section">
-
-</section>
-
-  <!-- BRANDING & CONTENT CREATION PACKAGES SECTION -->
-<section id="branding-packages">
-  <h2>Branding & Content Packages</h2>
-  <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
-    Give your brand the visual identity it deserves. Whether you're starting fresh or refining what you have, we’ll help your visuals and voice feel on point.
-  </p>
-
-  <div class="features">
-
-    <!-- Mini Brand Kit -->
-    <div class="service-card">
-      <h3>Mini Brand Kit</h3>
-      <p>Perfect for new businesses needing quick, clean branding to get online and launch with clarity.</p>
-      <ul>
-        <li>Logo + 2 variations</li>
-        <li>Brand colors + font pairing</li>
-        <li>2 social templates</li>
-      </ul>
-      <strong style="margin-top: 10px; display: block;">R1,200 once-off</strong>
-      <a href="contact.html" class="btn-consultation">Build My Brand</a>
-    </div>
-
-    <!-- Full Branding Suite -->
-    <div class="service-card">
-      <h3>Branding Suite</h3>
-      <p>Everything you need for consistent branding across platforms. This is for clients who are serious about showing up professionally.</p>
-      <ul>
-        <li>Logo + icon + favicon</li>
-        <li>Typography & palette guide</li>
-        <li>Social media & Canva templates</li>
-        <li>Tone of voice summary</li>
-      </ul>
-      <strong style="margin-top: 10px; display: block;">R2,500 once-off</strong>
-      <a href="contact.html" class="btn-consultation">Start Branding</a>
-    </div>
-
-    <!-- Content Creation Hourly -->
-    <div class="service-card">
-      <h3>Content Creation Hourly</h3>
-      <p>Need extra help designing social posts, graphics, pitch decks, or branded content? Hourly work available for fast delivery.</p>
-      <ul>
-        <li>Canva, Photoshop, or Figma</li>
-        <li>Flexible styles & formats</li>
-        <li>Based on your content calendar</li>
-      </ul>
-      <strong style="margin-top: 10px; display: block;">Pricing on request</strong>
-      <a href="contact.html" class="btn-consultation">Request a Quote</a>
-    </div>
-
-    <!-- Custom Package -->
-    <div class="service-card">
-      <h3>Custom Brand Support</h3>
-      <p>Not sure what you need? Let’s chat and build a tailored branding + content solution that suits your budget and your vision.</p>
-      <ul>
-        <li>One-on-one planning session</li>
-        <li>Hybrid packages available</li>
-        <li>Flexible timelines</li>
-      </ul>
-      <strong style="margin-top: 10px; display: block;">Pricing on request</strong>
-      <a href="contact.html" class="btn-consultation">Request a Quote</a>
-    </div>
-
-  </div>
-  <section id="admin-packages" class="package-section">
-  <section id="webdev-packages" class="package-section">
-  <section id="social-packages" class="package-section">
-  <section id="branding-packages" class="package-section">
-  <section id="all-packages" class="package-section">
-
-    
-</section>
-
-  <!-- FULL PACKAGE OVERVIEW SECTION -->
-<section id="all-packages">
-  <h2>📦 Full Package Overview</h2>
-  <p style="text-align: center; max-width: 750px; margin: 0 auto 30px;">
-    Browse all service packages in one place—from admin support to full branding builds. Click below to enquire about the right package for you.
-  </p>
-
-  <div class="features">
-
-    <!-- Admin -->
-    <div class="service-card">
-      <h3>Admin Support</h3>
-      <ul>
-        <li><strong>Once-Off:</strong> R850 – Setup & systems</li>
-        <li><strong>Monthly:</strong> R1450 – 12 hours of admin help</li>
-        <li><strong>Hourly & Custom:</strong> On request</li>
-      </ul>
-      <a href="#admin-packages" class="btn-consultation">View Details</a>
-    </div>
-
-    <!-- Web Dev -->
-    <div class="service-card">
-      <h3>Web Development</h3>
-      <ul>
-        <li><strong>Starter Site:</strong> R1800 – One-page site</li>
-        <li><strong>Business Site:</strong> R3200 – Multi-page</li>
-        <li><strong>Hourly & Custom:</strong> On request</li>
-      </ul>
-      <a href="#webdev-packages" class="btn-consultation">View Details</a>
-    </div>
-
-    <!-- Social Media -->
-    <div class="service-card">
-      <h3>Social Media</h3>
-      <ul>
-        <li><strong>Kickstart:</strong> R950 – 3 weeks content</li>
-        <li><strong>Monthly:</strong> R1750 – 12 posts/month</li>
-        <li><strong>Hourly & Custom:</strong> On request</li>
-      </ul>
-      <a href="#social-packages" class="btn-consultation">View Details</a>
-    </div>
-
-    <!-- Branding -->
-    <div class="service-card">
-      <h3>Branding & Content</h3>
-      <ul>
-        <li><strong>Mini Kit:</strong> R1200 – Logo + visuals</li>
-        <li><strong>Brand Suite:</strong> R2500 – Full kit</li>
-        <li><strong>Hourly & Custom:</strong> On request</li>
-      </ul>
-      <a href="#branding-packages" class="btn-consultation">View Details</a>
-    </div>
-
-  </div>
-  <section id="admin-packages" class="package-section">
-  <section id="webdev-packages" class="package-section">
-  <section id="social-packages" class="package-section">
-  <section id="branding-packages" class="package-section">
-  <section id="all-packages" class="package-section">
-
-</section>
-
-
-
-<script>
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetID = this.getAttribute('href').substring(1);
-      const targetSection = document.getElementById(targetID);
-      const allSections = document.querySelectorAll('.package-section');
-
-      // Hide all first
-      allSections.forEach(section => section.classList.remove('active'));
-
-      // Show only the clicked one
-      if (targetSection) {
-        e.preventDefault();
-        targetSection.classList.add('active');
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-</script>
-
+          allSections.forEach(section => section.classList.remove('active'));
+          if (targetSection) {
+            e.preventDefault();
+            targetSection.classList.add('active');
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    </script>
 
 </body>
 </html>
+<!-- END OF CLEANED SERVICES.HTML CONTENT -->

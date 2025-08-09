@@ -414,28 +414,42 @@ li {
   }
 }
 
+#all-packages {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, height 0.5s ease;
+  position: relative;
+  z-index: 10;
+  background-color: #fff;
+  padding-top: 20px;
+}
 
-
+#all-packages.active {
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+}
 
 .package-section {
-  display: none;
+  visibility: hidden;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, transform 0.5s ease, height 0.5s ease;
 }
 
 .package-section.active {
-  display: block;
+  visibility: visible;
   opacity: 1;
   transform: translateY(0);
+  height: auto;
 }
 
-.service-card ul,
-.feature-card ul {
-  text-align: left;
-  padding-left: 20px;
-  list-style-type: disc;
-}
+
+
 
 #all-packages {
   display: none; /* Hide the entire packages container initially */

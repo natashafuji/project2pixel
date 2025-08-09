@@ -437,6 +437,11 @@ li {
   list-style-type: disc;
 }
 
+#all-packages {
+  display: none; /* Hide the entire packages container initially */
+}
+
+
 
 
 

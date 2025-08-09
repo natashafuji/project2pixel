@@ -37,7 +37,7 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
@@ -97,7 +97,7 @@
     </section>
 
     <!-- ALL PACKAGES CONTAINER (Initially Hidden) -->
-    <section id="all-packages" style="display:none;">
+    <section id="all-packages">
 
       <!-- CURATED BUNDLES -->
       <section id="bundle-packages" class="package-section">
@@ -431,63 +431,62 @@
   </footer>
 
   <script src="script.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const allPackages = document.getElementById('all-packages');
-    if (!allPackages) return;
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const allPackages = document.getElementById('all-packages');
+      if (!allPackages) return;
 
-    function activateSection(id) {
-      const allSections = allPackages.querySelectorAll(".package-section");
+      function activateSection(id) {
+        const allSections = allPackages.querySelectorAll(".package-section");
 
-      if (id === 'all-packages') {
-        allPackages.classList.add('active');         // Show container
-        allSections.forEach(section => section.classList.add('active'));  // Show all packages
-        allPackages.scrollIntoView({ behavior: "smooth" });
-        return;
+        if (id === 'all-packages') {
+          allPackages.classList.add('active');         // Show container
+          allSections.forEach(section => section.classList.add('active'));  // Show all packages
+          allPackages.scrollIntoView({ behavior: "smooth" });
+          return;
+        }
+
+        allPackages.classList.add('active');          // Show container
+        allSections.forEach(section => {
+          if (section.id === id) {
+            section.classList.add('active');           // Show target section
+          } else {
+            section.classList.remove('active');        // Hide others
+          }
+        });
+
+        const targetSection = document.getElementById(id);
+        if (targetSection) targetSection.scrollIntoView({ behavior: "smooth" });
       }
 
-      allPackages.classList.add('active');          // Show container
-      allSections.forEach(section => {
-        if (section.id === id) {
-          section.classList.add('active');           // Show target section
-        } else {
-          section.classList.remove('active');        // Hide others
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        const targetID = link.getAttribute("href").substring(1);
+        if (
+          document.getElementById(targetID) &&
+          (
+            targetID === 'all-packages' ||
+            targetID.endsWith('-packages') ||
+            targetID === 'ngo-addons'
+          )
+        ) {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            activateSection(targetID);
+          });
         }
       });
 
-      const targetSection = document.getElementById(id);
-      if (targetSection) targetSection.scrollIntoView({ behavior: "smooth" });
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      const targetID = link.getAttribute("href").substring(1);
+      // Activate section on page load if URL contains hash
+      const hash = window.location.hash.substring(1);
       if (
-        document.getElementById(targetID) &&
-        (
-          targetID === 'all-packages' ||
-          targetID.endsWith('-packages') ||
-          targetID === 'ngo-addons'
-        )
+        hash &&
+        document.getElementById(hash) &&
+        (hash === 'all-packages' || hash.endsWith('-packages') || hash === 'ngo-addons')
       ) {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          activateSection(targetID);
-        });
+        activateSection(hash);
       }
     });
-
-    // Activate section on page load if URL contains hash
-    const hash = window.location.hash.substring(1);
-    if (
-      hash &&
-      document.getElementById(hash) &&
-      (hash === 'all-packages' || hash.endsWith('-packages') || hash === 'ngo-addons')
-    ) {
-      activateSection(hash);
-    }
-  });
-</script>
-
+  </script>
 
 </body>
 </html>

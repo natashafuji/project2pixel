@@ -611,7 +611,7 @@
     <p><a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
   </footer>
 
-    <script>
+   <script>
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector("header");
   const hamburger = document.getElementById("hamburger");
@@ -646,7 +646,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const targetSection = document.getElementById(id);
     const allSections = document.querySelectorAll(".package-section");
     if (targetSection) {
-      allSections.forEach(s => s.classList.remove("active"));
+      allSections.forEach(section => section.classList.remove("active"));
       targetSection.classList.add("active");
       targetSection.scrollIntoView({ behavior: "smooth" });
     }
@@ -670,6 +670,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+
 
 
 </body>

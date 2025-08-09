@@ -27,26 +27,25 @@ document.addEventListener("DOMContentLoaded", function () {
     else header.classList.remove("shrink");
   });
 
-  // Activate section by ID and scroll smoothly
-  function activateSection(id) {
-    const allPackages = document.getElementById('all-packages');
-    const allSections = allPackages ? allPackages.querySelectorAll(".package-section") : [];
+  // ====== START: Package Section Activation Code (only if packages exist) ======
+  const allPackages = document.getElementById('all-packages');
+  if (allPackages) {
+    // Function to activate package sections by ID
+    function activateSection(id) {
+      const allSections = allPackages.querySelectorAll(".package-section");
 
-    if (id === 'all-packages') {
-      // Show all packages container and all sections
-      if (allPackages) {
+      if (id === 'all-packages') {
+        // Show all packages container and all sections
         allPackages.style.display = 'block';
         allSections.forEach(section => {
           section.style.display = 'block';
           section.classList.remove('active');
         });
         allPackages.scrollIntoView({ behavior: "smooth" });
+        return;
       }
-      return;
-    }
 
-    // For individual package section clicks:
-    if (allPackages) {
+      // For individual package section clicks:
       allPackages.style.display = 'block';  // Show container
       allSections.forEach(section => {
         if (section.id === id) {
@@ -60,22 +59,24 @@ document.addEventListener("DOMContentLoaded", function () {
       const targetSection = document.getElementById(id);
       if (targetSection) targetSection.scrollIntoView({ behavior: "smooth" });
     }
-  }
 
-  // Listen for all anchor links to package sections
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", function (e) {
-      const targetID = this.getAttribute("href").substring(1);
-      if (document.getElementById(targetID)) {
-        e.preventDefault();
-        activateSection(targetID);
+    // Listen for all anchor links to package sections
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      const targetID = link.getAttribute("href").substring(1);
+      if (document.getElementById(targetID) && targetID.startsWith('admin-packages') || targetID.startsWith('webdev-packages') || targetID.startsWith('social-packages') || targetID.startsWith('branding-packages') || targetID.startsWith('bundle-packages') || targetID.startsWith('ngo-addons') || targetID === 'all-packages') {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          activateSection(targetID);
+        });
       }
     });
-  });
 
-  // On page load, activate the section if hash matches
-  const hash = window.location.hash.substring(1);
-  if (document.getElementById(hash)) {
-    activateSection(hash);
+    // On page load, activate the section if hash matches and is in packages
+    const hash = window.location.hash.substring(1);
+    if (hash && document.getElementById(hash) && (hash === 'all-packages' || hash.endsWith('-packages') || hash === 'ngo-addons')) {
+      activateSection(hash);
+    }
   }
+  // ====== END: Package Section Activation Code ======
+
 });

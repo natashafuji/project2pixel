@@ -27,16 +27,23 @@ document.addEventListener("DOMContentLoaded", function () {
     else header.classList.remove("shrink");
   });
 
+  // Hide all package sections initially inside all-packages container
+  const allPackages = document.getElementById('all-packages');
+  if (allPackages) {
+    const allSections = allPackages.querySelectorAll(".package-section");
+    allSections.forEach(section => {
+      section.style.display = 'none';
+      section.classList.remove('active');
+    });
+  }
+
   // Activate section by ID and scroll smoothly
   function activateSection(id) {
-    const allPackages = document.getElementById('all-packages');
-    const allSections = allPackages ? allPackages.querySelectorAll(".package-section") : [];
-
     if (id === 'all-packages') {
       // Show all packages container and all package sections inside it
       if (allPackages) {
         allPackages.style.display = 'block';
-        allSections.forEach(section => {
+        allPackages.querySelectorAll(".package-section").forEach(section => {
           section.style.display = 'block';
           section.classList.remove('active');
         });
@@ -48,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // For individual package section clicks:
     if (allPackages) {
       allPackages.style.display = 'block';  // Show container
-      allSections.forEach(section => {
+      allPackages.querySelectorAll(".package-section").forEach(section => {
         if (section.id === id) {
           section.style.display = 'block';
           section.classList.add('active');

@@ -431,65 +431,63 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const allPackages = document.getElementById('all-packages');
-      if (!allPackages) return;
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const allPackages = document.getElementById('all-packages');
+    if (!allPackages) return;
 
-      function activateSection(id) {
-        const allSections = allPackages.querySelectorAll(".package-section");
+    function activateSection(id) {
+      const allSections = allPackages.querySelectorAll(".package-section");
 
-        if (id === 'all-packages') {
-          allPackages.style.display = 'block';
-          allSections.forEach(section => {
-            section.style.display = 'block';
-            section.classList.remove('active');
-          });
-          allPackages.scrollIntoView({ behavior: "smooth" });
-          return;
-        }
-
-        allPackages.style.display = 'block';
-        allSections.forEach(section => {
-          if (section.id === id) {
-            section.style.display = 'block';
-            section.classList.add('active');
-          } else {
-            section.style.display = 'none';
-            section.classList.remove('active');
-          }
-        });
-        const targetSection = document.getElementById(id);
-        if (targetSection) targetSection.scrollIntoView({ behavior: "smooth" });
+      if (id === 'all-packages') {
+        allPackages.classList.add('active');         // Show container
+        allSections.forEach(section => section.classList.add('active'));  // Show all packages
+        allPackages.scrollIntoView({ behavior: "smooth" });
+        return;
       }
 
-      document.querySelectorAll('a[href^="#"]').forEach(link => {
-        const targetID = link.getAttribute("href").substring(1);
-        if (
-          document.getElementById(targetID) &&
-          (
-            targetID === 'all-packages' ||
-            targetID.endsWith('-packages') ||
-            targetID === 'ngo-addons'
-          )
-        ) {
-          link.addEventListener("click", function (e) {
-            e.preventDefault();
-            activateSection(targetID);
-          });
+      allPackages.classList.add('active');          // Show container
+      allSections.forEach(section => {
+        if (section.id === id) {
+          section.classList.add('active');           // Show target section
+        } else {
+          section.classList.remove('active');        // Hide others
         }
       });
 
-      const hash = window.location.hash.substring(1);
+      const targetSection = document.getElementById(id);
+      if (targetSection) targetSection.scrollIntoView({ behavior: "smooth" });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      const targetID = link.getAttribute("href").substring(1);
       if (
-        hash &&
-        document.getElementById(hash) &&
-        (hash === 'all-packages' || hash.endsWith('-packages') || hash === 'ngo-addons')
+        document.getElementById(targetID) &&
+        (
+          targetID === 'all-packages' ||
+          targetID.endsWith('-packages') ||
+          targetID === 'ngo-addons'
+        )
       ) {
-        activateSection(hash);
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          activateSection(targetID);
+        });
       }
     });
-  </script>
+
+    // Activate section on page load if URL contains hash
+    const hash = window.location.hash.substring(1);
+    if (
+      hash &&
+      document.getElementById(hash) &&
+      (hash === 'all-packages' || hash.endsWith('-packages') || hash === 'ngo-addons')
+    ) {
+      activateSection(hash);
+    }
+  });
+</script>
+
 
 </body>
 </html>

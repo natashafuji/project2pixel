@@ -32,18 +32,43 @@ document.addEventListener("DOMContentLoaded", function () {
   if (allPackages) {
     // Function to activate package sections by ID
     function activateSection(id) {
-      const allSections = allPackages.querySelectorAll(".package-section");
+  const allPackages = document.getElementById('all-packages');
+  const allSections = allPackages ? allPackages.querySelectorAll(".package-section") : [];
 
-      if (id === 'all-packages') {
-        // Show all packages container and all sections
-        allPackages.style.display = 'block';
-        allSections.forEach(section => {
-          section.style.display = 'block';
-          section.classList.remove('active');
-        });
-        allPackages.scrollIntoView({ behavior: "smooth" });
-        return;
+  console.log('activateSection called with id:', id);
+  console.log('allPackages:', allPackages);
+  console.log('allSections count:', allSections.length);
+
+  if (id === 'all-packages') {
+    if (allPackages) {
+      allPackages.style.display = 'block';
+      allSections.forEach(section => {
+        section.style.display = 'block';
+        section.classList.remove('active');
+      });
+      allPackages.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.warn('No #all-packages element found!');
+    }
+    return;
+  }
+
+  if (allPackages) {
+    allPackages.style.display = 'block';  
+    allSections.forEach(section => {
+      if (section.id === id) {
+        section.style.display = 'block';
+        section.classList.add('active');
+      } else {
+        section.style.display = 'none';
+        section.classList.remove('active');
       }
+    });
+    const targetSection = document.getElementById(id);
+    if (targetSection) targetSection.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
 
       // For individual package section clicks:
       allPackages.style.display = 'block';  // Show container

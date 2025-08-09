@@ -1,4 +1,4 @@
-// script.js (no package toggle code here)
+// script.js (hamburger menu and general site scripts)
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector("header");
   const hamburger = document.getElementById("hamburger");

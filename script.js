@@ -30,16 +30,18 @@ document.addEventListener("DOMContentLoaded", function () {
   // Activate section by ID and scroll smoothly
   function activateSection(id) {
     const allPackages = document.getElementById('all-packages');
-    const allSections = allPackages.querySelectorAll(".package-section");
+    const allSections = allPackages ? allPackages.querySelectorAll(".package-section") : [];
 
     if (id === 'all-packages') {
       // Show all packages container and all package sections inside it
-      allPackages.style.display = 'block';
-      allSections.forEach(section => {
-        section.style.display = 'block';
-        section.classList.remove('active');
-      });
-      allPackages.scrollIntoView({ behavior: "smooth" });
+      if (allPackages) {
+        allPackages.style.display = 'block';
+        allSections.forEach(section => {
+          section.style.display = 'block';
+          section.classList.remove('active');
+        });
+        allPackages.scrollIntoView({ behavior: "smooth" });
+      }
       return;
     }
 
@@ -76,22 +78,4 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.getElementById(hash)) {
     activateSection(hash);
   }
-
-  // === NEW CODE: Show all packages when Explore Services & Pricing button clicked ===
-  // (This is now handled inside activateSection, so this can be omitted or left for redundancy)
-  /*
-  const allPackages = document.getElementById('all-packages');
-  const exploreBtn = document.querySelector('a[href="#all-packages"]');
-
-  if (allPackages && exploreBtn) {
-    allPackages.style.display = 'none';
-
-    exploreBtn.addEventListener('click', e => {
-      e.preventDefault();
-      allPackages.style.display = 'block';
-      allPackages.scrollIntoView({ behavior: 'smooth' });
-      document.querySelectorAll(".package-section").forEach(s => s.classList.remove("active"));
-    });
-  }
-  */
 });

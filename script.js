@@ -29,12 +29,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Activate section by ID and scroll smoothly
   function activateSection(id) {
-    const targetSection = document.getElementById(id);
-    const allSections = document.querySelectorAll(".package-section");
-    if (targetSection) {
-      allSections.forEach(s => s.classList.remove("active"));
-      targetSection.classList.add("active");
-      targetSection.scrollIntoView({ behavior: "smooth" });
+    const allPackages = document.getElementById('all-packages');
+    const allSections = allPackages.querySelectorAll(".package-section");
+
+    if (id === 'all-packages') {
+      // Show all packages container and all package sections inside it
+      allPackages.style.display = 'block';
+      allSections.forEach(section => {
+        section.style.display = 'block';
+        section.classList.remove('active');
+      });
+      allPackages.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+
+    // For individual package section clicks:
+    if (allPackages) {
+      allPackages.style.display = 'block';  // Show container
+      allSections.forEach(section => {
+        if (section.id === id) {
+          section.style.display = 'block';
+          section.classList.add('active');
+        } else {
+          section.style.display = 'none';
+          section.classList.remove('active');
+        }
+      });
+      const targetSection = document.getElementById(id);
+      if (targetSection) targetSection.scrollIntoView({ behavior: "smooth" });
     }
   }
 
@@ -56,21 +78,20 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // === NEW CODE: Show all packages when Explore Services & Pricing button clicked ===
+  // (This is now handled inside activateSection, so this can be omitted or left for redundancy)
+  /*
   const allPackages = document.getElementById('all-packages');
   const exploreBtn = document.querySelector('a[href="#all-packages"]');
 
   if (allPackages && exploreBtn) {
-    // Start hidden
     allPackages.style.display = 'none';
 
     exploreBtn.addEventListener('click', e => {
       e.preventDefault();
-      // Show all packages container
       allPackages.style.display = 'block';
-      // Scroll smoothly to it
       allPackages.scrollIntoView({ behavior: 'smooth' });
-      // Remove any active classes on individual package sections
       document.querySelectorAll(".package-section").forEach(s => s.classList.remove("active"));
     });
   }
+  */
 });

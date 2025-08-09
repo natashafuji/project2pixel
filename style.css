@@ -345,7 +345,6 @@ li {
   margin-bottom: 8px;
 }
 
-
 /* Ensure hero headers are all the same size */
 .hero-contact, .hero-services, .hero, .hero-about {
   min-height: 330px;
@@ -414,6 +413,9 @@ li {
   }
 }
 
+/* ========================
+   PACKAGES VISIBILITY
+======================== */
 #all-packages {
   visibility: hidden;
   opacity: 0;
@@ -447,17 +449,3 @@ li {
   transform: translateY(0);
   height: auto;
 }
-
-
-
-
-#all-packages {
-  display: none; /* Hide the entire packages container initially */
-}
-
-
-
-
-
-
-

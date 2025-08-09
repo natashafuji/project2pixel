@@ -1,4 +1,3 @@
-<script>
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector("header");
   const hamburger = document.getElementById("hamburger");
@@ -56,4 +55,3 @@ document.addEventListener("DOMContentLoaded", function () {
     activateSection(hash);
   }
 });
-</script>

@@ -33,23 +33,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const allSections = allPackages ? allPackages.querySelectorAll(".package-section") : [];
 
     if (id === 'all-packages') {
+      // Show all packages container and all sections
       if (allPackages) {
-        allPackages.style.display = 'block';  // Show entire container
+        allPackages.style.display = 'block';
         allSections.forEach(section => {
-          section.classList.remove('active'); // Remove active from all (show all)
+          section.style.display = 'block';
+          section.classList.remove('active');
         });
         allPackages.scrollIntoView({ behavior: "smooth" });
       }
       return;
     }
 
+    // For individual package section clicks:
     if (allPackages) {
-      allPackages.style.display = 'block';  // Show container if hidden
+      allPackages.style.display = 'block';  // Show container
       allSections.forEach(section => {
         if (section.id === id) {
-          section.classList.add('active');    // Show selected section with animation
+          section.style.display = 'block';
+          section.classList.add('active');
         } else {
-          section.classList.remove('active'); // Hide others
+          section.style.display = 'none';
+          section.classList.remove('active');
         }
       });
       const targetSection = document.getElementById(id);

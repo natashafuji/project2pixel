@@ -54,4 +54,23 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.getElementById(hash)) {
     activateSection(hash);
   }
+
+  // === NEW CODE: Show all packages when Explore Services & Pricing button clicked ===
+  const allPackages = document.getElementById('all-packages');
+  const exploreBtn = document.querySelector('a[href="#all-packages"]');
+
+  if (allPackages && exploreBtn) {
+    // Start hidden
+    allPackages.style.display = 'none';
+
+    exploreBtn.addEventListener('click', e => {
+      e.preventDefault();
+      // Show all packages container
+      allPackages.style.display = 'block';
+      // Scroll smoothly to it
+      allPackages.scrollIntoView({ behavior: 'smooth' });
+      // Remove any active classes on individual package sections
+      document.querySelectorAll(".package-section").forEach(s => s.classList.remove("active"));
+    });
+  }
 });

@@ -27,41 +27,29 @@ document.addEventListener("DOMContentLoaded", function () {
     else header.classList.remove("shrink");
   });
 
-  // Hide all package sections initially inside all-packages container
-  const allPackages = document.getElementById('all-packages');
-  if (allPackages) {
-    const allSections = allPackages.querySelectorAll(".package-section");
-    allSections.forEach(section => {
-      section.style.display = 'none';
-      section.classList.remove('active');
-    });
-  }
-
   // Activate section by ID and scroll smoothly
   function activateSection(id) {
+    const allPackages = document.getElementById('all-packages');
+    const allSections = allPackages ? allPackages.querySelectorAll(".package-section") : [];
+
     if (id === 'all-packages') {
-      // Show all packages container and all package sections inside it
       if (allPackages) {
-        allPackages.style.display = 'block';
-        allPackages.querySelectorAll(".package-section").forEach(section => {
-          section.style.display = 'block';
-          section.classList.remove('active');
+        allPackages.style.display = 'block';  // Show entire container
+        allSections.forEach(section => {
+          section.classList.remove('active'); // Remove active from all (show all)
         });
         allPackages.scrollIntoView({ behavior: "smooth" });
       }
       return;
     }
 
-    // For individual package section clicks:
     if (allPackages) {
-      allPackages.style.display = 'block';  // Show container
-      allPackages.querySelectorAll(".package-section").forEach(section => {
+      allPackages.style.display = 'block';  // Show container if hidden
+      allSections.forEach(section => {
         if (section.id === id) {
-          section.style.display = 'block';
-          section.classList.add('active');
+          section.classList.add('active');    // Show selected section with animation
         } else {
-          section.style.display = 'none';
-          section.classList.remove('active');
+          section.classList.remove('active'); // Hide others
         }
       });
       const targetSection = document.getElementById(id);

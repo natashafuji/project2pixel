@@ -73,10 +73,6 @@ nav ul li a.active { color: #FFFFFF; font-weight: 600; }
   color: #FFFFFF;
 }
 
-.hero        { background: url('home-bg.webp') center/cover no-repeat; }
-.hero-about  { background: url('nf.webp') center/cover no-repeat; }
-.hero-services{ background: url('services-bg.webp') center/cover no-repeat; }
-.hero-contact{ background: url('contact-bg.webp') center/cover no-repeat; }
 .hero,
 .hero-about,
 .hero-services,
@@ -96,6 +92,22 @@ nav ul li a.active { color: #FFFFFF; font-weight: 600; }
   .hero-about { background-image: url('nf.webp'); }
   .hero-services { background-image: url('services-bg.webp'); }
   .hero-contact { background-image: url('contact-bg.webp'); }
+}
+
+.hero::before,
+.hero-about::before,
+.hero-services::before,
+.hero-contact::before {
+  content: ""; position: absolute; inset: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 1;
+}
+
+.hero h1, .hero p,
+.hero-about h1, .hero-about p,
+.hero-services h1, .hero-services p,
+.hero-contact h1, .hero-contact p {
+  position: relative; z-index: 2; color: #FFFFFF;
 }
 
 /* Force white text on About hero per request */

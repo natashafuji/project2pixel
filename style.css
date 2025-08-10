@@ -77,21 +77,25 @@ nav ul li a.active { color: #FFFFFF; font-weight: 600; }
 .hero-about  { background: url('nf.webp') center/cover no-repeat; }
 .hero-services{ background: url('services-bg.webp') center/cover no-repeat; }
 .hero-contact{ background: url('contact-bg.webp') center/cover no-repeat; }
-
-.hero::before,
-.hero-about::before,
-.hero-services::before,
-.hero-contact::before {
-  content: ""; position: absolute; inset: 0;
-  background: rgba(0,0,0,.5);
-  z-index: 1;
+.hero,
+.hero-about,
+.hero-services,
+.hero-contact {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.hero h1, .hero p,
-.hero-about h1, .hero-about p,
-.hero-services h1, .hero-services p,
-.hero-contact h1, .hero-contact p {
-  position: relative; z-index: 2; color: #FFFFFF;
+.hero { background-image: url('home-bg-mobile.webp'); }
+.hero-about { background-image: url('nf-mobile.webp'); }
+.hero-services { background-image: url('services-bg-mobile.webp'); }
+.hero-contact { background-image: url('contact-bg-mobile.webp'); }
+
+@media (min-width: 768px) {
+  .hero { background-image: url('home-bg.webp'); }
+  .hero-about { background-image: url('nf.webp'); }
+  .hero-services { background-image: url('services-bg.webp'); }
+  .hero-contact { background-image: url('contact-bg.webp'); }
 }
 
 /* Force white text on About hero per request */

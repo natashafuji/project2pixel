@@ -82,10 +82,10 @@ nav ul li a.active { color: #FFFFFF; font-weight: 600; }
   background-repeat: no-repeat;
 }
 
-.hero { background-image: url('home-bg-mobile.webp'); }
-.hero-about { background-image: url('nf-mobile.webp'); }
-.hero-services { background-image: url('services-bg-mobile.webp'); }
-.hero-contact { background-image: url('contact-bg-mobile.webp'); }
+.hero { background-image: url('home-bg.webp'); }
+.hero-about { background-image: url('nf.webp'); }
+.hero-services { background-image: url('services-bg.webp'); }
+.hero-contact { background-image: url('contact-bg.webp'); }
 
 @media (min-width: 768px) {
   .hero { background-image: url('home-bg.webp'); }

@@ -21,39 +21,31 @@
       <span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
     </div>
 
-   <nav>
-    <div
-      class="hamburger"
-      id="hamburger"
-      aria-label="Toggle navigation menu"
-      role="button"
-      tabindex="0"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <nav>
+      <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
 
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html" class="active">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- MAIN CONTENT -->
   <main>
 
     <!-- HERO -->
-    <div class="hero-services">
+    <div class="hero-services" role="img" aria-label="Services hero">
       <h1>Our Services</h1>
       <p>Professional support tailored to small businesses and NGOs.</p>
       <a href="#all-packages" class="btn-consultation">💼 Explore Services & Pricing</a>
     </div>
 
-    <!-- SERVICES SECTION -->
+    <!-- SERVICES CARDS -->
     <section>
       <div class="features">
 
@@ -84,46 +76,49 @@
         <div class="feature-card">
           <h3>Curated Bundles</h3>
           <p>“Pre-built value packs designed to save you time and money.”<br>Grab a launch kit that fits your goals — from visibility to branding to full site setup.</p>
-          <a href="#all-packages" class="btn-consultation">View Bundle Kits</a>
+          <a href="#bundle-packages" class="btn-consultation">View Bundle Kits</a>
         </div>
 
         <div class="feature-card">
-          <h3>NGO Add-Ons</h3>
-          <p>"Extra tools for NGOs that make a real difference — online and on the ground"<br>Tailored add-ons that help non-profits engage supporters, boost visibility, and maximize impact.</p>
-          <a href="#ngo-addons" class="btn-consultation">Explore NGO Add-Ons</a>
+          <h3>NGO & Non‑Profit Packages</h3>
+          <p>“Built for impact, mindful of budgets.”<br>Web + ops support tailored for NGOs and community projects.</p>
+          <a href="#ngo-packages" class="btn-consultation" id="explore-ngo">Explore NGO</a>
         </div>
+
+       
+
 
       </div>
     </section>
 
-    <!-- ALL PACKAGES CONTAINER (Initially Hidden) -->
+    <!-- ALL PACKAGES (Initially Hidden) -->
     <section id="all-packages">
-
       <!-- CURATED BUNDLES -->
       <section id="bundle-packages" class="package-section">
         <h2>Curated Bundles</h2>
-        <p style="text-align: center; max-width: 750px; margin: 0 auto 30px;">
+        <p class="section-intro">
           Pre-built value packs designed to save you time and money. Choose a bundle that fits your goals or create a custom package tailored to your needs.
         </p>
 
         <div class="features">
           <div class="service-card">
             <h3>Starter Business Launch Bundle</h3>
-            <ul style="text-align: left;">
+            <p></p>
+            <ul>
               <li>1-page Website (Starter Site)</li>
               <li>Mini Brand Kit (logo, color palette, 2 social templates)</li>
               <li>Admin Setup (once-off)</li>
               <li>1-hour Consultation (content + branding tips)</li>
             </ul>
             <p><strong>✅ Save R900 vs buying separately</strong></p>
-            <strong style="margin-top: 10px; display: block;">R3,950 once-off</strong>
+            <strong class="price">R3,950 once-off</strong>
             <a href="contact.html" class="btn-consultation">Book This Bundle</a>
           </div>
 
           <div class="service-card">
             <h3>Visibility Boost Bundle</h3>
             <p>Ideal for small businesses or solopreneurs looking to increase their online visibility and social engagement.</p>
-            <ul style="text-align: left;">
+            <ul>
               <li>Multi-page website (up to 3 pages)</li>
               <li>Enhanced brand kit (logo + icon + color palette + 3 social templates)</li>
               <li>Social media management (monthly scheduling for 8 posts)</li>
@@ -131,19 +126,19 @@
               <li>1-hour content strategy session</li>
             </ul>
             <p><strong>✅ Save R1,200 vs buying separately</strong></p>
-            <strong style="margin-top: 10px; display: block;">R5,450 once-off</strong>
+            <strong class="price">R5,450 once-off</strong>
             <a href="contact.html" class="btn-consultation">Book This Bundle</a>
           </div>
 
           <div class="service-card">
             <h3>Custom Bundle</h3>
             <p>Not seeing exactly what you need? Let’s build a personalized package just for you.</p>
-            <ul style="text-align: left;">
+            <ul>
               <li>Mix & match services from all categories</li>
               <li>Flexible deliverables & timelines</li>
               <li>Perfect for unique business goals</li>
             </ul>
-            <strong style="margin-top: 10px; display: block;">Pricing on request</strong>
+            <strong class="price">Pricing on request</strong>
             <a href="contact.html" class="btn-consultation">Request a Quote</a>
           </div>
         </div>
@@ -152,7 +147,7 @@
       <!-- ADMIN PACKAGES -->
       <section id="admin-packages" class="package-section">
         <h2>Administrative Support Packages</h2>
-        <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
+        <p class="section-intro">
           Flexible admin support tailored for solopreneurs, small teams, and NGOs. Choose once-off help, ongoing monthly support, or book by the hour.
         </p>
 
@@ -166,7 +161,7 @@
               <li>Digital filing structure</li>
               <li>Admin workflow setup (Notion, Google Drive, etc.)</li>
             </ul>
-            <strong style="margin-top: 10px; display: block;">R850 once-off</strong>
+            <strong class="price">R850 once-off</strong>
             <a href="contact.html" class="btn-consultation">Get Started</a>
           </div>
 
@@ -179,7 +174,7 @@
               <li>Task tracking and updates</li>
               <li>Weekly check-ins via WhatsApp/Email</li>
             </ul>
-            <strong style="margin-top: 10px; display: block;">R1,450/month</strong>
+            <strong class="price">R1,450/month</strong>
             <a href="contact.html" class="btn-consultation">Start Monthly Support</a>
           </div>
 
@@ -191,7 +186,7 @@
               <li>Support within 48 hours</li>
               <li>Great for ad-hoc needs</li>
             </ul>
-            <strong style="margin-top: 10px; display: block;">Pricing on request</strong>
+            <strong class="price">Pricing on request</strong>
             <a href="contact.html" class="btn-consultation">Request a Quote</a>
           </div>
 
@@ -203,7 +198,7 @@
               <li>Weekly or monthly support</li>
               <li>Flexible availability</li>
             </ul>
-            <strong style="margin-top: 10px; display: block;">Pricing on request</strong>
+            <strong class="price">Pricing on request</strong>
             <a href="contact.html" class="btn-consultation">Request a Quote</a>
           </div>
         </div>
@@ -212,7 +207,7 @@
       <!-- WEB DEVELOPMENT PACKAGES -->
       <section id="webdev-packages" class="package-section">
         <h2>Custom Web Development Packages</h2>
-        <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
+        <p class="section-intro">
           Build your online presence with modern, mobile-ready websites that reflect your brand or NGO mission. Choose a package or get a custom quote based on your goals.
         </p>
 
@@ -227,7 +222,7 @@
               <li>Basic SEO</li>
               <li>Delivered in 7–10 days</li>
             </ul>
-            <strong style="margin-top: 10px; display: block;">R1,800 once-off</strong>
+            <strong class="price">R1,800 once-off</strong>
             <a href="contact.html" class="btn-consultation">Get Started</a>
           </div>
 
@@ -240,7 +235,7 @@
               <li>Contact/booking form</li>
               <li>SEO-ready and shareable</li>
             </ul>
-            <strong style="margin-top: 10px; display: block;">R3,200 once-off</strong>
+            <strong class="price">R3,200 once-off</strong>
             <a href="contact.html" class="btn-consultation">Start My Website</a>
           </div>
 
@@ -252,7 +247,7 @@
               <li>Design adjustments</li>
               <li>Quick turnarounds available</li>
             </ul>
-            <strong style="margin-top: 10px; display: block;">Pricing on request</strong>
+            <strong class="price">Pricing on request</strong>
             <a href="contact.html" class="btn-consultation">Request a Quote</a>
           </div>
 
@@ -264,7 +259,7 @@
               <li>Optional integration: blog, payments, forms</li>
               <li>Includes design walkthrough</li>
             </ul>
-            <strong style="margin-top: 10px; display: block;">Pricing on request</strong>
+            <strong class="price">Pricing on request</strong>
             <a href="contact.html" class="btn-consultation">Request a Quote</a>
           </div>
 
@@ -274,7 +269,7 @@
       <!-- SOCIAL MEDIA MANAGEMENT PACKAGES -->
       <section id="social-packages" class="package-section">
         <h2>Social Media Management Packages</h2>
-        <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
+        <p class="section-intro">
           Amplify your brand’s or NGO’s voice with strategic, engaging content crafted for your audience. Choose a package that keeps your socials vibrant and consistent.
         </p>
 
@@ -288,7 +283,7 @@
               <li>Captions + hashtags included</li>
               <li>Delivered in 5–7 working days</li>
             </ul>
-            <strong style="margin-top: 10px; display: block;">R950 once-off</strong>
+            <strong class="price">R950 once-off</strong>
             <a href="contact.html" class="btn-consultation">Order Now</a>
           </div>
 
@@ -301,8 +296,8 @@
               <li>Monthly insights report</li>
               <li>1 revision round included</li>
             </ul>
-            <strong style="margin-top: 10px; display: block;">R1,750/month</strong>
-            <a href="contact.html" class="btn-consultation">Start Monthly</a>
+            <strong class="price">R1,750/month</strong>
+            <a href="contact.html" class="btn-consultation">Start Monthly Support</a>
           </div>
 
           <div class="service-card">
@@ -313,7 +308,7 @@
               <li>Fast turnaround</li>
               <li>Flexible & short-term</li>
             </ul>
-            <strong style="margin-top: 10px; display: block;">Pricing on request</strong>
+            <strong class="price">Pricing on request</strong>
             <a href="contact.html" class="btn-consultation">Request a Quote</a>
           </div>
 
@@ -325,7 +320,7 @@
               <li>Optional voice notes/video reels</li>
               <li>Flexible delivery schedule</li>
             </ul>
-            <strong style="margin-top: 10px; display: block;">Pricing on request</strong>
+            <strong class="price">Pricing on request</strong>
             <a href="contact.html" class="btn-consultation">Request a Quote</a>
           </div>
 
@@ -335,7 +330,7 @@
       <!-- BRANDING & CONTENT PACKAGES -->
       <section id="branding-packages" class="package-section">
         <h2>Branding & Content Packages</h2>
-        <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">
+        <p class="section-intro">
           Shape your business or NGO’s identity with cohesive visuals and compelling content that speaks your mission. Choose a package that brings clarity and confidence.
         </p>
         <div class="features">
@@ -347,7 +342,7 @@
               <li>Brand colors + font pairing</li>
               <li>2 social templates</li>
             </ul>
-            <strong style="margin-top: 10px; display: block;">R1,200 once-off</strong>
+            <strong class="price">R1,200 once-off</strong>
             <a href="contact.html" class="btn-consultation">Build My Brand</a>
           </div>
 
@@ -360,7 +355,7 @@
               <li>Social media & Canva templates</li>
               <li>Tone of voice summary</li>
             </ul>
-            <strong style="margin-top: 10px; display: block;">R2,500 once-off</strong>
+            <strong class="price">R2,500 once-off</strong>
             <a href="contact.html" class="btn-consultation">Start Branding</a>
           </div>
 
@@ -372,7 +367,7 @@
               <li>Flexible styles & formats</li>
               <li>Based on your content calendar</li>
             </ul>
-            <strong style="margin-top: 10px; display: block;">Pricing on request</strong>
+            <strong class="price">Pricing on request</strong>
             <a href="contact.html" class="btn-consultation">Request a Quote</a>
           </div>
 
@@ -384,42 +379,111 @@
               <li>Hybrid packages available</li>
               <li>Flexible timelines</li>
             </ul>
-            <strong style="margin-top: 10px; display: block;">Pricing on request</strong>
+            <strong class="price">Pricing on request</strong>
             <a href="contact.html" class="btn-consultation">Request a Quote</a>
           </div>
 
         </div>
       </section>
 
-      <!-- NGO ADD-ONS SECTION -->
-      <section id="ngo-addons" class="package-section">
-        <h2>NGO-Focused Add-Ons</h2>
-        <p style="max-width: 700px; margin: 0 auto 20px; text-align: center;">
-          Specialised services designed to meet NGO needs — easily add to your chosen package.
-        </p>
-        <div class="features" style="justify-content: center;">
-          <div class="service-card">
-            <h3>Donation Page Integration</h3>
-            <p>Set up secure, easy-to-use donation pages integrated with your website.</p>
-            <a href="contact.html" class="btn-consultation">Request a Quote</a>
-          </div>
-          <div class="service-card">
-            <h3>Volunteer Signup Forms</h3>
-            <p>Create forms to collect volunteer info and manage community engagement.</p>
-            <a href="contact.html" class="btn-consultation">Request a Quote</a>
-          </div>
-          <div class="service-card">
-            <h3>Grant Document Support</h3>
-            <p>Help with formatting, editing, or managing grant applications and reports.</p>
-            <a href="contact.html" class="btn-consultation">Request a Quote</a>
-          </div>
-          <div class="service-card">
-            <h3>Event Promotion</h3>
-            <p>Build event pages and digital flyers to boost participation and visibility.</p>
-            <a href="contact.html" class="btn-consultation">Request a Quote</a>
-          </div>
-        </div>
-      </section>
+      <!-- NGO PACKAGES (contains nested NGO Add-Ons) -->
+<section id="ngo-packages" class="package-section">
+  <h2>NGO & Non‑Profit Packages</h2>
+  <p class="section-intro">
+    Practical website + admin support tailored for mission-driven teams. Flexible, budget‑aware, impact‑focused.
+  </p>
+
+  <div class="features">
+    <div class="service-card">
+      <h3>NGO Starter Site</h3>
+      <p>Launch fast with a clean one‑page site that explains your cause and makes it easy to get in touch or donate.</p>
+      <ul>
+        <li>Home, About, Contact</li>
+        <li>Donation button ready</li>
+        <li>Basic SEO + mobile-friendly</li>
+      </ul>
+      <strong class="price">Pricing on request</strong>
+      <a href="contact.html" class="btn-consultation">Request a Quote</a>
+    </div>
+
+    <div class="service-card">
+      <h3>NGO Visibility Pack</h3>
+      <p>Grow awareness with a simple multi‑page site plus basic content support.</p>
+      <ul>
+        <li>Up to 4 pages (e.g., Programs, Donate, News)</li>
+        <li>Newsletter signup or WhatsApp CTA</li>
+        <li>1 round of content updates</li>
+      </ul>
+      <strong class="price">Pricing on request</strong>
+      <a href="contact.html" class="btn-consultation">Request a Quote</a>
+    </div>
+
+    <div class="service-card">
+      <h3>NGO Support Retainer</h3>
+      <p>Ongoing admin + web updates so your team can focus on the work that matters most.</p>
+      <ul>
+        <li>Monthly content & page updates</li>
+        <li>Volunteer or partner forms</li>
+        <li>Light grant edit support</li>
+      </ul>
+      <strong class="price">Pricing on request</strong>
+      <a href="contact.html" class="btn-consultation">Start Monthly Support</a>
+    </div>
+
+    <div class="service-card">
+      <h3>Custom NGO Build</h3>
+      <p>Need chapters, events, or a resource directory? Let’s scope it together.</p>
+      <ul>
+        <li>Tailored features & integrations</li>
+        <li>Content migration as needed</li>
+        <li>Roadmap & handover</li>
+      </ul>
+      <strong class="price">Pricing on request</strong>
+      <a href="contact.html" class="btn-consultation">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- Nested NGO Add-Ons (inside NGO Packages) -->
+  <section id="ngo-addons-inner" class="package-section active">
+    <h2>NGO‑Focused Add‑Ons</h2>
+    <p class="section-intro">Specialised services you can add to any NGO package.</p>
+    <div class="features">
+      <div class="service-card">
+        <h3>Donation Page Integration</h3>
+        <ul>
+          <li>Secure, easy-to-use donation setup</li>
+          <li>Integrated with your website</li>
+        </ul>
+        <a href="contact.html" class="btn-consultation">Request a Quote</a>
+      </div>
+      <div class="service-card">
+        <h3>Volunteer Signup Forms</h3>
+        <ul>
+          <li>Custom volunteer information capture</li>
+          <li>Manage community engagement efficiently</li>
+        </ul>
+        <a href="contact.html" class="btn-consultation">Request a Quote</a>
+      </div>
+      <div class="service-card">
+        <h3>Grant Document Support</h3>
+        <ul>
+          <li>Formatting and editing for grants</li>
+          <li>Reporting assistance as needed</li>
+        </ul>
+        <a href="contact.html" class="btn-consultation">Request a Quote</a>
+      </div>
+      <div class="service-card">
+        <h3>Event Promotion</h3>
+        <ul>
+          <li>Event pages and digital flyers</li>
+          <li>Drive participation and visibility</li>
+        </ul>
+        <a href="contact.html" class="btn-consultation">Request a Quote</a>
+      </div>
+    </div>
+  </section>
+</section>
+
 
     </section>
 
@@ -429,64 +493,247 @@
     <p>&copy; 2025 Project2Pixel | Built by Natasha Fredericks</p>
     <p><a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
   </footer>
-
   <script src="script.js"></script>
+
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const allPackages = document.getElementById('all-packages');
-      if (!allPackages) return;
-
-      function activateSection(id) {
-        const allSections = allPackages.querySelectorAll(".package-section");
-
-        if (id === 'all-packages') {
-          allPackages.classList.add('active');         // Show container
-          allSections.forEach(section => section.classList.add('active'));  // Show all packages
-          allPackages.scrollIntoView({ behavior: "smooth" });
-          return;
-        }
-
-        allPackages.classList.add('active');          // Show container
-        allSections.forEach(section => {
-          if (section.id === id) {
-            section.classList.add('active');           // Show target section
-          } else {
-            section.classList.remove('active');        // Hide others
-          }
-        });
-
-        const targetSection = document.getElementById(id);
-        if (targetSection) targetSection.scrollIntoView({ behavior: "smooth" });
+    // Add-only fix: make "Explore NGO" open NGO Packages + nested Add‑Ons
+    (function () {
+      function openAllPackages() {
+        const all = document.getElementById('all-packages');
+        if (all && !all.classList.contains('active')) all.classList.add('active');
+        // ensure every package section is visible
+        document.querySelectorAll('#all-packages .package-section').forEach(s => s.classList.add('active'));
       }
-
-      document.querySelectorAll('a[href^="#"]').forEach(link => {
-        const targetID = link.getAttribute("href").substring(1);
-        if (
-          document.getElementById(targetID) &&
-          (
-            targetID === 'all-packages' ||
-            targetID.endsWith('-packages') ||
-            targetID === 'ngo-addons'
-          )
-        ) {
-          link.addEventListener("click", function (e) {
-            e.preventDefault();
-            activateSection(targetID);
+  
+      function openNGO() {
+        openAllPackages();
+        const ngoPackages = document.getElementById('ngo-packages');
+        // Prefer nested add-ons id if present, else fall back to any standalone id you may still have
+        const ngoAddonsInner = document.getElementById('ngo-addons-inner') || document.getElementById('ngo-addons');
+        if (ngoPackages) ngoPackages.classList.add('active');
+        if (ngoAddonsInner) ngoAddonsInner.classList.add('active');
+        if (ngoPackages) ngoPackages.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+  
+      // Hook up the button: works whether you added id="explore-ngo" or only used an href to #ngo-packages
+      function bindExploreNGO() {
+        const btn =
+          document.getElementById('explore-ngo') ||
+          document.querySelector('a[href="#ngo-packages"], a[href*="#ngo-packages"]');
+        if (btn) {
+          btn.addEventListener('click', function () {
+            openNGO();
           });
         }
-      });
-
-      // Activate section on page load if URL contains hash
-      const hash = window.location.hash.substring(1);
-      if (
-        hash &&
-        document.getElementById(hash) &&
-        (hash === 'all-packages' || hash.endsWith('-packages') || hash === 'ngo-addons')
-      ) {
-        activateSection(hash);
       }
-    });
+  
+      // Handle direct hash navigation too
+      function handleHash() {
+        if (location.hash === '#ngo-packages') openNGO();
+        if (location.hash === '#all-packages') openAllPackages();
+      }
+  
+      window.addEventListener('DOMContentLoaded', function () {
+        bindExploreNGO();
+        handleHash();
+      });
+      window.addEventListener('hashchange', handleHash);
+    })();
   </script>
 
+<script>
+  // Add-on: make sure the NGO heading is fully visible and the URL hash is set
+  (function () {
+    function scrollToNGO() {
+      const sec = document.getElementById('ngo-packages');
+      if (sec) {
+        if (location.hash !== '#ngo-packages') {
+          history.replaceState(null, '', '#ngo-packages');
+        }
+        sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Re-run a focused scroll after your existing openNGO logic fires
+    const btn =
+      document.getElementById('explore-ngo') ||
+      document.querySelector('a[href="#ngo-packages"], a[href*="#ngo-packages"]');
+
+    if (btn) {
+      btn.addEventListener('click', function () {
+        // small delay so your existing script finishes expanding sections first
+        setTimeout(scrollToNGO, 50);
+      });
+    }
+
+    // Deep link support
+    window.addEventListener('DOMContentLoaded', function () {
+      if (location.hash === '#ngo-packages') {
+        setTimeout(scrollToNGO, 50);
+      }
+    });
+  })();
+</script>
+
+<script>
+  /* Add-only: scroll to NGO heading after the #all-packages transition completes */
+  (function () {
+    const btn = document.getElementById('explore-ngo') ||
+                document.querySelector('a[href="#ngo-packages"], a[href*="#ngo-packages"]');
+    const all = document.getElementById('all-packages');
+    const sec = document.getElementById('ngo-packages');
+    let scrolled = false;
+  
+    function scrollToHeadingOnce() {
+      if (scrolled) return;
+      scrolled = true;
+      if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  
+    function whenOpenThenScroll() {
+      if (!all) { scrollToHeadingOnce(); return; }
+      // If already open (height auto/visible), scroll now
+      const styles = getComputedStyle(all);
+      if (all.classList.contains('active') || styles.height !== '0px') {
+        scrollToHeadingOnce();
+        return;
+      }
+      // Wait for the open animation to finish
+      const onEnd = (e) => {
+        if (e.target === all && (e.propertyName === 'height' || e.propertyName === 'opacity')) {
+          all.removeEventListener('transitionend', onEnd);
+          scrollToHeadingOnce();
+        }
+      };
+      all.addEventListener('transitionend', onEnd, { once: true });
+    }
+  
+    if (btn) {
+      btn.addEventListener('click', function () {
+        scrolled = false;   // allow a fresh scroll for this click
+        whenOpenThenScroll();
+      });
+    }
+  
+    // Deep link support: services.html#ngo-packages
+    if (location.hash === '#ngo-packages') {
+      window.addEventListener('DOMContentLoaded', function () {
+        scrolled = false;
+        whenOpenThenScroll();
+      });
+    }
+  })();
+  </script>
+
+<script>
+  /* Combined NGO open + reliable scroll-to-heading (add-only, no changes to script.js) */
+  (function () {
+    // ---- existing behaviors ----
+    function openAllPackages() {
+      const all = document.getElementById('all-packages');
+      if (all && !all.classList.contains('active')) all.classList.add('active');
+      document.querySelectorAll('#all-packages .package-section').forEach(s => s.classList.add('active'));
+    }
+  
+    function openNGO() {
+      openAllPackages();
+      const ngoPackages = document.getElementById('ngo-packages');
+      const ngoAddonsInner = document.getElementById('ngo-addons-inner') || document.getElementById('ngo-addons');
+      if (ngoPackages) ngoPackages.classList.add('active');
+      if (ngoAddonsInner) ngoAddonsInner.classList.add('active');
+    }
+  
+    function getExploreBtn() {
+      return document.getElementById('explore-ngo') ||
+             document.querySelector('a[href="#ngo-packages"], a[href*="#ngo-packages"]');
+    }
+  
+    // ---- robust scroll helper ----
+    function targetHeading() {
+      const ngo = document.getElementById('ngo-packages');
+      if (!ngo) return null;
+      return ngo.querySelector('h2, h3') || ngo;
+    }
+  
+    function scrollToNGOHeading() {
+      const t = targetHeading();
+      if (!t) return;
+      if (location.hash !== '#ngo-packages') history.replaceState(null, '', '#ngo-packages');
+      t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  
+    function readyToScroll() {
+      const all = document.getElementById('all-packages');
+      const ngo = document.getElementById('ngo-packages');
+      const wrapperOpen = !all || all.classList.contains('active');
+      const ngoOpen = !!(ngo && ngo.classList.contains('active'));
+      return wrapperOpen && ngoOpen;
+    }
+  
+    function waitThenScroll() {
+      if (readyToScroll()) { scrollToNGOHeading(); return; }
+  
+      const all = document.getElementById('all-packages');
+      const ngo = document.getElementById('ngo-packages');
+  
+      // Listen for transitions finishing
+      const onEnd = function (e) {
+        if (readyToScroll()) {
+          all && all.removeEventListener('transitionend', onEnd);
+          ngo && ngo.removeEventListener('transitionend', onEnd);
+          scrollToNGOHeading();
+        }
+      };
+      all && all.addEventListener('transitionend', onEnd);
+      ngo && ngo.addEventListener('transitionend', onEnd);
+  
+      // Fallback: watch class changes in case there are no transitions
+      let done = false;
+      const obs = new MutationObserver(function () {
+        if (!done && readyToScroll()) { done = true; obs.disconnect(); scrollToNGOHeading(); }
+      });
+      ngo && obs.observe(ngo, { attributes: true, attributeFilter: ['class'] });
+      all && obs.observe(all, { attributes: true, attributeFilter: ['class'] });
+  
+      // Absolute fallback after a short delay
+      setTimeout(function () { if (readyToScroll()) scrollToNGOHeading(); }, 200);
+    }
+  
+    // ---- wiring ----
+    function handleExploreClick() {
+      openNGO();            // ensure sections are opened
+      waitThenScroll();     // then scroll when they're actually visible
+    }
+  
+    function bindExploreNGO() {
+      const btn = getExploreBtn();
+      if (!btn || btn._ngoBound) return; // avoid double-binding
+      btn._ngoBound = true;
+      btn.addEventListener('click', function (e) {
+        // let hash link keep working; we augment it
+        handleExploreClick();
+      }, { passive: true });
+    }
+  
+    function handleHash() {
+      if (location.hash === '#ngo-packages') {
+        openNGO();
+        waitThenScroll();
+      }
+      if (location.hash === '#all-packages') openAllPackages();
+    }
+  
+    window.addEventListener('DOMContentLoaded', function () {
+      bindExploreNGO();
+      handleHash();
+    });
+  
+    window.addEventListener('hashchange', handleHash);
+  })();
+  </script>
+  
+  
+
+  
 </body>
 </html>

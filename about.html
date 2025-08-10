@@ -5,20 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About | Project2Pixel</title>
   <meta name="description" content="Meet Natasha Fredericks, founder of Project2Pixel, blending admin expertise and digital solutions.">
-
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="favicon.ico">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
-
-
-<!-- HEADER -->
+  <!-- HEADER -->
   <header>
     <div class="logo-container">
       <a href="index.html">
@@ -28,28 +21,22 @@
     </div>
 
     <nav>
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
-  <ul class="nav-links"> <!-- ✅ This class is required -->
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-    
+      <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-
   <!-- HERO ABOUT -->
-  <div class="hero-about">
-    <h1>About Me</h1>
-    <p>Helping businesses shine through admin, code, and creative energy.</p>
+  <div class="hero-about lefty" role="img" aria-label="About Natasha hero">
+    <h1 class="force-white">About Me</h1>
+    <p class="force-white">Helping businesses shine through admin, code, and creative energy.</p>
   </div>
 
   <!-- ABOUT SECTION -->
@@ -79,7 +66,6 @@
       I love ego work—the deep stuff that helps people grow into their purpose. As the founder of <strong>Project2Pixel</strong>, I now collaborate with 
       a trusted network of freelancers who share that same energy. Whether it's behind your brand or behind your website, we're here to 
       make sure everything flows.
-
     </p>
 
     <div style="text-align: center; margin-top: 30px;">
@@ -91,9 +77,7 @@
   <footer>
     <p>&copy; 2025 Project2Pixel | Built by Natasha Fredericks</p>
   </footer>
+
   <script src="script.js"></script>
-
-
-
 </body>
 </html>

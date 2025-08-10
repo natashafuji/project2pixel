@@ -1,77 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About | Project2Pixel</title>
-  <meta name="description" content="Meet Natasha Fredericks, founder of Project2Pixel, blending admin expertise and digital solutions.">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="favicon.ico">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- HEADER -->
-  <header>
-    <div class="logo-container">
-      <a href="index.html">
-        <img src="project2pixel-logo.png" alt="Project2Pixel Logo" class="logo">
-      </a>
-      <span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
-    </div>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <title>About | Project2Pixel</title>
+   <meta name="description" content="Meet Natasha Fredericks, founder of Project2Pixel, blending admin expertise and digital solutions.">
+   <link rel="icon" href="favicon.ico" type="image/x-icon">
+   <link rel="apple-touch-icon" href="favicon.ico">
+   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+   <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+   <!-- HEADER -->
+   <header>
+     <div class="logo-container">
+       <a href="index.html">
+-        <img src="project2pixel-logo.png" alt="Project2Pixel Logo" class="logo">
++        <img src="project2pixel-logo.png"
++             srcset="project2pixel-logo.png 1x, project2pixel-logo.png 2x"
++             sizes="80px"
++             width="1024" height="1024"
++             alt="Project2Pixel Logo" class="logo">
+       </a>
+       <span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
+     </div>
+ 
+     <nav>
+       <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+         <span></span><span></span><span></span>
+       </div>
+       <ul class="nav-links" id="navLinks">
+         <li><a href="index.html">Home</a></li>
+         <li><a href="about.html" class="active">About</a></li>
+         <li><a href="services.html">Services</a></li>
+         <li><a href="contact.html">Contact</a></li>
+       </ul>
+     </nav>
+   </header>
+ 
+   <!-- HERO ABOUT -->
+   <div class="hero-about lefty" role="img" aria-label="About Natasha hero">
+     <h1 class="force-white">About Me</h1>
+     <p class="force-white">Helping businesses shine through admin, code, and creative energy.</p>
+   </div>
+ 
+   <!-- ABOUT SECTION -->
+   <section class="contact-section">
+     <h2>Meet Natasha</h2>
+     <p>
+-      With over a decade of experience in executive support, operations, and production coordination, I founded <strong>Project2Pixel</strong> 
+-      to bridge the gap between tech and teamwork. After years behind the scenes supporting producers, CEOs, and public service 
+-      professionals, I now lead a hand-picked team of creative freelancers who help me bring that same organized magic to small 
++      With over a decade of experience in executive support, operations, and production coordination, I founded <strong>Project2Pixel</strong>
++      to bridge the gap between tech and teamwork. After years behind the scenes supporting producers, CEOs, and public service
++      professionals, I now lead a hand-picked team of creative freelancers who help me bring that same organized magic to small
+       businesses, creatives, and NGOs.
+     </p>
+ 
++    <figure style="text-align:center;">
++      <img src="nf.webp"
++           srcset="nf.webp 768w, nf.png 1536w"
++           sizes="(max-width: 768px) 100vw, 768px"
++           loading="lazy"
++           width="1536" height="1024"
++           alt="Natasha Fredericks working on a laptop"
++           class="content-image">
++    </figure>
++
+     <h2>Mission</h2>
+     <p>
+       To transform admin chaos into clean workflows, build powerful digital tools, and support clients with honest, adaptable service. 
+       Together with my freelance team, we tailor every project to fit each client’s unique needs—with care, strategy, and heart.
+     </p>
+ 
+     <h2>Vision</h2>
+     <p>
+       A world where solopreneurs, small businesses, and grassroots changemakers have access to high-quality, affordable tech support and 
+       digital services—without the overwhelm. With a flexible freelance model, we make that vision real, one project at a time.
+     </p>
+ 
+     <h2>Fun Fact</h2>
+     <p>
+       I love ego work—the deep stuff that helps people grow into their purpose. As the founder of <strong>Project2Pixel</strong>, I now collaborate with 
+       a trusted network of freelancers who share that same energy. Whether it's behind your brand or behind your website, we're here to 
+       make sure everything flows.
+     </p>
+ 
+     <div style="text-align: center; margin-top: 30px;">
+       <a href="contact.html" class="btn-consultation">📌 Work with Us</a>
+     </div>
+   </section>
+ 
+   <!-- FOOTER -->
 
-    <nav>
-      <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
-        <span></span><span></span><span></span>
-      </div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- HERO ABOUT -->
-  <div class="hero-about lefty" role="img" aria-label="About Natasha hero">
-    <h1 class="force-white">About Me</h1>
-    <p class="force-white">Helping businesses shine through admin, code, and creative energy.</p>
-  </div>
-
-  <!-- ABOUT SECTION -->
-  <section class="contact-section">
-    <h2>Meet Natasha</h2>
-    <p>
-      With over a decade of experience in executive support, operations, and production coordination, I founded <strong>Project2Pixel</strong> 
-      to bridge the gap between tech and teamwork. After years behind the scenes supporting producers, CEOs, and public service 
-      professionals, I now lead a hand-picked team of creative freelancers who help me bring that same organized magic to small 
-      businesses, creatives, and NGOs.
-    </p>
-
-    <h2>Mission</h2>
-    <p>
-      To transform admin chaos into clean workflows, build powerful digital tools, and support clients with honest, adaptable service. 
-      Together with my freelance team, we tailor every project to fit each client’s unique needs—with care, strategy, and heart.
-    </p>
-
-    <h2>Vision</h2>
-    <p>
-      A world where solopreneurs, small businesses, and grassroots changemakers have access to high-quality, affordable tech support and 
-      digital services—without the overwhelm. With a flexible freelance model, we make that vision real, one project at a time.
-    </p>
-
-    <h2>Fun Fact</h2>
-    <p>
-      I love ego work—the deep stuff that helps people grow into their purpose. As the founder of <strong>Project2Pixel</strong>, I now collaborate with 
-      a trusted network of freelancers who share that same energy. Whether it's behind your brand or behind your website, we're here to 
-      make sure everything flows.
-    </p>
-
-    <div style="text-align: center; margin-top: 30px;">
-      <a href="contact.html" class="btn-consultation">📌 Work with Us</a>
-    </div>
-  </section>
 
   <!-- FOOTER -->
   <footer>

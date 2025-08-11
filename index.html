@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" href="favicon.ico">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
-  <link rel="preload" as="image" href="home-bg-1080.jpg" imagesrcset="home-bg-480.jpg 1x, home-bg-1080.jpg 2x, home-bg-480.webp 1x, home-bg-1080.webp 2x" fetchpriority="high">
+  <link rel="preload" as="image" href="nf-1080.jpg" imagesrcset="nf-480.jpg 1x, nf-1080.jpg 2x, nf-480.webp 1x, nf-1080.webp 2x" fetchpriority="high">
 </head>
 <body>
   <!-- HEADER -->
@@ -36,7 +36,11 @@
 
   <!-- HERO -->
   <div class="hero" role="img" aria-label="Project2Pixel hero">
-    <img src="home-bg-480.jpg" srcset="home-bg-480.webp 480w, home-bg-1080.webp 1080w, home-bg-480.jpg 480w, home-bg-1080.jpg 1080w" fetchpriority="high" loading="eager" alt="" class="hero-bg">
+    <picture>
+      <source srcset="nf-480.webp 480w, nf-1080.webp 1080w" type="image/webp">
+      <source srcset="nf-480.jpg 480w, nf-1080.jpg 1080w" type="image/jpeg">
+      <img src="nf-480.jpg" alt="" class="hero-bg" loading="eager" fetchpriority="high">
+    </picture>
     <h1>✨ Transforming Your Ideas into Digital Reality ✨</h1>
     <p>Helping small businesses and NGOs thrive with strategic admin support, professional websites, and social media management that leave a lasting impression.</p>
     <a href="contact.html" class="btn-consultation">📌 Book a Free Consultation</a>

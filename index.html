@@ -8,11 +8,19 @@
     <link rel="stylesheet" href="style.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <!-- Preload hero sources (root files) -->
-    <link rel="preload" as="image" href="home-bg-480.webp" type="image/webp" fetchpriority="high">
-    <link rel="preload" as="image" href="home-bg-1080.webp" type="image/webp" fetchpriority="high">
-    <link rel="preload" as="image" href="home-bg-480.jpg"  type="image/jpeg" fetchpriority="high">
-    <link rel="preload" as="image" href="home-bg-1080.jpg" type="image/jpeg" fetchpriority="high">
+    <!-- Preload hero image -->
+    <link rel="preload" as="image"
+          href="home-bg-1080.webp"
+          imagesrcset="home-bg-480.webp 480w, home-bg-1080.webp 1080w"
+          imagesizes="100vw"
+          type="image/webp"
+          fetchpriority="high">
+    <link rel="preload" as="image"
+          href="home-bg-1080.jpg"
+          imagesrcset="home-bg-480.jpg 480w, home-bg-1080.jpg 1080w"
+          imagesizes="100vw"
+          type="image/jpeg"
+          fetchpriority="high">
 </head>
 
 <body>

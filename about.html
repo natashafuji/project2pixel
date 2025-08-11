@@ -10,11 +10,19 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
 
-  <!-- Preload hero sources (root files) -->
-  <link rel="preload" as="image" href="nf-480.webp" type="image/webp" fetchpriority="high">
-  <link rel="preload" as="image" href="nf-1080.webp" type="image/webp" fetchpriority="high">
-  <link rel="preload" as="image" href="nf-480.jpg"  type="image/jpeg" fetchpriority="high">
-  <link rel="preload" as="image" href="nf-1080.jpg" type="image/jpeg" fetchpriority="high">
+  <!-- Preload hero image -->
+  <link rel="preload" as="image"
+        href="nf-1080.webp"
+        imagesrcset="nf-480.webp 480w, nf-1080.webp 1080w"
+        imagesizes="100vw"
+        type="image/webp"
+        fetchpriority="high">
+  <link rel="preload" as="image"
+        href="nf-1080.jpg"
+        imagesrcset="nf-480.jpg 480w, nf-1080.jpg 1080w"
+        imagesizes="100vw"
+        type="image/jpeg"
+        fetchpriority="high">
 </head>
 <body>
 

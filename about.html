@@ -95,5 +95,51 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+(() => {
+  const btn = document.getElementById('hamburger');
+  const nav = document.getElementById('navLinks');
+  if (!btn || !nav) return;
+
+  // keep ARIA tidy
+  btn.setAttribute('aria-expanded', 'false');
+
+  function toggleNav() {
+    const isOpen = btn.classList.toggle('is-active');
+    btn.setAttribute('aria-expanded', String(isOpen));
+
+    // Minimal, no-CSS dependency: only affect mobile
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (isMobile) {
+      nav.style.display = (nav.style.display === 'block') ? 'none' : 'block';
+    }
+  }
+
+  // Click + keyboard access
+  btn.addEventListener('click', toggleNav);
+  btn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleNav(); }
+  });
+
+  // Close when clicking outside (mobile)
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && !btn.contains(e.target)) {
+      btn.classList.remove('is-active');
+      btn.setAttribute('aria-expanded', 'false');
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        nav.style.display = 'none';
+      }
+    }
+  });
+
+  // Clear inline style on desktop so your desktop nav stays normal
+  window.addEventListener('resize', () => {
+    if (!window.matchMedia('(max-width: 768px)').matches) {
+      nav.style.display = '';
+    }
+  });
+})();
+</script>
+
 </body>
 </html>

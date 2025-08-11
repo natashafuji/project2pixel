@@ -177,6 +177,15 @@ h1, h2, h3, h4, h5, h6 { color: var(--teal); font-family: 'Montserrat', sans-ser
   text-align: center;
 }
 
+/* Stack cards on narrow screens */
+@media (max-width: 600px) {
+  .feature-card,
+  .service-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 /* ========================
    ALL PACKAGES SHOW/HIDE
 ======================== */

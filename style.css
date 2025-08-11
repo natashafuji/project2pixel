@@ -124,8 +124,6 @@ nav ul li a.active { color: #FFFFFF; font-weight: 600; }
     }
     .hero-contact {
       background-image: image-set(
-        url('contact-bg-480.webp') 1x,
-        url('contact-bg-1080.webp') 2x
         url('contact-bg-480.webp') type('image/webp') 1x,
         url('contact-bg-1080.webp') type('image/webp') 2x,
         url('contact-bg-480.jpg') type('image/jpeg') 1x,

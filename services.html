@@ -20,26 +20,50 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-<div class="hero-services" role="img" aria-label="Services hero"
-     style="position:relative; overflow:hidden; background:#0b0b0b url('home-bg-480.jpg') center/cover no-repeat;">
-  <picture>
-    <source type="image/webp" srcset="home-bg-480.webp 480w, home-bg-1080.webp 1080w" sizes="100vw">
-    <img
-      src="home-bg-1080.jpg"
-      srcset="home-bg-480.jpg 480w, home-bg-1080.jpg 1080w"
-      sizes="100vw"
-      class="hero-bg"
-      loading="eager"
-      fetchpriority="high"
-      style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;"
-      alt="">
-  </picture>
+    <!-- HEADER -->
+  <header>
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="images/project2pixel-logo.svg" alt="Project2Pixel Logo" class="logo" width="400" height="100">
+      </a>
+      <span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
+    </div>
 
-  <h1 style="position:relative; z-index:1;">Our Services</h1>
-  <p style="position:relative; z-index:1;">Professional support tailored to small businesses and NGOs.</p>
-  <a href="#all-packages" class="btn-consultation" style="position:relative; z-index:1;">💼 Explore Services & Pricing</a>
-</div>
+    <nav>
+      <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO (reset to homepage style, with fallback bg and image layer) -->
+  <div class="hero-services" role="img" aria-label="Services hero"
+       style="position:relative; overflow:hidden; background:#0b0b0b url('home-bg-480.jpg') center/cover no-repeat;">
+    <picture>
+      <source type="image/webp" srcset="home-bg-480.webp 480w, home-bg-1080.webp 1080w" sizes="100vw">
+      <img
+        src="home-bg-1080.jpg"
+        srcset="home-bg-480.jpg 480w, home-bg-1080.jpg 1080w"
+        sizes="100vw"
+        class="hero-bg"
+        loading="eager"
+        fetchpriority="high"
+        style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;"
+        alt="">
+    </picture>
+
+    <h1 style="position:relative; z-index:1;">Our Services</h1>
+    <p style="position:relative; z-index:1;">Professional support tailored to small businesses and NGOs.</p>
+    <a href="#all-packages" class="btn-consultation" style="position:relative; z-index:1;">💼 Explore Services & Pricing</a>
+  </div>
+
 
 
     <nav>
@@ -59,12 +83,6 @@
   <!-- MAIN CONTENT -->
   <main>
 
-    <!-- HERO -->
-    <div class="hero-services" role="img" aria-label="Services hero">
-      <h1>Our Services</h1>
-      <p>Professional support tailored to small businesses and NGOs.</p>
-      <a href="#all-packages" class="btn-consultation">💼 Explore Services & Pricing</a>
-    </div>
 
     <!-- SERVICES CARDS -->
     <section>

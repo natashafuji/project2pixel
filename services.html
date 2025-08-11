@@ -9,7 +9,18 @@
   <link rel="apple-touch-icon" href="favicon.ico">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
-  <link rel="preload" as="image" href="services-bg-1080.jpg" imagesrcset="services-bg-480.jpg 480w, services-bg-1080.jpg 1080w, services-bg-480.webp 480w, services-bg-1080.webp 1080w" fetchpriority="high">
+    <link rel="preload" as="image"
+          href="services-bg-1080.webp"
+          imagesrcset="services-bg-480.webp 480w, services-bg-1080.webp 1080w"
+          imagesizes="100vw"
+          type="image/webp"
+          fetchpriority="high">
+    <link rel="preload" as="image"
+          href="services-bg-1080.jpg"
+          imagesrcset="services-bg-480.jpg 480w, services-bg-1080.jpg 1080w"
+          imagesizes="100vw"
+          type="image/jpeg"
+          fetchpriority="high">
 </head>
 <body>
 

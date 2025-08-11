@@ -45,21 +45,26 @@
   <!-- MAIN CONTENT -->
   <main>
     <!-- HERO -->
-    <div class="hero-services" role="img" aria-label="Services hero">
-      <picture>
-        <source type="image/webp" srcset="services-bg-480.webp 480w, services-bg-1080.webp 1080w" sizes="100vw">
-        <img src="services-bg-1080.jpg"
-             srcset="services-bg-480.jpg 480w, services-bg-1080.jpg 1080w"
-             sizes="100vw"
-             class="hero-bg"
-             loading="eager"
-             fetchpriority="high"
-             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
-      </picture>
-      <h1>Our Services</h1>
-      <p>Professional support tailored to small businesses and NGOs.</p>
-      <a href="#all-packages" class="btn-consultation">💼 Explore Services & Pricing</a>
-    </div>
+    <div class="hero-services" style="position:relative; overflow:hidden;">
+  <picture>
+    <source type="image/webp" srcset="services-bg-480.webp 480w, services-bg-1080.webp 1080w" sizes="100vw">
+    <img
+      src="services-bg-1080.jpg"
+      srcset="services-bg-480.jpg 480w, services-bg-1080.jpg 1080w"
+      sizes="100vw"
+      class="hero-bg blur-up"
+      loading="eager"
+      fetchpriority="high"
+      onload="this.classList.remove('blur-up')"
+      style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;"
+      alt="">
+  </picture>
+
+  <h1>Our Services</h1>
+  <p>Professional support tailored to small businesses and NGOs.</p>
+  <a href="contact.html" class="btn-consultation">📌 Book a Free Consultation</a>
+</div>
+
 
     <!-- SERVICES CARDS -->
     <section>

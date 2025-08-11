@@ -9,21 +9,25 @@
   <link rel="apple-touch-icon" href="favicon.ico">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Add-only, scoped safety net */
-    header .logo { display:block; }
-    .hero-about, .hero-services { position:relative; overflow:hidden; }
-    .hero-about .hero-bg, .hero-services .hero-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
-    .hero-about > *:not(picture), .hero-services > *:not(picture) { position:relative; z-index:1; }
 
-    /* New: ensure header sits above hero image */
-    header { position: relative; z-index: 10; }
-    .hero-services { position: relative; }
+  <style>
+    /* Add-only safety net: keep the logo visible and above hero art */
+    header { position: relative; z-index: 1000; }
+    header .logo { display: block; }
+
+    /* Make hero image sit behind text (and behind header) */
+    .hero-about, .hero-services { position: relative; overflow: hidden; }
+    .hero-about .hero-bg, .hero-services .hero-bg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; z-index: 0;
+    }
+    .hero-about > *:not(picture), .hero-services > *:not(picture) { position: relative; z-index: 1; }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER (unchanged structure) -->
   <header>
     <div class="logo-container">
       <a href="index.html">
@@ -46,25 +50,24 @@
     </nav>
   </header>
 
-  <!-- HERO (reset to homepage style, with fallback bg and image layer) -->
+  <!-- HERO (same layout as homepage; uses SERVICES images, with a fallback bg) -->
   <div class="hero-services" role="img" aria-label="Services hero"
-       style="position:relative; overflow:hidden; background:#0b0b0b url('home-bg-480.jpg') center/cover no-repeat;">
+       style="background:#0b0b0b url('services-bg-480.jpg') center/cover no-repeat;">
     <picture>
-      <source type="image/webp" srcset="home-bg-480.webp 480w, home-bg-1080.webp 1080w" sizes="100vw">
+      <source type="image/webp" srcset="services-bg-480.webp 480w, services-bg-1080.webp 1080w" sizes="100vw">
       <img
-        src="home-bg-1080.jpg"
-        srcset="home-bg-480.jpg 480w, home-bg-1080.jpg 1080w"
+        src="services-bg-1080.jpg"
+        srcset="services-bg-480.jpg 480w, services-bg-1080.jpg 1080w"
         sizes="100vw"
         class="hero-bg"
         loading="eager"
         fetchpriority="high"
-        style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;"
-        alt="">
+        alt="Abstract services background">
     </picture>
 
-    <h1 style="position:relative; z-index:1;">Our Services</h1>
-    <p style="position:relative; z-index:1;">Professional support tailored to small businesses and NGOs.</p>
-    <a href="#all-packages" class="btn-consultation" style="position:relative; z-index:1;">💼 Explore Services & Pricing</a>
+    <h1>Our Services</h1>
+    <p>Professional support tailored to small businesses and NGOs.</p>
+    <a href="#all-packages" class="btn-consultation">💼 Explore Services & Pricing</a>
   </div>
 
   <!-- MAIN CONTENT -->
@@ -125,7 +128,6 @@
         <div class="features">
           <div class="service-card">
             <h3>Starter Business Launch Bundle</h3>
-            <p></p>
             <ul>
               <li>1-page Website (Starter Site)</li>
               <li>Mini Brand Kit (logo, color palette, 2 social templates)</li>
@@ -514,6 +516,7 @@
     <p>&copy; 2025 Project2Pixel | Built by Natasha Fredericks</p>
     <p><a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
   </footer>
+
   <script src="script.js"></script>
 
   <script>
@@ -522,38 +525,28 @@
       function openAllPackages() {
         const all = document.getElementById('all-packages');
         if (all && !all.classList.contains('active')) all.classList.add('active');
-        // ensure every package section is visible
         document.querySelectorAll('#all-packages .package-section').forEach(s => s.classList.add('active'));
       }
-  
       function openNGO() {
         openAllPackages();
         const ngoPackages = document.getElementById('ngo-packages');
-        // Prefer nested add-ons id if present, else fall back to any standalone id you may still have
         const ngoAddonsInner = document.getElementById('ngo-addons-inner') || document.getElementById('ngo-addons');
         if (ngoPackages) ngoPackages.classList.add('active');
         if (ngoAddonsInner) ngoAddonsInner.classList.add('active');
         if (ngoPackages) ngoPackages.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-  
-      // Hook up the button: works whether you added id="explore-ngo" or only used an href to #ngo-packages
       function bindExploreNGO() {
         const btn =
           document.getElementById('explore-ngo') ||
           document.querySelector('a[href="#ngo-packages"], a[href*="#ngo-packages"]');
         if (btn) {
-          btn.addEventListener('click', function () {
-            openNGO();
-          });
+          btn.addEventListener('click', function () { openNGO(); });
         }
       }
-  
-      // Handle direct hash navigation too
       function handleHash() {
         if (location.hash === '#ngo-packages') openNGO();
         if (location.hash === '#all-packages') openAllPackages();
       }
-  
       window.addEventListener('DOMContentLoaded', function () {
         bindExploreNGO();
         handleHash();
@@ -574,24 +567,14 @@
           sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }
-
-      // Re-run a focused scroll after your existing openNGO logic fires
       const btn =
         document.getElementById('explore-ngo') ||
         document.querySelector('a[href="#ngo-packages"], a[href*="#ngo-packages"]');
-
       if (btn) {
-        btn.addEventListener('click', function () {
-          // small delay so your existing script finishes expanding sections first
-          setTimeout(scrollToNGO, 50);
-        });
+        btn.addEventListener('click', function () { setTimeout(scrollToNGO, 50); });
       }
-
-      // Deep link support
       window.addEventListener('DOMContentLoaded', function () {
-        if (location.hash === '#ngo-packages') {
-          setTimeout(scrollToNGO, 50);
-        }
+        if (location.hash === '#ngo-packages') { setTimeout(scrollToNGO, 50); }
       });
     })();
   </script>
@@ -604,22 +587,18 @@
       const all = document.getElementById('all-packages');
       const sec = document.getElementById('ngo-packages');
       let scrolled = false;
-    
       function scrollToHeadingOnce() {
         if (scrolled) return;
         scrolled = true;
         if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    
       function whenOpenThenScroll() {
         if (!all) { scrollToHeadingOnce(); return; }
-        // If already open (height auto/visible), scroll now
         const styles = getComputedStyle(all);
         if (all.classList.contains('active') || styles.height !== '0px') {
           scrollToHeadingOnce();
           return;
         }
-        // Wait for the open animation to finish
         const onEnd = (e) => {
           if (e.target === all && (e.propertyName === 'height' || e.propertyName === 'opacity')) {
             all.removeEventListener('transitionend', onEnd);
@@ -628,15 +607,12 @@
         };
         all.addEventListener('transitionend', onEnd, { once: true });
       }
-    
       if (btn) {
         btn.addEventListener('click', function () {
-          scrolled = false;   // allow a fresh scroll for this click
+          scrolled = false;
           whenOpenThenScroll();
         });
       }
-    
-      // Deep link support: services.html#ngo-packages
       if (location.hash === '#ngo-packages') {
         window.addEventListener('DOMContentLoaded', function () {
           scrolled = false;
@@ -649,13 +625,11 @@
   <script>
     /* Combined NGO open + reliable scroll-to-heading (add-only, no changes to script.js) */
     (function () {
-      // ---- existing behaviors ----
       function openAllPackages() {
         const all = document.getElementById('all-packages');
         if (all && !all.classList.contains('active')) all.classList.add('active');
         document.querySelectorAll('#all-packages .package-section').forEach(s => s.classList.add('active'));
       }
-    
       function openNGO() {
         openAllPackages();
         const ngoPackages = document.getElementById('ngo-packages');
@@ -663,26 +637,21 @@
         if (ngoPackages) ngoPackages.classList.add('active');
         if (ngoAddonsInner) ngoAddonsInner.classList.add('active');
       }
-    
       function getExploreBtn() {
         return document.getElementById('explore-ngo') ||
                document.querySelector('a[href="#ngo-packages"], a[href*="#ngo-packages"]');
       }
-    
-      // ---- robust scroll helper ----
       function targetHeading() {
         const ngo = document.getElementById('ngo-packages');
         if (!ngo) return null;
         return ngo.querySelector('h2, h3') || ngo;
       }
-    
       function scrollToNGOHeading() {
         const t = targetHeading();
         if (!t) return;
         if (location.hash !== '#ngo-packages') history.replaceState(null, '', '#ngo-packages');
         t.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    
       function readyToScroll() {
         const all = document.getElementById('all-packages');
         const ngo = document.getElementById('ngo-packages');
@@ -690,15 +659,11 @@
         const ngoOpen = !!(ngo && ngo.classList.contains('active'));
         return wrapperOpen && ngoOpen;
       }
-    
       function waitThenScroll() {
         if (readyToScroll()) { scrollToNGOHeading(); return; }
-    
         const all = document.getElementById('all-packages');
         const ngo = document.getElementById('ngo-packages');
-    
-        // Listen for transitions finishing
-        const onEnd = function (e) {
+        const onEnd = function () {
           if (readyToScroll()) {
             all && all.removeEventListener('transitionend', onEnd);
             ngo && ngo.removeEventListener('transitionend', onEnd);
@@ -707,51 +672,35 @@
         };
         all && all.addEventListener('transitionend', onEnd);
         ngo && ngo.addEventListener('transitionend', onEnd);
-    
-        // Fallback: watch class changes in case there are no transitions
         let done = false;
         const obs = new MutationObserver(function () {
           if (!done && readyToScroll()) { done = true; obs.disconnect(); scrollToNGOHeading(); }
         });
         ngo && obs.observe(ngo, { attributes: true, attributeFilter: ['class'] });
         all && obs.observe(all, { attributes: true, attributeFilter: ['class'] });
-    
-        // Absolute fallback after a short delay
         setTimeout(function () { if (readyToScroll()) scrollToNGOHeading(); }, 200);
       }
-    
-      // ---- wiring ----
       function handleExploreClick() {
-        openNGO();            // ensure sections are opened
-        waitThenScroll();     // then scroll when they're actually visible
+        openNGO();
+        waitThenScroll();
       }
-    
       function bindExploreNGO() {
         const btn = getExploreBtn();
-        if (!btn || btn._ngoBound) return; // avoid double-binding
+        if (!btn || btn._ngoBound) return;
         btn._ngoBound = true;
-        btn.addEventListener('click', function (e) {
-          // let hash link keep working; we augment it
-          handleExploreClick();
-        }, { passive: true });
+        btn.addEventListener('click', function () { handleExploreClick(); }, { passive: true });
       }
-    
       function handleHash() {
-        if (location.hash === '#ngo-packages') {
-          openNGO();
-          waitThenScroll();
-        }
+        if (location.hash === '#ngo-packages') { openNGO(); waitThenScroll(); }
         if (location.hash === '#all-packages') openAllPackages();
       }
-    
       window.addEventListener('DOMContentLoaded', function () {
         bindExploreNGO();
         handleHash();
       });
-    
       window.addEventListener('hashchange', handleHash);
     })();
   </script>
-  
+
 </body>
 </html>

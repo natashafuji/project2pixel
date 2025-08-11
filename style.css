@@ -6,7 +6,7 @@
 :root {
   --teal: #1DD1A1;
   --ink: #0C0C0C;
-  --hero-min: clamp(420px, 65vh, 720px);
+  --hero-min: 380px; /* unified hero height to match About page */
 }
 
 html { scroll-behavior: smooth; }
@@ -34,7 +34,8 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;}
+  z-index: 1000;
+}
 
 .logo { height: 80px; max-height: 90px; width: auto; }
 
@@ -88,7 +89,6 @@ nav ul li a.active { color: #FFFFFF; font-weight: 600; }
   object-fit: cover;
   z-index: 0;
 }
-
 
 .hero::before,
 .hero-about::before,
@@ -263,35 +263,9 @@ footer a:hover { text-decoration: underline; }
 .hamburger { border: none; outline: none; background: transparent; }
 .hamburger:focus, .hamburger:focus-visible { outline: none; box-shadow: none; }
 
-
 /* --- NGO consolidation (add-only overrides) --- */
-/* Hide the existing "NGO Add-Ons" feature card on the top grid */
 .features .feature-card a[href="#ngo-addons"] { display: none; }
-.features .feature-card a[href="#ngo-addons"] ~ * {}
-.features .feature-card h3:has(+ p + a[href="#ngo-addons"]),
-.features .feature-card p:has(+ a[href="#ngo-addons"]),
-.features .feature-card a[href="#ngo-addons"] {
-  /* Fallback for browsers without :has() — also hide by targeting the whole card via attribute */
-}
 .features .feature-card:has(a[href="#ngo-addons"]) { display: none; }
-
-/* Hide the old standalone NGO add-ons section so the nested one shows instead */
 #ngo-addons { display: none; }
-
-/* Ensure package section headings aren't hidden under the fixed header */
 #all-packages .package-section,
-#ngo-packages {
-  scroll-margin-top: 120px; /* tweak if your header height changes */
-}
-
-/* Keep section headings visible under fixed header */
-#ngo-packages,
-#all-packages .package-section {
-  scroll-margin-top: 120px; /* adjust if your header height changes */
-}
-
-/* Make the NGO heading land below the fixed header when scrolled to */
-
-
-
-
+#ngo-packages { scroll-margin-top: 120px; }

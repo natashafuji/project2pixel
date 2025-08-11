@@ -17,7 +17,7 @@
   <!-- Preload the hero (falls back to natasha-bg if nf-* not present) -->
   <link rel="preload" as="image" href="images/natasha-bg.png"
         imagesrcset="nf-480.webp 480w, nf-1080.webp 1080w, nf-480.jpg 480w, nf-1080.jpg 1080w">
-
+  
   <!-- Page-scoped styles so we don’t touch global CSS -->
   <style>
     .hero-about {
@@ -25,47 +25,28 @@
       display: grid;
       place-items: center;
       text-align: center;
-      padding: 80px 20px;              /* matches your hero rhythm */
-      min-height: 380px;               /* ensures a proper hero height */
+      padding: 80px 20px;
+      min-height: 380px;
       color: #fff;
       overflow: hidden;
     }
-    .hero-about .hero-bg {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
-    .hero-about::before {
-      content: "";
-      position: absolute; inset: 0;
-      background: rgba(0,0,0,0.45);    /* readability over image */
-      z-index: 1;
-    }
-    .hero-about h1,
-    .hero-about p {
-      position: relative; z-index: 2;  /* above overlay */
-      color: #fff; margin: 0.25rem 0;
-    }
-
-    /* Optional: if you ever make the header fixed globally, prevent overlap */
-    /* body { padding-top: 100px; } */
+    .hero-about .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+    .hero-about::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.45); z-index: 1; }
+    .hero-about h1, .hero-about p { position: relative; z-index: 2; color: #fff; margin: 0.25rem 0; }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
- <div class="logo-container">
+
+  <!-- HEADER (same as Home) -->
+  <header>
+    <div class="logo-container">
       <a href="index.html">
-        <img src="project2pixel-logo.webp" alt="Project2Pixel Logo" class="logo" width="150" height="50" fetchpriority="high">
+        <img src="images/project2pixel-logo.png" alt="Project2Pixel Logo" class="logo" width="150" height="50" fetchpriority="high">
       </a>
       <span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
     </div>
-
     <nav>
-      <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
-        <span></span><span></span><span></span>
-      </div>
-      <ul class="nav-links" id="navLinks">
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" class="active">About</a></li>
         <li><a href="services.html">Services</a></li>
@@ -130,11 +111,9 @@
     <p>&copy; 2025 Project2Pixel | Built by Natasha Fredericks</p>
   </footer>
 
-  <!-- If this page lives under /about/, change paths:
-       - CSS:  ../style.css
-       - Logo: ../images/project2pixel-logo.png
-       - Fallback hero: ../images/natasha-bg.png
-       - nf-* sources: ../nf-480.jpg, ../nf-1080.jpg, etc.
+  <!-- If this file lives under /about/, adjust to:
+       ../style.css, ../images/project2pixel-logo.png,
+       ../images/natasha-bg.png, ../nf-480.jpg, ../nf-1080.jpg
   -->
   <script src="script.js"></script>
 </body>

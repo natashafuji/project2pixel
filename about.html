@@ -20,20 +20,49 @@
 
   <!-- Page-scoped styles so we don’t touch global CSS -->
   <style>
-    .hero-about {
-      position: relative;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 80px 20px;
-      min-height: 380px;
-      color: #fff;
-      overflow: hidden;
-    }
-    .hero-about .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
-    .hero-about::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.45); z-index: 1; }
-    .hero-about h1, .hero-about p { position: relative; z-index: 2; color: #fff; margin: 0.25rem 0; }
-  </style>
+  .hero-about {
+    position: relative;
+    display: flex; /* flex allows left alignment */
+    flex-direction: column;
+    justify-content: center;
+    text-align: left; /* left align by default */
+    padding: 80px 20px;
+    min-height: 380px;
+    color: #fff;
+    overflow: hidden;
+  }
+  .hero-about.lefty {
+    align-items: flex-start;
+  }
+  .hero-about.lefty h1,
+  .hero-about.lefty p {
+    max-width: 720px;
+    margin-left: 20px;
+  }
+  .hero-about .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .hero-about::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+  }
+  .hero-about h1,
+  .hero-about p {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    margin: 0.25rem 0;
+  }
+</style>
+
 </head>
 <body>
 

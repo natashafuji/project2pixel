@@ -20,61 +20,42 @@
   <link rel="preload" as="image" href="nf-480.jpg"  type="image/jpeg">
   <link rel="preload" as="image" href="nf-1080.jpg" type="image/jpeg">
 
-
   <!-- Page-scoped styles so we don’t touch global CSS -->
   <style>
-  .hero-about {
-    position: relative;
-    display: flex; /* flex allows left alignment */
-    flex-direction: column;
-    justify-content: center;
-    text-align: left; /* left align by default */
-    padding: 80px 20px;
-    min-height: 380px;
-    color: #fff;
-    overflow: hidden;
-  }
-  .hero-about.lefty {
-    align-items: flex-start;
-  }
-  .hero-about.lefty h1,
-  .hero-about.lefty p {
-    max-width: 720px;
-    margin-left: 20px;
-  }
-  .hero-about .hero-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-  }
-  .hero-about::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    z-index: 1;
-  }
-  .hero-about h1,
-  .hero-about p {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    margin: 0.25rem 0;
-  }
-</style>
-
-  
+    .hero-about {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+      padding: 80px 20px;
+      min-height: 380px;
+      color: #fff;
+      overflow: hidden;
+    }
+    .hero-about.lefty { align-items: flex-start; }
+    .hero-about.lefty h1,
+    .hero-about.lefty p { max-width: 720px; margin-left: 20px; }
+    .hero-about .hero-bg {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: 0;
+    }
+    .hero-about::before {
+      content: ""; position: absolute; inset: 0;
+      background: rgba(0,0,0,0.45); z-index: 1;
+    }
+    .hero-about h1, .hero-about p {
+      position: relative; z-index: 2; color: #fff; margin: 0.25rem 0;
+    }
+  </style>
 </head>
 <body>
 
   <!-- HEADER (from Home, with hamburger preserved) -->
- <header>
+  <header>
     <div class="logo-container">
       <a href="index.html">
-        <img src="project2pixel-logo.webp" alt="Project2Pixel Logo" class="logo" width="150" height="50" fetchpriority="low" decoding="async"" />
+        <img src="project2pixel-logo.webp" alt="Project2Pixel Logo" class="logo" width="150" height="50" fetchpriority="low" decoding="async" />
       </a>
       <span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
     </div>
@@ -85,60 +66,56 @@
       </div>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html" class="active">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-
-
   <main>
-
     <!-- HERO ABOUT -->
     <div class="hero-about lefty" role="img" aria-label="About Natasha hero">
-  <picture>
-    <source type="image/webp" srcset="nf-480.webp 480w, nf-1080.webp 1080w" sizes="100vw">
-    <img src="nf-1080.jpg"
-         srcset="nf-480.jpg 480w, nf-1080.jpg 1080w"
-         sizes="100vw"
-         class="hero-bg"
-         loading="eager"
-         fetchpriority="high"
-         style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
-  </picture>
-  <h1>About Me</h1>
-  <p>Helping businesses shine through admin, code, and creative energy.</p>
-</div>
-
+      <picture>
+        <source type="image/webp" srcset="nf-480.webp 480w, nf-1080.webp 1080w" sizes="100vw">
+        <img src="nf-1080.jpg"
+             srcset="nf-480.jpg 480w, nf-1080.jpg 1080w"
+             sizes="100vw"
+             class="hero-bg"
+             loading="eager"
+             fetchpriority="high"
+             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+      </picture>
+      <h1>About Me</h1>
+      <p>Helping businesses shine through admin, code, and creative energy.</p>
+    </div>
 
     <!-- ABOUT SECTION -->
     <section class="contact-section">
       <h2>Meet Natasha</h2>
       <p>
-        With over a decade of experience in executive support, operations, and production coordination, I founded <strong>Project2Pixel</strong> 
-        to bridge the gap between tech and teamwork. After years behind the scenes supporting producers, CEOs, and public service 
-        professionals, I now lead a hand-picked team of creative freelancers who help me bring that same organized magic to small 
+        With over a decade of experience in executive support, operations, and production coordination, I founded <strong>Project2Pixel</strong>
+        to bridge the gap between tech and teamwork. After years behind the scenes supporting producers, CEOs, and public service
+        professionals, I now lead a hand-picked team of creative freelancers who help me bring that same organized magic to small
         businesses, creatives, and NGOs.
       </p>
 
       <h2>Mission</h2>
       <p>
-        To transform admin chaos into clean workflows, build powerful digital tools, and support clients with honest, adaptable service. 
+        To transform admin chaos into clean workflows, build powerful digital tools, and support clients with honest, adaptable service.
         Together with my freelance team, we tailor every project to fit each client’s unique needs—with care, strategy, and heart.
       </p>
 
       <h2>Vision</h2>
       <p>
-        A world where solopreneurs, small businesses, and grassroots changemakers have access to high-quality, affordable tech support and 
+        A world where solopreneurs, small businesses, and grassroots changemakers have access to high-quality, affordable tech support and
         digital services—without the overwhelm. With a flexible freelance model, we make that vision real, one project at a time.
       </p>
 
       <h2>Fun Fact</h2>
       <p>
-        I love ego work—the deep stuff that helps people grow into their purpose. As the founder of <strong>Project2Pixel</strong>, I now collaborate with 
-        a trusted network of freelancers who share that same energy. Whether it's behind your brand or behind your website, we're here to 
+        I love ego work—the deep stuff that helps people grow into their purpose. As the founder of <strong>Project2Pixel</strong>, I now collaborate with
+        a trusted network of freelancers who share that same energy. Whether it's behind your brand or behind your website, we're here to
         make sure everything flows.
       </p>
 
@@ -146,7 +123,6 @@
         <a href="contact.html" class="btn-consultation">📌 Work with Us</a>
       </div>
     </section>
-
   </main>
 
   <!-- FOOTER -->
@@ -154,7 +130,6 @@
     <p>&copy; 2025 Project2Pixel | Built by Natasha Fredericks</p>
   </footer>
 
-  <!-- If this file lives under /about/, adjust paths to ../ -->
   <script src="script.js"></script>
 </body>
 </html>

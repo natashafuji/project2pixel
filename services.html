@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" href="favicon.ico">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
-  <link rel="preload" as="image" href="services-bg-1080.jpg" imagesrcset="services-bg-480.jpg 1x, services-bg-1080.jpg 2x, services-bg-480.webp 1x, services-bg-1080.webp 2x" fetchpriority="high">
+  <link rel="preload" as="image" href="services-bg-1080.jpg" imagesrcset="services-bg-480.jpg 480w, services-bg-1080.jpg 1080w, services-bg-480.webp 480w, services-bg-1080.webp 1080w" fetchpriority="high">
 </head>
 <body>
 
@@ -42,7 +42,8 @@
     <!-- HERO -->
     <div class="hero-services" role="img" aria-label="Services hero">
   <img
-    src="services-bg.png"
+    src="services-bg-1080.jpg"
+    srcset="services-bg-480.jpg 480w, services-bg-1080.jpg 1080w, services-bg-480.webp 480w, services-bg-1080.webp 1080w"
     alt=""
     class="hero-bg"
     loading="eager"

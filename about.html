@@ -14,9 +14,9 @@
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Preload the hero (falls back to natasha-bg if nf-* not present) -->
-  <link rel="preload" as="image" href="images/natasha-bg.png"
-        imagesrcset="nf-480.webp 480w, nf-1080.webp 1080w, nf-480.jpg 480w, nf-1080.jpg 1080w">
+  <!-- Preload the hero image -->
+  <link rel="preload" as="image" href="nf-1080.jpg"
+        imagesrcset="nf-480.jpg 480w, nf-1080.jpg 1080w, nf-480.webp 480w, nf-1080.webp 1080w">
 
   <!-- Page-scoped styles so we don’t touch global CSS -->
   <style>
@@ -96,7 +96,8 @@
     <!-- HERO ABOUT -->
     <div class="hero-about lefty" role="img" aria-label="About Natasha hero">
   <img
-    src="natasha-bg.png"
+    src="nf-1080.jpg"
+    srcset="nf-480.jpg 480w, nf-1080.jpg 1080w, nf-480.webp 480w, nf-1080.webp 1080w"
     alt=""
     class="hero-bg"
     loading="eager"

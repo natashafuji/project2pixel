@@ -9,12 +9,12 @@
   <link rel="apple-touch-icon" href="favicon.ico" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
+
   <!-- Preload hero sources (root files) -->
   <link rel="preload" as="image" href="contact-bg-480.webp" type="image/webp" fetchpriority="high">
   <link rel="preload" as="image" href="contact-bg-1080.webp" type="image/webp" fetchpriority="high">
   <link rel="preload" as="image" href="contact-bg-480.jpg"  type="image/jpeg" fetchpriority="high">
   <link rel="preload" as="image" href="contact-bg-1080.jpg" type="image/jpeg" fetchpriority="high">
-
 </head>
 
 <body>
@@ -40,21 +40,19 @@
   </header>
 
   <div class="hero-contact" role="img" aria-label="Contact hero">
-  <picture>
-    <source type="image/webp" srcset="contact-bg-480.webp 480w, contact-bg-1080.webp 1080w" sizes="100vw">
-    <img src="contact-bg-1080.jpg"
-         srcset="contact-bg-480.jpg 480w, contact-bg-1080.jpg 1080w"
-         sizes="100vw"
-         class="hero-bg"
-         loading="eager"
-         fetchpriority="high"
-         style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
-  </picture>
-  <h1>Contact Me</h1>
-  <p>Have a project in mind? Let's make it a reality.</p>
-</div>
-
-
+    <picture>
+      <source type="image/webp" srcset="contact-bg-480.webp 480w, contact-bg-1080.webp 1080w" sizes="100vw">
+      <img src="contact-bg-1080.jpg"
+           srcset="contact-bg-480.jpg 480w, contact-bg-1080.jpg 1080w"
+           sizes="100vw"
+           class="hero-bg"
+           loading="eager"
+           fetchpriority="high"
+           style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+    </picture>
+    <h1>Contact Me</h1>
+    <p>Have a project in mind? Let's make it a reality.</p>
+  </div>
 
   <section class="contact-section">
     <form action="https://formspree.io/f/mdkdwjrq" method="POST">

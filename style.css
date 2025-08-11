@@ -82,35 +82,47 @@ nav ul li a.active { color: #FFFFFF; font-weight: 600; }
   background-repeat: no-repeat;
 }
 
-.hero {
-  background-image: url('home-bg-1080.webp');
-  background-image: image-set(
-    url('home-bg-480.webp') 1x,
-    url('home-bg-1080.webp') 2x
-  );
-}
+  .hero {
+    background-image: url('home-bg-480.webp');
+  }
 
-.hero-about {
-  background-image: url('nf-1080.webp');
-  background-image: image-set(
-    url('nf-480.webp') 1x,
-    url('nf-1080.webp') 2x
-  );
-}
-.hero-services {
-  background-image: url('services-bg-1080.webp');
-  background-image: image-set(
-    url('services-bg-480.webp') 1x,
-    url('services-bg-1080.webp') 2x
-  );
-}
-.hero-contact {
-  background-image: url('contact-bg-1080.webp');
-  background-image: image-set(
-    url('contact-bg-480.webp') 1x,
-    url('contact-bg-1080.webp') 2x
-  );
-}
+  .hero-about {
+    background-image: url('nf-480.webp');
+  }
+  .hero-services {
+    background-image: url('services-bg-1080.webp');
+  }
+  .hero-contact {
+    background-image: url('contact-bg-480.webp');
+  }
+
+  @supports (background-image: image-set()) {
+    .hero {
+      background-image: image-set(
+        url('home-bg-480.webp') 1x,
+        url('home-bg-1080.webp') 2x
+      );
+    }
+
+    .hero-about {
+      background-image: image-set(
+        url('nf-480.webp') 1x,
+        url('nf-1080.webp') 2x
+      );
+    }
+    .hero-services {
+      background-image: image-set(
+        url('services-bg-480.webp') 1x,
+        url('services-bg-1080.webp') 2x
+      );
+    }
+    .hero-contact {
+      background-image: image-set(
+        url('contact-bg-480.webp') 1x,
+        url('contact-bg-1080.webp') 2x
+      );
+    }
+  }
 
 
 .hero::before,

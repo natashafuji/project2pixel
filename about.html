@@ -9,22 +9,20 @@
   <link rel="apple-touch-icon" href="favicon.ico">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
-  <style>
-  /* Add-only, scoped safety net */
-  header .logo { display:block; }
-  .hero-about, .hero-services { position:relative; overflow:hidden; }
-  .hero-about .hero-bg, .hero-services .hero-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
-  .hero-about > *:not(picture), .hero-services > *:not(picture) { position:relative; z-index:1; }
-</style>
 
+  <!-- Preload hero sources (root files) -->
+  <link rel="preload" as="image" href="nf-480.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="nf-1080.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="nf-480.jpg"  type="image/jpeg" fetchpriority="high">
+  <link rel="preload" as="image" href="nf-1080.jpg" type="image/jpeg" fetchpriority="high">
 </head>
 <body>
-  <!-- HEADER -->
+
+  <!-- HEADER (matches Contact/Home structure) -->
   <header>
     <div class="logo-container">
       <a href="index.html">
         <img src="images/project2pixel-logo.svg" alt="Project2Pixel Logo" class="logo" width="400" height="100">
-
       </a>
       <span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
     </div>
@@ -42,29 +40,22 @@
     </nav>
   </header>
 
-  <!-- HERO ABOUT (reset to match homepage style, with fallback bg) -->
-<div class="hero-about lefty" style="position:relative; overflow:hidden; background:#0b0b0b url('nf-480.jpg') center/cover no-repeat;">
-  <picture>
-    <source type="image/webp" srcset="nf-480.webp 480w, nf-1080.webp 1080w" sizes="100vw">
-    <img
-      src="nf-1080.jpg"
-      srcset="nf-480.jpg 480w, nf-1080.jpg 1080w"
-      sizes="100vw"
-      class="hero-bg"
-      loading="eager"
-      fetchpriority="high"
-      style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;"
-      alt="">
-  </picture>
+  <!-- HERO ABOUT (single hero, left-aligned like you wanted) -->
+  <div class="hero-about lefty" role="img" aria-label="About Natasha hero" style="position:relative; overflow:hidden; background:#0b0b0b url('nf-480.jpg') center/cover no-repeat;">
+    <picture>
+      <source type="image/webp" srcset="nf-480.webp 480w, nf-1080.webp 1080w" sizes="100vw">
+      <img
+        src="nf-1080.jpg"
+        srcset="nf-480.jpg 480w, nf-1080.jpg 1080w"
+        sizes="100vw"
+        class="hero-bg"
+        loading="eager"
+        fetchpriority="high"
+        alt="">
+    </picture>
 
-  <h1 style="position:relative; z-index:1;">About Me</h1>
-  <p style="position:relative; z-index:1;">Helping businesses shine through admin, code, and creative energy.</p>
-</div>
-
-  <!-- HERO ABOUT -->
-  <div class="hero-about lefty" role="img" aria-label="About Natasha hero">
-    <h1 class="force-white">About Me</h1>
-    <p class="force-white">Helping businesses shine through admin, code, and creative energy.</p>
+    <h1>About Me</h1>
+    <p>Helping businesses shine through admin, code, and creative energy.</p>
   </div>
 
   <!-- ABOUT SECTION -->
@@ -101,61 +92,12 @@
     </div>
   </section>
 
-  
-
-
-
   <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Project2Pixel | Built by Natasha Fredericks</p>
   </footer>
 
   <script src="script.js"></script>
-  <script>
-(() => {
-  const btn = document.getElementById('hamburger');
-  const nav = document.getElementById('navLinks');
-  if (!btn || !nav) return;
-
-  // keep ARIA tidy
-  btn.setAttribute('aria-expanded', 'false');
-
-  function toggleNav() {
-    const isOpen = btn.classList.toggle('is-active');
-    btn.setAttribute('aria-expanded', String(isOpen));
-
-    // Minimal, no-CSS dependency: only affect mobile
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    if (isMobile) {
-      nav.style.display = (nav.style.display === 'block') ? 'none' : 'block';
-    }
-  }
-
-  // Click + keyboard access
-  btn.addEventListener('click', toggleNav);
-  btn.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleNav(); }
-  });
-
-  // Close when clicking outside (mobile)
-  document.addEventListener('click', (e) => {
-    if (!nav.contains(e.target) && !btn.contains(e.target)) {
-      btn.classList.remove('is-active');
-      btn.setAttribute('aria-expanded', 'false');
-      if (window.matchMedia('(max-width: 768px)').matches) {
-        nav.style.display = 'none';
-      }
-    }
-  });
-
-  // Clear inline style on desktop so your desktop nav stays normal
-  window.addEventListener('resize', () => {
-    if (!window.matchMedia('(max-width: 768px)').matches) {
-      nav.style.display = '';
-    }
-  });
-})();
-</script>
-
 </body>
 </html>
+

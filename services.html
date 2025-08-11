@@ -10,17 +10,20 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
   <style>
-  /* Add-only, scoped safety net */
-  header .logo { display:block; }
-  .hero-about, .hero-services { position:relative; overflow:hidden; }
-  .hero-about .hero-bg, .hero-services .hero-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
-  .hero-about > *:not(picture), .hero-services > *:not(picture) { position:relative; z-index:1; }
-</style>
+    /* Add-only, scoped safety net */
+    header .logo { display:block; }
+    .hero-about, .hero-services { position:relative; overflow:hidden; }
+    .hero-about .hero-bg, .hero-services .hero-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+    .hero-about > *:not(picture), .hero-services > *:not(picture) { position:relative; z-index:1; }
 
+    /* New: ensure header sits above hero image */
+    header { position: relative; z-index: 10; }
+    .hero-services { position: relative; }
+  </style>
 </head>
 <body>
 
-    <!-- HEADER -->
+  <!-- HEADER -->
   <header>
     <div class="logo-container">
       <a href="index.html">
@@ -64,10 +67,8 @@
     <a href="#all-packages" class="btn-consultation" style="position:relative; z-index:1;">💼 Explore Services & Pricing</a>
   </div>
 
-
   <!-- MAIN CONTENT -->
   <main>
-
 
     <!-- SERVICES CARDS -->
     <section>
@@ -104,13 +105,10 @@
         </div>
 
         <div class="feature-card">
-          <h3>NGO & Non‑Profit Packages</h3>
+          <h3>NGO & Non-Profit Packages</h3>
           <p>“Built for impact, mindful of budgets.”<br>Web + ops support tailored for NGOs and community projects.</p>
           <a href="#ngo-packages" class="btn-consultation" id="explore-ngo">Explore NGO</a>
         </div>
-
-       
-
 
       </div>
     </section>
@@ -411,103 +409,102 @@
       </section>
 
       <!-- NGO PACKAGES (contains nested NGO Add-Ons) -->
-<section id="ngo-packages" class="package-section">
-  <h2>NGO & Non‑Profit Packages</h2>
-  <p class="section-intro">
-    Practical website + admin support tailored for mission-driven teams. Flexible, budget‑aware, impact‑focused.
-  </p>
+      <section id="ngo-packages" class="package-section">
+        <h2>NGO & Non-Profit Packages</h2>
+        <p class="section-intro">
+          Practical website + admin support tailored for mission-driven teams. Flexible, budget-aware, impact-focused.
+        </p>
 
-  <div class="features">
-    <div class="service-card">
-      <h3>NGO Starter Site</h3>
-      <p>Launch fast with a clean one‑page site that explains your cause and makes it easy to get in touch or donate.</p>
-      <ul>
-        <li>Home, About, Contact</li>
-        <li>Donation button ready</li>
-        <li>Basic SEO + mobile-friendly</li>
-      </ul>
-      <strong class="price">Pricing on request</strong>
-      <a href="contact.html" class="btn-consultation">Request a Quote</a>
-    </div>
+        <div class="features">
+          <div class="service-card">
+            <h3>NGO Starter Site</h3>
+            <p>Launch fast with a clean one-page site that explains your cause and makes it easy to get in touch or donate.</p>
+            <ul>
+              <li>Home, About, Contact</li>
+              <li>Donation button ready</li>
+              <li>Basic SEO + mobile-friendly</li>
+            </ul>
+            <strong class="price">Pricing on request</strong>
+            <a href="contact.html" class="btn-consultation">Request a Quote</a>
+          </div>
 
-    <div class="service-card">
-      <h3>NGO Visibility Pack</h3>
-      <p>Grow awareness with a simple multi‑page site plus basic content support.</p>
-      <ul>
-        <li>Up to 4 pages (e.g., Programs, Donate, News)</li>
-        <li>Newsletter signup or WhatsApp CTA</li>
-        <li>1 round of content updates</li>
-      </ul>
-      <strong class="price">Pricing on request</strong>
-      <a href="contact.html" class="btn-consultation">Request a Quote</a>
-    </div>
+          <div class="service-card">
+            <h3>NGO Visibility Pack</h3>
+            <p>Grow awareness with a simple multi-page site plus basic content support.</p>
+            <ul>
+              <li>Up to 4 pages (e.g., Programs, Donate, News)</li>
+              <li>Newsletter signup or WhatsApp CTA</li>
+              <li>1 round of content updates</li>
+            </ul>
+            <strong class="price">Pricing on request</strong>
+            <a href="contact.html" class="btn-consultation">Request a Quote</a>
+          </div>
 
-    <div class="service-card">
-      <h3>NGO Support Retainer</h3>
-      <p>Ongoing admin + web updates so your team can focus on the work that matters most.</p>
-      <ul>
-        <li>Monthly content & page updates</li>
-        <li>Volunteer or partner forms</li>
-        <li>Light grant edit support</li>
-      </ul>
-      <strong class="price">Pricing on request</strong>
-      <a href="contact.html" class="btn-consultation">Start Monthly Support</a>
-    </div>
+          <div class="service-card">
+            <h3>NGO Support Retainer</h3>
+            <p>Ongoing admin + web updates so your team can focus on the work that matters most.</p>
+            <ul>
+              <li>Monthly content & page updates</li>
+              <li>Volunteer or partner forms</li>
+              <li>Light grant edit support</li>
+            </ul>
+            <strong class="price">Pricing on request</strong>
+            <a href="contact.html" class="btn-consultation">Start Monthly Support</a>
+          </div>
 
-    <div class="service-card">
-      <h3>Custom NGO Build</h3>
-      <p>Need chapters, events, or a resource directory? Let’s scope it together.</p>
-      <ul>
-        <li>Tailored features & integrations</li>
-        <li>Content migration as needed</li>
-        <li>Roadmap & handover</li>
-      </ul>
-      <strong class="price">Pricing on request</strong>
-      <a href="contact.html" class="btn-consultation">Request a Quote</a>
-    </div>
-  </div>
+          <div class="service-card">
+            <h3>Custom NGO Build</h3>
+            <p>Need chapters, events, or a resource directory? Let’s scope it together.</p>
+            <ul>
+              <li>Tailored features & integrations</li>
+              <li>Content migration as needed</li>
+              <li>Roadmap & handover</li>
+            </ul>
+            <strong class="price">Pricing on request</strong>
+            <a href="contact.html" class="btn-consultation">Request a Quote</a>
+          </div>
+        </div>
 
-  <!-- Nested NGO Add-Ons (inside NGO Packages) -->
-  <section id="ngo-addons-inner" class="package-section active">
-    <h2>NGO‑Focused Add‑Ons</h2>
-    <p class="section-intro">Specialised services you can add to any NGO package.</p>
-    <div class="features">
-      <div class="service-card">
-        <h3>Donation Page Integration</h3>
-        <ul>
-          <li>Secure, easy-to-use donation setup</li>
-          <li>Integrated with your website</li>
-        </ul>
-        <a href="contact.html" class="btn-consultation">Request a Quote</a>
-      </div>
-      <div class="service-card">
-        <h3>Volunteer Signup Forms</h3>
-        <ul>
-          <li>Custom volunteer information capture</li>
-          <li>Manage community engagement efficiently</li>
-        </ul>
-        <a href="contact.html" class="btn-consultation">Request a Quote</a>
-      </div>
-      <div class="service-card">
-        <h3>Grant Document Support</h3>
-        <ul>
-          <li>Formatting and editing for grants</li>
-          <li>Reporting assistance as needed</li>
-        </ul>
-        <a href="contact.html" class="btn-consultation">Request a Quote</a>
-      </div>
-      <div class="service-card">
-        <h3>Event Promotion</h3>
-        <ul>
-          <li>Event pages and digital flyers</li>
-          <li>Drive participation and visibility</li>
-        </ul>
-        <a href="contact.html" class="btn-consultation">Request a Quote</a>
-      </div>
-    </div>
-  </section>
-</section>
-
+        <!-- Nested NGO Add-Ons (inside NGO Packages) -->
+        <section id="ngo-addons-inner" class="package-section active">
+          <h2>NGO-Focused Add-Ons</h2>
+          <p class="section-intro">Specialised services you can add to any NGO package.</p>
+          <div class="features">
+            <div class="service-card">
+              <h3>Donation Page Integration</h3>
+              <ul>
+                <li>Secure, easy-to-use donation setup</li>
+                <li>Integrated with your website</li>
+              </ul>
+              <a href="contact.html" class="btn-consultation">Request a Quote</a>
+            </div>
+            <div class="service-card">
+              <h3>Volunteer Signup Forms</h3>
+              <ul>
+                <li>Custom volunteer information capture</li>
+                <li>Manage community engagement efficiently</li>
+              </ul>
+              <a href="contact.html" class="btn-consultation">Request a Quote</a>
+            </div>
+            <div class="service-card">
+              <h3>Grant Document Support</h3>
+              <ul>
+                <li>Formatting and editing for grants</li>
+                <li>Reporting assistance as needed</li>
+              </ul>
+              <a href="contact.html" class="btn-consultation">Request a Quote</a>
+            </div>
+            <div class="service-card">
+              <h3>Event Promotion</h3>
+              <ul>
+                <li>Event pages and digital flyers</li>
+                <li>Drive participation and visibility</li>
+              </ul>
+              <a href="contact.html" class="btn-consultation">Request a Quote</a>
+            </div>
+          </div>
+        </section>
+      </section>
 
     </section>
 
@@ -520,7 +517,7 @@
   <script src="script.js"></script>
 
   <script>
-    // Add-only fix: make "Explore NGO" open NGO Packages + nested Add‑Ons
+    // Add-only fix: make "Explore NGO" open NGO Packages + nested Add-Ons
     (function () {
       function openAllPackages() {
         const all = document.getElementById('all-packages');
@@ -565,201 +562,196 @@
     })();
   </script>
 
-<script>
-  // Add-on: make sure the NGO heading is fully visible and the URL hash is set
-  (function () {
-    function scrollToNGO() {
-      const sec = document.getElementById('ngo-packages');
-      if (sec) {
-        if (location.hash !== '#ngo-packages') {
-          history.replaceState(null, '', '#ngo-packages');
+  <script>
+    // Add-on: make sure the NGO heading is fully visible and the URL hash is set
+    (function () {
+      function scrollToNGO() {
+        const sec = document.getElementById('ngo-packages');
+        if (sec) {
+          if (location.hash !== '#ngo-packages') {
+            history.replaceState(null, '', '#ngo-packages');
+          }
+          sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-        sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    }
 
-    // Re-run a focused scroll after your existing openNGO logic fires
-    const btn =
-      document.getElementById('explore-ngo') ||
-      document.querySelector('a[href="#ngo-packages"], a[href*="#ngo-packages"]');
+      // Re-run a focused scroll after your existing openNGO logic fires
+      const btn =
+        document.getElementById('explore-ngo') ||
+        document.querySelector('a[href="#ngo-packages"], a[href*="#ngo-packages"]');
 
-    if (btn) {
-      btn.addEventListener('click', function () {
-        // small delay so your existing script finishes expanding sections first
-        setTimeout(scrollToNGO, 50);
-      });
-    }
-
-    // Deep link support
-    window.addEventListener('DOMContentLoaded', function () {
-      if (location.hash === '#ngo-packages') {
-        setTimeout(scrollToNGO, 50);
+      if (btn) {
+        btn.addEventListener('click', function () {
+          // small delay so your existing script finishes expanding sections first
+          setTimeout(scrollToNGO, 50);
+        });
       }
-    });
-  })();
-</script>
 
-<script>
-  /* Add-only: scroll to NGO heading after the #all-packages transition completes */
-  (function () {
-    const btn = document.getElementById('explore-ngo') ||
-                document.querySelector('a[href="#ngo-packages"], a[href*="#ngo-packages"]');
-    const all = document.getElementById('all-packages');
-    const sec = document.getElementById('ngo-packages');
-    let scrolled = false;
-  
-    function scrollToHeadingOnce() {
-      if (scrolled) return;
-      scrolled = true;
-      if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  
-    function whenOpenThenScroll() {
-      if (!all) { scrollToHeadingOnce(); return; }
-      // If already open (height auto/visible), scroll now
-      const styles = getComputedStyle(all);
-      if (all.classList.contains('active') || styles.height !== '0px') {
-        scrollToHeadingOnce();
-        return;
-      }
-      // Wait for the open animation to finish
-      const onEnd = (e) => {
-        if (e.target === all && (e.propertyName === 'height' || e.propertyName === 'opacity')) {
-          all.removeEventListener('transitionend', onEnd);
-          scrollToHeadingOnce();
-        }
-      };
-      all.addEventListener('transitionend', onEnd, { once: true });
-    }
-  
-    if (btn) {
-      btn.addEventListener('click', function () {
-        scrolled = false;   // allow a fresh scroll for this click
-        whenOpenThenScroll();
-      });
-    }
-  
-    // Deep link support: services.html#ngo-packages
-    if (location.hash === '#ngo-packages') {
+      // Deep link support
       window.addEventListener('DOMContentLoaded', function () {
-        scrolled = false;
-        whenOpenThenScroll();
-      });
-    }
-  })();
-  </script>
-
-<script>
-  /* Combined NGO open + reliable scroll-to-heading (add-only, no changes to script.js) */
-  (function () {
-    // ---- existing behaviors ----
-    function openAllPackages() {
-      const all = document.getElementById('all-packages');
-      if (all && !all.classList.contains('active')) all.classList.add('active');
-      document.querySelectorAll('#all-packages .package-section').forEach(s => s.classList.add('active'));
-    }
-  
-    function openNGO() {
-      openAllPackages();
-      const ngoPackages = document.getElementById('ngo-packages');
-      const ngoAddonsInner = document.getElementById('ngo-addons-inner') || document.getElementById('ngo-addons');
-      if (ngoPackages) ngoPackages.classList.add('active');
-      if (ngoAddonsInner) ngoAddonsInner.classList.add('active');
-    }
-  
-    function getExploreBtn() {
-      return document.getElementById('explore-ngo') ||
-             document.querySelector('a[href="#ngo-packages"], a[href*="#ngo-packages"]');
-    }
-  
-    // ---- robust scroll helper ----
-    function targetHeading() {
-      const ngo = document.getElementById('ngo-packages');
-      if (!ngo) return null;
-      return ngo.querySelector('h2, h3') || ngo;
-    }
-  
-    function scrollToNGOHeading() {
-      const t = targetHeading();
-      if (!t) return;
-      if (location.hash !== '#ngo-packages') history.replaceState(null, '', '#ngo-packages');
-      t.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  
-    function readyToScroll() {
-      const all = document.getElementById('all-packages');
-      const ngo = document.getElementById('ngo-packages');
-      const wrapperOpen = !all || all.classList.contains('active');
-      const ngoOpen = !!(ngo && ngo.classList.contains('active'));
-      return wrapperOpen && ngoOpen;
-    }
-  
-    function waitThenScroll() {
-      if (readyToScroll()) { scrollToNGOHeading(); return; }
-  
-      const all = document.getElementById('all-packages');
-      const ngo = document.getElementById('ngo-packages');
-  
-      // Listen for transitions finishing
-      const onEnd = function (e) {
-        if (readyToScroll()) {
-          all && all.removeEventListener('transitionend', onEnd);
-          ngo && ngo.removeEventListener('transitionend', onEnd);
-          scrollToNGOHeading();
+        if (location.hash === '#ngo-packages') {
+          setTimeout(scrollToNGO, 50);
         }
-      };
-      all && all.addEventListener('transitionend', onEnd);
-      ngo && ngo.addEventListener('transitionend', onEnd);
-  
-      // Fallback: watch class changes in case there are no transitions
-      let done = false;
-      const obs = new MutationObserver(function () {
-        if (!done && readyToScroll()) { done = true; obs.disconnect(); scrollToNGOHeading(); }
       });
-      ngo && obs.observe(ngo, { attributes: true, attributeFilter: ['class'] });
-      all && obs.observe(all, { attributes: true, attributeFilter: ['class'] });
-  
-      // Absolute fallback after a short delay
-      setTimeout(function () { if (readyToScroll()) scrollToNGOHeading(); }, 200);
-    }
-  
-    // ---- wiring ----
-    function handleExploreClick() {
-      openNGO();            // ensure sections are opened
-      waitThenScroll();     // then scroll when they're actually visible
-    }
-  
-    function bindExploreNGO() {
-      const btn = getExploreBtn();
-      if (!btn || btn._ngoBound) return; // avoid double-binding
-      btn._ngoBound = true;
-      btn.addEventListener('click', function (e) {
-        // let hash link keep working; we augment it
-        handleExploreClick();
-      }, { passive: true });
-    }
-  
-    function handleHash() {
-      if (location.hash === '#ngo-packages') {
-        openNGO();
-        waitThenScroll();
-      }
-      if (location.hash === '#all-packages') openAllPackages();
-    }
-  
-    window.addEventListener('DOMContentLoaded', function () {
-      bindExploreNGO();
-      handleHash();
-    });
-  
-    window.addEventListener('hashchange', handleHash);
-  })();
+    })();
   </script>
-  
-  
 
+  <script>
+    /* Add-only: scroll to NGO heading after the #all-packages transition completes */
+    (function () {
+      const btn = document.getElementById('explore-ngo') ||
+                  document.querySelector('a[href="#ngo-packages"], a[href*="#ngo-packages"]');
+      const all = document.getElementById('all-packages');
+      const sec = document.getElementById('ngo-packages');
+      let scrolled = false;
+    
+      function scrollToHeadingOnce() {
+        if (scrolled) return;
+        scrolled = true;
+        if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    
+      function whenOpenThenScroll() {
+        if (!all) { scrollToHeadingOnce(); return; }
+        // If already open (height auto/visible), scroll now
+        const styles = getComputedStyle(all);
+        if (all.classList.contains('active') || styles.height !== '0px') {
+          scrollToHeadingOnce();
+          return;
+        }
+        // Wait for the open animation to finish
+        const onEnd = (e) => {
+          if (e.target === all && (e.propertyName === 'height' || e.propertyName === 'opacity')) {
+            all.removeEventListener('transitionend', onEnd);
+            scrollToHeadingOnce();
+          }
+        };
+        all.addEventListener('transitionend', onEnd, { once: true });
+      }
+    
+      if (btn) {
+        btn.addEventListener('click', function () {
+          scrolled = false;   // allow a fresh scroll for this click
+          whenOpenThenScroll();
+        });
+      }
+    
+      // Deep link support: services.html#ngo-packages
+      if (location.hash === '#ngo-packages') {
+        window.addEventListener('DOMContentLoaded', function () {
+          scrolled = false;
+          whenOpenThenScroll();
+        });
+      }
+    })();
+  </script>
+
+  <script>
+    /* Combined NGO open + reliable scroll-to-heading (add-only, no changes to script.js) */
+    (function () {
+      // ---- existing behaviors ----
+      function openAllPackages() {
+        const all = document.getElementById('all-packages');
+        if (all && !all.classList.contains('active')) all.classList.add('active');
+        document.querySelectorAll('#all-packages .package-section').forEach(s => s.classList.add('active'));
+      }
+    
+      function openNGO() {
+        openAllPackages();
+        const ngoPackages = document.getElementById('ngo-packages');
+        const ngoAddonsInner = document.getElementById('ngo-addons-inner') || document.getElementById('ngo-addons');
+        if (ngoPackages) ngoPackages.classList.add('active');
+        if (ngoAddonsInner) ngoAddonsInner.classList.add('active');
+      }
+    
+      function getExploreBtn() {
+        return document.getElementById('explore-ngo') ||
+               document.querySelector('a[href="#ngo-packages"], a[href*="#ngo-packages"]');
+      }
+    
+      // ---- robust scroll helper ----
+      function targetHeading() {
+        const ngo = document.getElementById('ngo-packages');
+        if (!ngo) return null;
+        return ngo.querySelector('h2, h3') || ngo;
+      }
+    
+      function scrollToNGOHeading() {
+        const t = targetHeading();
+        if (!t) return;
+        if (location.hash !== '#ngo-packages') history.replaceState(null, '', '#ngo-packages');
+        t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    
+      function readyToScroll() {
+        const all = document.getElementById('all-packages');
+        const ngo = document.getElementById('ngo-packages');
+        const wrapperOpen = !all || all.classList.contains('active');
+        const ngoOpen = !!(ngo && ngo.classList.contains('active'));
+        return wrapperOpen && ngoOpen;
+      }
+    
+      function waitThenScroll() {
+        if (readyToScroll()) { scrollToNGOHeading(); return; }
+    
+        const all = document.getElementById('all-packages');
+        const ngo = document.getElementById('ngo-packages');
+    
+        // Listen for transitions finishing
+        const onEnd = function (e) {
+          if (readyToScroll()) {
+            all && all.removeEventListener('transitionend', onEnd);
+            ngo && ngo.removeEventListener('transitionend', onEnd);
+            scrollToNGOHeading();
+          }
+        };
+        all && all.addEventListener('transitionend', onEnd);
+        ngo && ngo.addEventListener('transitionend', onEnd);
+    
+        // Fallback: watch class changes in case there are no transitions
+        let done = false;
+        const obs = new MutationObserver(function () {
+          if (!done && readyToScroll()) { done = true; obs.disconnect(); scrollToNGOHeading(); }
+        });
+        ngo && obs.observe(ngo, { attributes: true, attributeFilter: ['class'] });
+        all && obs.observe(all, { attributes: true, attributeFilter: ['class'] });
+    
+        // Absolute fallback after a short delay
+        setTimeout(function () { if (readyToScroll()) scrollToNGOHeading(); }, 200);
+      }
+    
+      // ---- wiring ----
+      function handleExploreClick() {
+        openNGO();            // ensure sections are opened
+        waitThenScroll();     // then scroll when they're actually visible
+      }
+    
+      function bindExploreNGO() {
+        const btn = getExploreBtn();
+        if (!btn || btn._ngoBound) return; // avoid double-binding
+        btn._ngoBound = true;
+        btn.addEventListener('click', function (e) {
+          // let hash link keep working; we augment it
+          handleExploreClick();
+        }, { passive: true });
+      }
+    
+      function handleHash() {
+        if (location.hash === '#ngo-packages') {
+          openNGO();
+          waitThenScroll();
+        }
+        if (location.hash === '#all-packages') openAllPackages();
+      }
+    
+      window.addEventListener('DOMContentLoaded', function () {
+        bindExploreNGO();
+        handleHash();
+      });
+    
+      window.addEventListener('hashchange', handleHash);
+    })();
+  </script>
   
 </body>
 </html>
-
-

@@ -14,17 +14,12 @@
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Preload the hero image -->
-  <link rel="preload" as="image"
-        href="nf-1080.webp"
-        imagesrcset="nf-480.webp 480w, nf-1080.webp 1080w"
-        imagesizes="100vw"
-        type="image/webp">
-  <link rel="preload" as="image"
-        href="nf-1080.jpg"
-        imagesrcset="nf-480.jpg 480w, nf-1080.jpg 1080w"
-        imagesizes="100vw"
-        type="image/jpeg">
+  <!-- Preload hero sources (root files) -->
+  <link rel="preload" as="image" href="nf-480.webp" type="image/webp">
+  <link rel="preload" as="image" href="nf-1080.webp" type="image/webp">
+  <link rel="preload" as="image" href="nf-480.jpg"  type="image/jpeg">
+  <link rel="preload" as="image" href="nf-1080.jpg" type="image/jpeg">
+
 
   <!-- Page-scoped styles so we don’t touch global CSS -->
   <style>

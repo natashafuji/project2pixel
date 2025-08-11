@@ -269,3 +269,12 @@ footer a:hover { text-decoration: underline; }
 #ngo-addons { display: none; }
 #all-packages .package-section,
 #ngo-packages { scroll-margin-top: 120px; }
+
+/* Blur-up effect for hero images */
+.blur-up {
+  filter: blur(16px);
+  opacity: .85;
+  transform: scale(1.02);
+  transition: filter .45s ease, opacity .45s ease, transform .45s ease;
+}
+

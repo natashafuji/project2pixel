@@ -81,13 +81,6 @@ nav ul li a.active { color: #FFFFFF; font-weight: 600; }
   overflow: hidden;
 }
 
-.hero {
-  background:#0b0b0b url('home-bg-480.jpg') center/cover no-repeat;
-}
-
-.hero-contact {
-  background:#0b0b0b url('contact-bg-480.jpg') center/cover no-repeat;
-}
 
 .hero-bg {
   position: absolute;

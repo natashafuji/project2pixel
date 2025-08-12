@@ -55,4 +55,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if (initial && document.getElementById(initial) && (initial === "all-packages" || initial.endsWith("-packages") || initial === "ngo-addons" || initial === "bundle-packages")) {
     setTimeout(() => activateSection(initial), 0);
   }
+
+  // ----- HERO reveal fallback (handles cached images too) -----
+  document.querySelectorAll('.hero-bg').forEach(img => {
+    const done = () => img.classList.remove('blur-up');
+    if (img.complete && img.naturalWidth) done();
+    else img.addEventListener('load', done, { once: true });
+  });
 });

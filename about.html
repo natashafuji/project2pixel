@@ -56,9 +56,10 @@
         src="nf-1080.jpg"
         srcset="nf-480.jpg 480w, nf-1080.jpg 1080w"
         sizes="100vw"
-        class="hero-bg"
+        class="hero-bg blur-up"
         loading="eager"
         fetchpriority="high"
+        onload="this.classList.remove('blur-up')"
         alt="">
     </picture>
 

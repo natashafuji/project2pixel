@@ -1,143 +1,229 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About | Project2Pixel</title>
-  <meta name="description" content="Natasha Fredericks is an AI advocate building practical AI enablement across Africa through Project2Pixel.">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="favicon.ico">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Preload hero image -->
-  <link rel="preload" as="image"
-        href="nf-1080.webp"
-        imagesrcset="nf-480.webp 480w, nf-1080.webp 1080w"
-        imagesizes="100vw"
-        type="image/webp"
-        fetchpriority="high">
-  <link rel="preload" as="image"
-        href="nf-1080.jpg"
-        imagesrcset="nf-480.jpg 480w, nf-1080.jpg 1080w"
-        imagesizes="100vw"
-        type="image/jpeg"
-        fetchpriority="high">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hephzibah Foundation | About</title>
+  <meta name="description" content="About Hephzibah Foundation: Reviving Hope, Restoring Value. Rooted in faith and purpose, serving communities through practical restoration initiatives." />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo-container">
-      <a href="index.html">
-        <img src="project2pixel-logo.webp" alt="Project2Pixel Logo" class="logo" width="150" height="50" fetchpriority="low" decoding="async" />
-      </a>
-      <span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
-    </div>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span>Hephzibah Foundation</span>
+    </a>
 
-    <nav>
-      <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
-      </div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="initiative.html">AI Africa Initiative</a></li>
-        <li><a href="partnerships.html">Partnerships</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <nav class="nav-links" aria-label="Primary">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="about.html">About</a>
+      <a data-nav href="projects.html">Projects</a>
+      <a data-nav href="initiatives.html">Initiatives</a>
     </nav>
-  </header>
 
-  <!-- HERO -->
-  <div class="hero-about lefty" role="img" aria-label="About Natasha hero"
-       style="position:relative; overflow:hidden; min-height:380px;
-              background:#0b0b0b url('nf-blur-40w.jpg') center/cover no-repeat;">
-
-    <picture>
-      <source type="image/webp"
-              srcset="nf-480.webp 480w, nf-1080.webp 1080w"
-              sizes="100vw">
-      <img
-        src="nf-1080.jpg"
-        srcset="nf-480.jpg 480w, nf-1080.jpg 1080w"
-        sizes="100vw"
-        class="hero-bg blur-up"
-        loading="eager"
-        fetchpriority="high"
-        onload="this.classList.remove('blur-up')"
-        width="1080" height="720"
-        style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;"
-        alt="">
-    </picture>
-
-    <h1>About Natasha Fredericks</h1>
-    <p>AI Advocate. Digital Systems Strategist. Builder of practical AI capability across Africa.</p>
+    <div class="nav-cta">
+      <a class="btn primary hide-mobile" href="contact.html">Contact Us</a>
+      <button class="burger" data-burger aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 
-  <!-- CONTENT -->
-  <section class="contact-section">
-
-    <h2>The Vision</h2>
-    <p>
-      Africa is not behind. Africa is under enabled.
-      My mission is to make practical artificial intelligence accessible, understandable, and usable across the continent.
-      Not as hype. Not as theory. But as a daily productivity tool that increases opportunity.
-    </p>
-
-    <h2>The Founder</h2>
-    <p>
-      With over a decade of experience in executive operations, coordination, and digital systems,
-      I understand how real organisations function. I have worked in high pressure environments,
-      supported leadership teams, and built structured systems that keep operations moving.
-    </p>
-
-    <p>
-      That foundation allows me to approach AI differently.
-      Not from a purely technical angle, but from a practical implementation perspective.
-      If a tool cannot fit into the workflow of a small business, an NGO, or a corporate team,
-      it will not be adopted. Adoption is where transformation happens.
-    </p>
-
-    <h2>The Initiative</h2>
-    <p>
-      Through Project2Pixel, I am building a continent focused AI enablement initiative.
-      The goal is clear. Enable 50,000 Africans with practical AI skills and structured adoption frameworks.
-    </p>
-
-    <p>
-      This work focuses on awareness, responsible use, adoption support, and scalable partnership models.
-      It is designed to work within real world constraints such as bandwidth limitations,
-      budget sensitivity, and varying digital literacy levels.
-    </p>
-
-    <h2>Why It Matters</h2>
-    <p>
-      Artificial intelligence will shape productivity, employment, and economic participation across every sector.
-      Africa must not be a passive consumer of global AI systems.
-      We must be active users, builders, trainers, and decision makers.
-    </p>
-
-    <p>
-      This is not just about tools.
-      It is about capability.
-      It is about confidence.
-      It is about ensuring that AI becomes a lever for growth rather than a source of fear.
-    </p>
-
-    <div style="text-align:center; margin-top:30px;">
-      <a href="initiative.html" class="btn-consultation">Explore the AI Africa Initiative</a>
+  <div class="container mobile" data-mobile>
+    <a data-nav href="index.html">Home</a>
+    <a data-nav href="about.html">About</a>
+    <a data-nav href="projects.html">Projects</a>
+    <a data-nav href="initiatives.html">Initiatives</a>
+    <div class="row">
+      <a class="btn primary" style="width:100%" href="contact.html">Contact Us</a>
     </div>
+  </div>
+</header>
 
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-wrap">
+      <div class="card card-pad">
+        <span class="badge">About Hephzibah Foundation</span>
+        <h1>Reviving Hope. Restoring Value.</h1>
+        <p class="lead">
+          We exist to help people move from crisis to stability — and from survival mode to dignity.
+        </p>
+
+        <div class="hr"></div>
+
+        <p>
+          “Hephzibah” means <i>My delight is in her</i> — a declaration of restoration, transformation, and renewed identity.
+          It represents a turning point: from brokenness to rebuilding, from struggle to strength, and from despair to dignity.
+          That’s the heart of our work: practical compassion that creates real change.
+        </p>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px">
+          <a class="btn primary" href="initiatives.html">Explore Initiatives</a>
+          <a class="btn" href="contact.html">Partner With Us</a>
+          <a class="btn ghost" href="#" title="Add your donation link">Donate Now</a>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <img src="https://assets-v2.codedesign.ai/storage/v1/object/public/playground_835b99c3/photo-1759106539822-b31de23ad1de.jpeg"
+             alt="Hephzibah Foundation visual" />
+      </div>
+    </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Project2Pixel | Built by Natasha Fredericks</p>
-    <p><a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
-  </footer>
+  <!-- IMPACT GOAL -->
+  <section class="section">
+    <div class="container">
+      <div class="card card-pad">
+        <span class="badge">Our Impact Goal</span>
+        <h2>Serving 50 000 lives through restoration</h2>
+        <p>
+          We are building initiatives designed to reach and support <b>50 000 people</b> through safe housing,
+          food security, education support, wellness programmes, and skills development.
+          This isn’t a “nice-to-have” goal — it’s the scale we’re designing for.
+        </p>
 
-  <script src="script.js"></script>
+        <div class="grid" style="grid-template-columns:repeat(3,1fr); gap:18px; margin-top:14px">
+          <div class="card card-pad">
+            <h3>Short Term</h3>
+            <p>Immediate relief: food support, basic essentials, crisis response, and safe shelter access.</p>
+          </div>
+          <div class="card card-pad">
+            <h3>Medium Term</h3>
+            <p>Stability: ongoing family support, education assistance, structured wellness programmes.</p>
+          </div>
+          <div class="card card-pad">
+            <h3>Long Term</h3>
+            <p>Transformation: skills, employability pathways, stronger households, stronger communities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION + VISION -->
+  <section class="section" id="mission">
+    <div class="container">
+      <div class="grid" style="grid-template-columns:1fr 1fr; gap:18px">
+        <div class="card card-pad">
+          <span class="badge">Our Mission</span>
+          <h2>Mission for sustainable change</h2>
+          <p>
+            To restore hope and create sustainable transformation through housing initiatives, education support,
+            and wellness-driven programmes that rebuild lives and renew purpose.
+          </p>
+        </div>
+
+        <div class="card card-pad" id="vision">
+          <span class="badge">Our Vision</span>
+          <h2>Communities that thrive</h2>
+          <p>
+            A South Africa where people rise from hardship into healing — restored, empowered, and recognised as valuable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="section">
+    <div class="container">
+      <div class="card card-pad">
+        <span class="badge">Our Core Pillars</span>
+        <h2>How we work</h2>
+        <p>
+          <b>Restoration</b> — Safe housing and essential support to rebuild stability.<br/>
+          <b>Empowerment</b> — Skills, mentorship, and education support to break cycles of poverty.<br/>
+          <b>Compassion in Action</b> — Practical support that meets real needs with real outcomes.<br/>
+          <b>Transformation</b> — Programmes that heal, uplift, and create long-term change.
+        </p>
+
+        <div class="hr"></div>
+
+        <p style="margin:0">
+          Want to support or partner? We welcome individuals, churches, organisations, and CSI teams.
+        </p>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px">
+          <a class="btn primary" href="contact.html">Get In Touch</a>
+          <a class="btn" href="initiatives.html">See Initiatives</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="card cta">
+        <div class="card-pad inner">
+          <div>
+            <span class="badge">Reviving Hope, Restoring Value</span>
+            <h2>Help us grow impact to 50 000</h2>
+            <p>
+              Donate, partner, or volunteer — your support becomes practical change on the ground.
+            </p>
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:10px">
+              <a class="btn primary" href="contact.html">Partner / Volunteer</a>
+              <a class="btn" href="#" title="Add your donation link">Donate Now</a>
+            </div>
+          </div>
+          <div class="card" style="border-radius:22px; overflow:hidden; border:1px solid var(--border)">
+            <img src="https://assets-v2.codedesign.ai/storage/v1/object/public/playground_835b99c3/photo-1758599669186-9eaf14f6f3ea.jpeg"
+                 alt="Impact visual" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand" style="margin-bottom:8px">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>Hephzibah Foundation</span>
+      </div>
+      <p style="margin:0">Restoring Hope, Rebuilding Lives</p>
+      <p style="margin:10px 0 0"><a href="mailto:info@mydelighthephzibah.org">info@mydelighthephzibah.org</a></p>
+      <p style="margin:10px 0 0; font-size:12px">© 2025 Hephzibah Foundation.</p>
+    </div>
+
+    <div>
+      <b>About</b>
+      <div style="height:10px"></div>
+      <a href="about.html">Our Story</a><br/>
+      <a href="about.html#mission">Our Mission</a><br/>
+      <a href="about.html#vision">Our Vision</a>
+    </div>
+
+    <div>
+      <b>Initiatives</b>
+      <div style="height:10px"></div>
+      <a href="initiatives.html#homes">Hephzibah Homes</a><br/>
+      <a href="initiatives.html#feedhope">Feed Hope</a><br/>
+      <a href="initiatives.html#education">Education Support</a><br/>
+      <a href="initiatives.html#skills">Wellness & Skills Hub</a>
+    </div>
+
+    <div>
+      <b>Support</b>
+      <div style="height:10px"></div>
+      <a href="#" title="Add your donation link">Donate</a><br/>
+      <a href="contact.html">Volunteer</a><br/>
+      <a href="contact.html">Partner</a><br/>
+      <a href="contact.html">Contact us</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>

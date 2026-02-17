@@ -1,25 +1,19 @@
-/* =======================================================
-   Project2Pixel | Continental AI Theme
-   Clean | Institutional | Consistent Branding
-   Logo 2 colour: #1FD1BE
-   Includes: stronger hero blur + working mobile hamburger
-======================================================= */
-
 :root {
-  --bg-dark: #0B0F1A;
   --bg-deep: #070A12;
+  --bg-dark: #0B0F1A;
 
-  --text-light: #FFFFFF;
-  --text-muted: rgba(255,255,255,0.75);
+  --text: #FFFFFF;
+  --muted: rgba(255,255,255,0.75);
 
   --brand: #1FD1BE;
   --brand-dark: #17B8A6;
 
-  --border: rgba(255,255,255,0.10);
   --surface: rgba(255,255,255,0.05);
+  --border: rgba(255,255,255,0.10);
+
+  --header-h: 78px;
 }
 
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -29,25 +23,25 @@
 html, body { height: 100%; }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background: linear-gradient(180deg, var(--bg-deep), var(--bg-dark));
-  color: var(--text-light);
+  color: var(--text);
   line-height: 1.6;
 }
 
-/* ================= HEADER ================= */
-
+/* Header */
 header {
+  min-height: var(--header-h);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 18px 6%;
-  background: rgba(7,10,18,0.85);
-  backdrop-filter: blur(10px);
+  background: rgba(7,10,18,0.90);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,255,255,0.08);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 9999;
 }
 
 .logo-container {
@@ -62,35 +56,36 @@ header {
 }
 
 .logo-text {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 800;
   font-size: 1.2rem;
 }
 
-/* ALL header brand 2s match logo */
-.highlight-2,
-.logo-text span {
+.highlight-2 {
   color: var(--brand);
 }
 
-/* ================= NAVIGATION ================= */
+.brand-2 {
+  color: var(--brand);
+}
 
+/* Nav */
 nav { position: relative; }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 22px;
   align-items: center;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: var(--text-light);
+  color: var(--text);
   font-weight: 500;
   padding: 8px 14px;
-  border-radius: 8px;
-  transition: 0.3s ease;
+  border-radius: 10px;
+  transition: 0.25s ease;
 }
 
 .nav-links a:hover {
@@ -102,15 +97,14 @@ nav { position: relative; }
   border: 1px solid rgba(31,209,190,0.30);
 }
 
-/* ================= HAMBURGER ================= */
-
+/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.12);
   background: rgba(255,255,255,0.04);
 }
@@ -118,92 +112,50 @@ nav { position: relative; }
 .hamburger span {
   width: 26px;
   height: 2px;
-  background: var(--text-light);
+  background: var(--text);
 }
 
-/* ================= HERO SECTIONS ================= */
-/* Note: your HTML uses picture tags + inline styles.
-   This CSS adds extra blur and stronger overlay for readability. */
-
+/* Hero base */
 .hero,
-.herohome,
 .hero-services,
-.heroservices,
 .hero-contact,
-.herocontact,
 .heroinitiative,
 .heroabout,
 .hero-about {
   position: relative;
   text-align: center;
   padding: 100px 20px;
-  color: var(--text-light);
   overflow: hidden;
+  color: var(--text);
 }
 
-/* Blurred background layer that inherits the hero inline background */
-.hero::before,
-.herohome::before,
-.hero-services::before,
-.heroservices::before,
-.hero-contact::before,
-.herocontact::before,
-.heroinitiative::before,
-.heroabout::before,
-.hero-about::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: inherit;
-  background-size: cover;
-  background-position: center;
-  filter: blur(14px);            /* stronger blur */
-  transform: scale(1.12);        /* prevents blur edges */
-  z-index: 0;
-}
-
-/* Dark overlay for readability */
-.hero::after,
-.herohome::after,
-.hero-services::after,
-.heroservices::after,
-.hero-contact::after,
-.herocontact::after,
-.heroinitiative::after,
-.heroabout::after,
-.hero-about::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.75);  /* stronger overlay */
-  z-index: 1;
-}
-
-/* Ensure text and buttons sit above blur + overlay */
 .hero h1,
-.hero p,
-.herohome h1,
-.herohome p,
 .hero-services h1,
-.hero-services p,
-.heroservices h1,
-.heroservices p,
 .hero-contact h1,
-.hero-contact p,
-.herocontact h1,
-.herocontact p,
 .heroinitiative h1,
-.heroinitiative p,
 .heroabout h1,
+.hero-about h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  margin-bottom: 18px;
+}
+
+.hero p,
+.hero-services p,
+.hero-contact p,
+.heroinitiative p,
 .heroabout p,
-.hero-about h1,
-.hero-about p,
+.hero-about p {
+  max-width: 900px;
+  margin: 0 auto 28px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
 .hero a,
-.herohome a,
 .hero-services a,
-.heroservices a,
 .hero-contact a,
-.herocontact a,
 .heroinitiative a,
 .heroabout a,
 .hero-about a {
@@ -211,56 +163,59 @@ nav { position: relative; }
   z-index: 2;
 }
 
+/* Inner pages keep normal brightness */
+.hero-services::after,
+.hero-contact::after,
+.heroinitiative::after,
+.heroabout::after,
+.hero-about::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
+}
+
+/* Index stays darker and blurred */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(14px);
+  transform: scale(1.12);
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 1;
+}
+
+/* Keep hero text above overlays */
 .hero h1,
-.herohome h1,
-.hero-services h1,
-.heroservices h1,
-.hero-contact h1,
-.herocontact h1,
-.heroinitiative h1,
-.heroabout h1,
-.hero-about h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  margin-bottom: 20px;
-  line-height: 1.1;
-}
-
 .hero p,
-.herohome p,
+.hero-services h1,
 .hero-services p,
-.heroservices p,
+.hero-contact h1,
 .hero-contact p,
-.herocontact p,
+.heroinitiative h1,
 .heroinitiative p,
+.heroabout h1,
 .heroabout p,
+.hero-about h1,
 .hero-about p {
-  max-width: 860px;
-  margin: 0 auto 30px;
-  color: var(--text-muted);
-  font-size: 1.05rem;
+  position: relative;
+  z-index: 2;
 }
 
-/* Fallback backgrounds (only used if you remove inline hero backgrounds) */
-.hero,
-.herohome {
-  background: url('home-bg-1080.jpg') no-repeat center center/cover;
-}
-
-.hero-services,
-.heroservices {
-  background: url('services-bg-1080.jpg') no-repeat center center/cover;
-}
-
-.hero-contact,
-.herocontact {
-  background: url('contact-bg-1080.jpg') no-repeat center center/cover;
-}
-
-/* ================= BUTTONS ================= */
-
-.btn-consultation,
-.btnconsultation {
+/* Buttons */
+.btn-consultation {
   display: inline-block;
   padding: 12px 24px;
   border-radius: 999px;
@@ -268,164 +223,172 @@ nav { position: relative; }
   color: #061018;
   font-weight: 800;
   text-decoration: none;
-  transition: 0.3s ease;
   border: none;
+  transition: 0.25s ease;
   box-shadow: 0 10px 30px rgba(0,0,0,0.30);
 }
 
-.btn-consultation:hover,
-.btnconsultation:hover {
+.btn-consultation:hover {
   background: var(--brand-dark);
   transform: translateY(-2px);
 }
 
-.btn-consultation.secondary,
-.btnconsultation.secondary {
+.btn-consultation.secondary {
   background: transparent;
   color: var(--brand);
   border: 2px solid var(--brand);
   box-shadow: none;
 }
 
-.btn-consultation.secondary:hover,
-.btnconsultation.secondary:hover {
+.btn-consultation.secondary:hover {
   background: rgba(31,209,190,0.15);
   transform: translateY(-2px);
 }
 
-/* ================= SECTIONS ================= */
-
+/* Sections */
 section {
   padding: 80px 6%;
 }
 
-.contact-section,
-.contactsection {
+.contact-section {
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.8rem;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 p { margin-bottom: 18px; }
 
-/* ================= CARDS ================= */
-
+/* Cards */
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
+  gap: 24px;
+  margin-top: 26px;
 }
 
 .feature-card,
-.featurecard,
-.service-card,
-.servicecard {
+.service-card {
   background: var(--surface);
-  padding: 25px;
-  border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.08);
-  transition: 0.3s ease;
+  border-radius: 16px;
+  padding: 24px;
+  transition: 0.25s ease;
 }
 
 .feature-card:hover,
-.featurecard:hover,
-.service-card:hover,
-.servicecard:hover {
+.service-card:hover {
   transform: translateY(-5px);
   border-color: rgba(31,209,190,0.22);
 }
 
 .feature-card h3,
-.featurecard h3,
-.service-card h3,
-.servicecard h3 {
-  font-family: 'Montserrat', sans-serif;
-  margin-bottom: 12px;
+.service-card h3 {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 10px;
 }
 
 .feature-card ul,
-.featurecard ul,
-.service-card ul,
-.servicecard ul {
+.service-card ul {
   margin-top: 12px;
   padding-left: 18px;
 }
 
 .feature-card li,
-.featurecard li,
-.service-card li,
-.servicecard li {
+.service-card li {
   margin-bottom: 8px;
 }
 
-/* ================= FORMS ================= */
-
+/* Forms */
 form {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  max-width: 600px;
-  margin: auto;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+label {
+  font-weight: 500;
+  color: var(--text);
 }
 
 input,
 textarea {
   padding: 12px;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.12);
   background: rgba(255,255,255,0.05);
-  color: white;
+  color: var(--text);
 }
 
 input:focus,
 textarea:focus {
-  border-color: var(--brand);
   outline: none;
+  border-color: var(--brand);
 }
 
-textarea { min-height: 130px; }
+textarea { min-height: 140px; }
 
-/* ================= FOOTER ================= */
+/* Links */
+a[href^="mailto"] {
+  color: var(--brand);
+  font-weight: 500;
+  transition: 0.25s ease;
+}
 
+a[href^="mailto"]:hover {
+  color: var(--brand-dark);
+}
+
+/* Footer */
 footer {
   margin-top: 60px;
   padding: 30px 6%;
   text-align: center;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.30);
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 footer p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
+  font-size: 0.92rem;
+  color: var(--muted);
 }
 
-/* ================= MOBILE ================= */
-
+/* Mobile fixed header and persistent menu */
 @media (max-width: 768px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
 
-  .hamburger { display: flex; }
+  body {
+    padding-top: var(--header-h);
+  }
+
+  .hamburger {
+    display: flex;
+  }
 
   .nav-links {
     display: none;
     flex-direction: column;
-    gap: 12px;
-    position: absolute;
+    gap: 14px;
+    position: fixed;
+    top: var(--header-h);
     right: 0;
-    top: 62px;
-    width: 230px;
-    padding: 16px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.12);
-    background: rgba(11,15,26,0.92);
-    backdrop-filter: blur(10px);
-    z-index: 1001;
+    width: 240px;
+    padding: 18px;
+    background: rgba(11,15,26,0.98);
+    border-left: 1px solid rgba(255,255,255,0.10);
+    backdrop-filter: blur(12px);
+    z-index: 9998;
   }
 
   .nav-links.open {
@@ -433,21 +396,12 @@ footer p {
   }
 
   .hero,
-  .herohome,
   .hero-services,
-  .heroservices,
   .hero-contact,
-  .herocontact,
   .heroinitiative,
   .heroabout,
   .hero-about {
     text-align: left;
-    padding: 80px 6%;
+    padding: 86px 6% 70px;
   }
-}
-
-/* ================= BRAND 2 (FOR HEADINGS IN HERO/TEXT) ================= */
-/* Use in HTML as: Project<span class="brand-2">2</span>Pixel */
-.brand-2 {
-  color: var(--brand);
 }

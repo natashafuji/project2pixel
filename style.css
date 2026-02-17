@@ -435,3 +435,30 @@ footer p {
   font-size: 1.05rem;
 }
 
+.hero-about {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 120px 6%;
+  text-align: left;
+}
+
+.hero-about-content {
+  max-width: 600px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-about h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+

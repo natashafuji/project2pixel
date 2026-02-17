@@ -405,3 +405,33 @@ footer p {
     padding: 86px 6% 70px;
   }
 }
+
+.hero-about {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* push content left */
+  text-align: left;            /* left align text */
+  padding: 120px 6%;
+  min-height: 420px;
+  overflow: hidden;
+}
+
+.hero-about h1,
+.hero-about p {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;   /* prevent full width overlay */
+}
+
+.hero-about h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  margin-bottom: 18px;
+}
+
+.hero-about p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+

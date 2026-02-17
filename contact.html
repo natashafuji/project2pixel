@@ -4,12 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Project2Pixel</title>
-  <meta name="description" content="Contact Project2Pixel to partner, host a session, or collaborate on AI enablement across Africa." />
+  <meta name="description" content="Partner with Project2Pixel, host a session, or collaborate on AI enablement across Africa.">
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="favicon.ico" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
+  <!-- Preload hero image (keeps your file names) -->
   <link rel="preload" as="image"
         href="contact-bg-1080.webp"
         imagesrcset="contact-bg-480.webp 480w, contact-bg-1080.webp 1080w"
@@ -25,19 +27,22 @@
 </head>
 
 <body>
+
+  <!-- HEADER -->
   <header>
-    <div class="logocontainer">
+    <div class="logo-container">
       <a href="index.html">
-        <img src="project2pixel-logo.webp" alt="Project2Pixel Logo" class="logo" width="150" height="50" fetchpriority="low" decoding="async" />
+        <img src="project2pixel-logo.webp" alt="Project2Pixel Logo" class="logo" width="150" height="50" decoding="async" />
       </a>
-      <span class="logotext">Project<span class="highlight2">2</span>Pixel</span>
+      <span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
     </div>
 
     <nav>
-      <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0" aria-expanded="false" aria-controls="navLinks">
+      <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
         <span></span><span></span><span></span>
       </div>
-      <ul class="navlinks" id="navLinks">
+
+      <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="initiative.html">AI Africa Initiative</a></li>
@@ -47,9 +52,11 @@
     </nav>
   </header>
 
-  <div class="herocontact"
+  <!-- HERO -->
+  <div class="hero-contact"
        style="position:relative; overflow:hidden; min-height:380px;
               background:#0b0b0b url('contact-bg-blur-40w.jpg') center/cover no-repeat;">
+
     <picture>
       <source type="image/webp"
               srcset="contact-bg-480.webp 480w, contact-bg-1080.webp 1080w"
@@ -58,10 +65,10 @@
         src="contact-bg-1080.jpg"
         srcset="contact-bg-480.jpg 480w, contact-bg-1080.jpg 1080w"
         sizes="100vw"
-        class="herobg blurup"
+        class="hero-bg blur-up"
         loading="eager"
         fetchpriority="high"
-        onload="this.classList.remove('blurup')"
+        onload="this.classList.remove('blur-up')"
         width="1080" height="720"
         style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;"
         alt="">
@@ -71,7 +78,8 @@
     <p>Partner with us, host a session, or collaborate on AI enablement across Africa.</p>
   </div>
 
-  <section class="contactsection">
+  <!-- CONTACT FORM -->
+  <section class="contact-section">
     <form action="https://formspree.io/f/mdkdwjrq" method="POST">
       <label for="name">Your Name</label>
       <input type="text" id="name" name="name" required />
@@ -80,20 +88,21 @@
       <input type="email" id="email" name="_replyto" required />
 
       <label for="message">Your Message</label>
-      <textarea id="message" name="message" placeholder="Tell us what you are planning and what support you need" required></textarea>
+      <textarea id="message" name="message" placeholder="Tell us what you want to build or enable..." required></textarea>
 
-      <button type="submit">Send Message</button>
+      <button type="submit" class="btn-consultation">Send Message</button>
     </form>
 
-    <div class="directcontact">
-      <p>Email <a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
-      <p>Location Cape Town South Africa</p>
-      <p>Response time within 24 hours</p>
+    <div class="direct-contact" style="margin-top:30px; text-align:center;">
+      <p>📧 Email: <a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
+      <p>📍 Centurion, South Africa</p>
+      <p>💬 Expect a response within 24 hours.</p>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Project2Pixel | Built by Natasha Fredericks</p>
+    <p>&copy; 2025 Project<span class="brand-2">2</span>Pixel | Built by Natasha Fredericks</p>
     <p><a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
   </footer>
 

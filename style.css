@@ -334,3 +334,9 @@ footer p {
     padding: 80px 6%;
   }
 }
+
+/* Ensure the 2 in Project2Pixel is always teal */
+.brand-2 {
+  color: #1FD1BE;
+}
+

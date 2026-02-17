@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Project2Pixel | AI Enablement Across Africa</title>
-  <meta name="description" content="Project2Pixel enables practical AI capability across Africa through programmes, partnerships, and responsible adoption frameworks.">
+  <meta name="description" content="Project2Pixel is an Africa first AI enablement initiative led by Natasha Fredericks, focused on practical AI capability, responsible adoption, and partnerships across the continent.">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="favicon.ico">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+  <!-- Preload hero image -->
   <link rel="preload" as="image"
         href="home-bg-1080.webp"
         imagesrcset="home-bg-480.webp 480w, home-bg-1080.webp 1080w"
@@ -26,19 +27,20 @@
 </head>
 
 <body>
+  <!-- HEADER -->
   <header>
-    <div class="logocontainer">
+    <div class="logo-container">
       <a href="index.html">
         <img src="project2pixel-logo.webp" alt="Project2Pixel Logo" class="logo" width="150" height="50" fetchpriority="low" decoding="async">
       </a>
-      <span class="logotext">Project<span class="highlight2">2</span>Pixel</span>
+      <span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
     </div>
 
     <nav>
       <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </div>
-      <ul class="navlinks" id="navLinks">
+      <ul class="nav-links" id="navLinks">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="initiative.html">AI Africa Initiative</a></li>
@@ -48,8 +50,9 @@
     </nav>
   </header>
 
+  <!-- HERO -->
   <div class="herohome"
-       style="position:relative; overflow:hidden; min-height:380px;
+       style="position:relative; overflow:hidden; min-height:420px;
               background:#0b0b0b url('home-bg-blur-40w.jpg') center/cover no-repeat;">
 
     <picture>
@@ -60,10 +63,10 @@
         src="home-bg-1080.jpg"
         srcset="home-bg-480.jpg 480w, home-bg-1080.jpg 1080w"
         sizes="100vw"
-        class="herobg blurup"
+        class="hero-bg blur-up"
         loading="eager"
         fetchpriority="high"
-        onload="this.classList.remove('blurup')"
+        onload="this.classList.remove('blur-up')"
         width="1080" height="719"
         style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;"
         alt="">
@@ -71,52 +74,76 @@
 
     <h1>Enabling Africa’s AI Ready Future</h1>
     <p>
-      Project2Pixel is building practical AI capability across Africa through education, adoption frameworks, and partnerships that respect real world constraints.
+      Project2Pixel is an Africa first AI enablement initiative focused on practical AI capability, responsible adoption, and real world implementation.
+      We help people, teams, and institutions move from curiosity to confident use with frameworks that work across diverse contexts.
     </p>
 
     <div class="herobuttonrow">
-      <a href="initiative.html" class="btnconsultation">Explore the Initiative</a>
-      <a href="contact.html" class="btnconsultation">Partner or Collaborate</a>
+      <a href="initiative.html" class="btn-consultation">Explore the Initiative</a>
+      <a href="contact.html" class="btn-consultation secondary">Partner or Collaborate</a>
     </div>
 
-    <p class="herosubnote">
-      Target impact: enable 50,000 Africans with practical AI skills and adoption support.
-    </p>
+    <!-- TRUST BAR -->
+    <div class="trustbar">
+      <p>Designed for Africa. Built for real world adoption. Ready for partnerships.</p>
+      <div class="trustlogos">
+        <span class="trustpill">Corporate and CSI</span>
+        <span class="trustpill">NGOs and Community</span>
+        <span class="trustpill">Institutions and Training</span>
+        <span class="trustpill">Entrepreneurs and Youth</span>
+      </div>
+    </div>
   </div>
 
-  <section class="features">
-    <div class="featurecard">
-      <h3>Awareness</h3>
-      <p>We demystify AI and replace fear with practical understanding.</p>
-      <ul>
-        <li>Community sessions and public talks</li>
-        <li>Beginner friendly AI literacy</li>
-        <li>Responsible use principles</li>
-      </ul>
+  <!-- SECTION INTRO -->
+  <section class="contact-section">
+    <h2>What We Do</h2>
+    <p class="section-intro">
+      We build AI readiness and adoption across Africa through an enablement framework that is practical, responsible, and designed for scale.
+      This is not hype. This is capability.
+    </p>
+
+    <div class="features">
+      <div class="feature-card">
+        <h3>Awareness</h3>
+        <p>Demystifying AI through accessible learning that replaces fear with clarity.</p>
+        <ul>
+          <li>AI literacy sessions for beginners</li>
+          <li>Community workshops and public talks</li>
+          <li>Responsible use principles that protect people and organisations</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <h3>Adoption</h3>
+        <p>Helping teams apply AI in daily workflows with templates, guardrails, and structure.</p>
+        <ul>
+          <li>Readiness assessments and workflow mapping</li>
+          <li>Team bootcamps for practical usage</li>
+          <li>Role based prompt libraries and playbooks</li>
+          <li>Governance basics and quality control</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <h3>Acceleration</h3>
+        <p>Scaling delivery through partnerships, cohorts, and train the trainer models.</p>
+        <ul>
+          <li>Regional cohort programmes</li>
+          <li>Corporate and CSI collaboration for wider reach</li>
+          <li>NGO enablement and community rollout support</li>
+          <li>Facilitator toolkits for consistent delivery</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="featurecard">
-      <h3>Adoption</h3>
-      <p>We help teams use AI consistently with guardrails and real workflows.</p>
-      <ul>
-        <li>Readiness assessments</li>
-        <li>Team bootcamps</li>
-        <li>Templates and playbooks</li>
-        <li>Governance basics</li>
-      </ul>
-    </div>
-
-    <div class="featurecard">
-      <h3>Acceleration</h3>
-      <p>We build scalable models through cohorts and partner programmes.</p>
-      <ul>
-        <li>Train the trainer model</li>
-        <li>Corporate CSI collaboration</li>
-        <li>NGO and community enablement</li>
-      </ul>
+    <div style="text-align:center; margin-top:34px;">
+      <a href="initiative.html" class="btn-consultation">See the Framework</a>
+      <a href="partnerships.html" class="btn-consultation secondary" style="margin-left:10px;">View Partnership Options</a>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Project2Pixel | Built by Natasha Fredericks</p>
     <p><a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>

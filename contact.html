@@ -1,111 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Project2Pixel</title>
-  <meta name="description" content="Partner with Project2Pixel, host a session, or collaborate on AI enablement across Africa.">
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="favicon.ico" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- Preload hero image (keeps your file names) -->
-  <link rel="preload" as="image"
-        href="contact-bg-1080.webp"
-        imagesrcset="contact-bg-480.webp 480w, contact-bg-1080.webp 1080w"
-        imagesizes="100vw"
-        type="image/webp"
-        fetchpriority="high">
-  <link rel="preload" as="image"
-        href="contact-bg-1080.jpg"
-        imagesrcset="contact-bg-480.jpg 480w, contact-bg-1080.jpg 1080w"
-        imagesizes="100vw"
-        type="image/jpeg"
-        fetchpriority="high">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact | Project2Pixel</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo-container">
-      <a href="index.html">
-        <img src="project2pixel-logo.webp" alt="Project2Pixel Logo" class="logo" width="150" height="50" decoding="async" />
-      </a>
-      <span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
-    </div>
+<header>
+<div class="logo-container">
+<a href="index.html">
+<img src="project2pixel-logo.webp" class="logo" width="150" height="50">
+</a>
+<span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
+</div>
 
-    <nav>
-      <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
-        <span></span><span></span><span></span>
-      </div>
+<nav>
+<div class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</div>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="initiative.html">AI Africa Initiative</a></li>
+<li><a href="partnerships.html">Partnerships</a></li>
+<li><a href="contact.html" class="active">Contact</a></li>
+</ul>
+</nav>
+</header>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="initiative.html">AI Africa Initiative</a></li>
-        <li><a href="partnerships.html">Partnerships</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<div class="hero-contact"
+style="background:#0b0b0b url('contact-bg-1080.jpg') center/cover no-repeat;">
 
-  <!-- HERO -->
-  <div class="hero-contact"
-       style="position:relative; overflow:hidden; min-height:380px;
-              background:#0b0b0b url('contact-bg-blur-40w.jpg') center/cover no-repeat;">
+<h1>Contact</h1>
+<p>Partner with us, host a session or collaborate on AI enablement across Africa.</p>
 
-    <picture>
-      <source type="image/webp"
-              srcset="contact-bg-480.webp 480w, contact-bg-1080.webp 1080w"
-              sizes="100vw">
-      <img
-        src="contact-bg-1080.jpg"
-        srcset="contact-bg-480.jpg 480w, contact-bg-1080.jpg 1080w"
-        sizes="100vw"
-        class="hero-bg blur-up"
-        loading="eager"
-        fetchpriority="high"
-        onload="this.classList.remove('blur-up')"
-        width="1080" height="720"
-        style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;"
-        alt="">
-    </picture>
+</div>
 
-    <h1>Contact</h1>
-    <p>Partner with us, host a session, or collaborate on AI enablement across Africa.</p>
-  </div>
+<section>
+<form action="https://formspree.io/f/mdkdwjrq" method="POST">
+<label>Your Name</label>
+<input type="text" name="name" required>
 
-  <!-- CONTACT FORM -->
-  <section class="contact-section">
-    <form action="https://formspree.io/f/mdkdwjrq" method="POST">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required />
+<label>Your Email</label>
+<input type="email" name="_replyto" required>
 
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="_replyto" required />
+<label>Your Message</label>
+<textarea name="message" required></textarea>
 
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" placeholder="Tell us what you want to build or enable..." required></textarea>
+<button type="submit" class="btn-consultation">Send Message</button>
+</form>
+</section>
 
-      <button type="submit" class="btn-consultation">Send Message</button>
-    </form>
+<footer>
+<p>&copy; 2026 Project<span class="brand-2">2</span>Pixel</p>
+</footer>
 
-    <div class="direct-contact" style="margin-top:30px; text-align:center;">
-      <p>📧 Email: <a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
-      <p>📍 Centurion, South Africa</p>
-      <p>💬 Expect a response within 24 hours.</p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Project<span class="brand-2">2</span>Pixel | Built by Natasha Fredericks</p>
-    <p><a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

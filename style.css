@@ -2,16 +2,21 @@
    Project2Pixel | Continental AI Theme
    Clean | Institutional | Consistent Branding
    Logo 2 colour: #1FD1BE
+   Includes: stronger hero blur + working mobile hamburger
 ======================================================= */
 
 :root {
   --bg-dark: #0B0F1A;
   --bg-deep: #070A12;
+
   --text-light: #FFFFFF;
   --text-muted: rgba(255,255,255,0.75);
 
   --brand: #1FD1BE;
   --brand-dark: #17B8A6;
+
+  --border: rgba(255,255,255,0.10);
+  --surface: rgba(255,255,255,0.05);
 }
 
 /* RESET */
@@ -20,6 +25,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html, body { height: 100%; }
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -51,6 +58,7 @@ header {
 
 .logo {
   height: 45px;
+  width: auto;
 }
 
 .logo-text {
@@ -59,7 +67,7 @@ header {
   font-size: 1.2rem;
 }
 
-/* ALL 2s match logo */
+/* ALL header brand 2s match logo */
 .highlight-2,
 .logo-text span {
   color: var(--brand);
@@ -67,13 +75,16 @@ header {
 
 /* ================= NAVIGATION ================= */
 
-nav ul {
+nav { position: relative; }
+
+.nav-links {
   list-style: none;
   display: flex;
   gap: 25px;
+  align-items: center;
 }
 
-nav a {
+.nav-links a {
   text-decoration: none;
   color: var(--text-light);
   font-weight: 500;
@@ -82,22 +93,47 @@ nav a {
   transition: 0.3s ease;
 }
 
-nav a:hover {
+.nav-links a:hover {
   background: rgba(255,255,255,0.08);
 }
 
-nav a.active {
+.nav-links a.active {
   background: rgba(31,209,190,0.18);
-  border: 1px solid rgba(31,209,190,0.3);
+  border: 1px solid rgba(31,209,190,0.30);
+}
+
+/* ================= HAMBURGER ================= */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+}
+
+.hamburger span {
+  width: 26px;
+  height: 2px;
+  background: var(--text-light);
 }
 
 /* ================= HERO SECTIONS ================= */
+/* Note: your HTML uses picture tags + inline styles.
+   This CSS adds extra blur and stronger overlay for readability. */
 
 .hero,
+.herohome,
 .hero-services,
+.heroservices,
 .hero-contact,
+.herocontact,
 .heroinitiative,
-.heroabout {
+.heroabout,
+.hero-about {
   position: relative;
   text-align: center;
   padding: 100px 20px;
@@ -105,115 +141,156 @@ nav a.active {
   overflow: hidden;
 }
 
-/* Blurred background layer */
+/* Blurred background layer that inherits the hero inline background */
 .hero::before,
+.herohome::before,
 .hero-services::before,
+.heroservices::before,
 .hero-contact::before,
+.herocontact::before,
 .heroinitiative::before,
-.heroabout::before {
+.heroabout::before,
+.hero-about::before {
   content: "";
   position: absolute;
   inset: 0;
   background: inherit;
   background-size: cover;
   background-position: center;
-  filter: blur(10px);
-  transform: scale(1.1);
+  filter: blur(14px);            /* stronger blur */
+  transform: scale(1.12);        /* prevents blur edges */
   z-index: 0;
 }
 
 /* Dark overlay for readability */
 .hero::after,
+.herohome::after,
 .hero-services::after,
+.heroservices::after,
 .hero-contact::after,
+.herocontact::after,
 .heroinitiative::after,
-.heroabout::after {
+.heroabout::after,
+.hero-about::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.75);  /* stronger overlay */
   z-index: 1;
 }
 
-/* Ensure text sits above blur */
+/* Ensure text and buttons sit above blur + overlay */
 .hero h1,
 .hero p,
+.herohome h1,
+.herohome p,
 .hero-services h1,
 .hero-services p,
+.heroservices h1,
+.heroservices p,
 .hero-contact h1,
 .hero-contact p,
+.herocontact h1,
+.herocontact p,
 .heroinitiative h1,
 .heroinitiative p,
 .heroabout h1,
 .heroabout p,
+.hero-about h1,
+.hero-about p,
 .hero a,
+.herohome a,
 .hero-services a,
+.heroservices a,
 .hero-contact a,
+.herocontact a,
 .heroinitiative a,
-.heroabout a {
+.heroabout a,
+.hero-about a {
   position: relative;
   z-index: 2;
 }
 
 .hero h1,
+.herohome h1,
 .hero-services h1,
+.heroservices h1,
 .hero-contact h1,
+.herocontact h1,
 .heroinitiative h1,
-.heroabout h1 {
+.heroabout h1,
+.hero-about h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
   margin-bottom: 20px;
+  line-height: 1.1;
 }
 
 .hero p,
+.herohome p,
 .hero-services p,
+.heroservices p,
 .hero-contact p,
+.herocontact p,
 .heroinitiative p,
-.heroabout p {
-  max-width: 800px;
+.heroabout p,
+.hero-about p {
+  max-width: 860px;
   margin: 0 auto 30px;
   color: var(--text-muted);
+  font-size: 1.05rem;
 }
 
-/* Background images */
-.hero {
-  background: url('images/home-bg.png') no-repeat center center/cover;
+/* Fallback backgrounds (only used if you remove inline hero backgrounds) */
+.hero,
+.herohome {
+  background: url('home-bg-1080.jpg') no-repeat center center/cover;
 }
 
-.hero-services {
-  background: url('images/services-bg.png') no-repeat center center/cover;
+.hero-services,
+.heroservices {
+  background: url('services-bg-1080.jpg') no-repeat center center/cover;
 }
 
-.hero-contact {
-  background: url('images/contact-bg.png') no-repeat center center/cover;
+.hero-contact,
+.herocontact {
+  background: url('contact-bg-1080.jpg') no-repeat center center/cover;
 }
 
 /* ================= BUTTONS ================= */
 
-.btn-consultation {
+.btn-consultation,
+.btnconsultation {
   display: inline-block;
   padding: 12px 24px;
   border-radius: 999px;
   background: var(--brand);
   color: #061018;
-  font-weight: 700;
+  font-weight: 800;
   text-decoration: none;
   transition: 0.3s ease;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.30);
 }
 
-.btn-consultation:hover {
+.btn-consultation:hover,
+.btnconsultation:hover {
   background: var(--brand-dark);
   transform: translateY(-2px);
 }
 
-.btn-consultation.secondary {
+.btn-consultation.secondary,
+.btnconsultation.secondary {
   background: transparent;
   color: var(--brand);
   border: 2px solid var(--brand);
+  box-shadow: none;
 }
 
-.btn-consultation.secondary:hover {
+.btn-consultation.secondary:hover,
+.btnconsultation.secondary:hover {
   background: rgba(31,209,190,0.15);
+  transform: translateY(-2px);
 }
 
 /* ================= SECTIONS ================= */
@@ -222,7 +299,8 @@ section {
   padding: 80px 6%;
 }
 
-.contact-section {
+.contact-section,
+.contactsection {
   max-width: 1100px;
   margin: auto;
 }
@@ -233,9 +311,7 @@ h2 {
   margin-bottom: 18px;
 }
 
-p {
-  margin-bottom: 18px;
-}
+p { margin-bottom: 18px; }
 
 /* ================= CARDS ================= */
 
@@ -246,29 +322,45 @@ p {
   margin-top: 30px;
 }
 
-.feature-card {
-  background: rgba(255,255,255,0.05);
+.feature-card,
+.featurecard,
+.service-card,
+.servicecard {
+  background: var(--surface);
   padding: 25px;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.08);
   transition: 0.3s ease;
 }
 
-.feature-card:hover {
+.feature-card:hover,
+.featurecard:hover,
+.service-card:hover,
+.servicecard:hover {
   transform: translateY(-5px);
+  border-color: rgba(31,209,190,0.22);
 }
 
-.feature-card h3 {
+.feature-card h3,
+.featurecard h3,
+.service-card h3,
+.servicecard h3 {
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 12px;
 }
 
-.feature-card ul {
+.feature-card ul,
+.featurecard ul,
+.service-card ul,
+.servicecard ul {
   margin-top: 12px;
   padding-left: 18px;
 }
 
-.feature-card li {
+.feature-card li,
+.featurecard li,
+.service-card li,
+.servicecard li {
   margin-bottom: 8px;
 }
 
@@ -286,7 +378,7 @@ input,
 textarea {
   padding: 12px;
   border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
   background: rgba(255,255,255,0.05);
   color: white;
 }
@@ -297,9 +389,7 @@ textarea:focus {
   outline: none;
 }
 
-textarea {
-  min-height: 130px;
-}
+textarea { min-height: 130px; }
 
 /* ================= FOOTER ================= */
 
@@ -320,23 +410,44 @@ footer p {
 
 @media (max-width: 768px) {
 
-  nav ul {
+  .hamburger { display: flex; }
+
+  .nav-links {
+    display: none;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
+    position: absolute;
+    right: 0;
+    top: 62px;
+    width: 230px;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(11,15,26,0.92);
+    backdrop-filter: blur(10px);
+    z-index: 1001;
+  }
+
+  .nav-links.open {
+    display: flex;
   }
 
   .hero,
+  .herohome,
   .hero-services,
+  .heroservices,
   .hero-contact,
+  .herocontact,
   .heroinitiative,
-  .heroabout {
+  .heroabout,
+  .hero-about {
     text-align: left;
     padding: 80px 6%;
   }
 }
 
-/* Ensure the 2 in Project2Pixel is always teal */
+/* ================= BRAND 2 (FOR HEADINGS IN HERO/TEXT) ================= */
+/* Use in HTML as: Project<span class="brand-2">2</span>Pixel */
 .brand-2 {
-  color: #1FD1BE;
+  color: var(--brand);
 }
-

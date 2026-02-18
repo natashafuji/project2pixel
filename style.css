@@ -14,12 +14,7 @@
   --header-h: 78px;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { height: 100%; }
 
 body {
@@ -30,7 +25,6 @@ body {
 }
 
 /* Header */
-
 header {
   min-height: var(--header-h);
   display: flex;
@@ -45,16 +39,8 @@ header {
   z-index: 9999;
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo {
-  height: 45px;
-  width: auto;
-}
+.logo-container { display: flex; align-items: center; gap: 10px; }
+.logo { height: 45px; width: auto; }
 
 .logo-text {
   font-family: "Montserrat", sans-serif;
@@ -62,19 +48,15 @@ header {
   font-size: 1.2rem;
 }
 
-.highlight-2,
-.brand-2 {
-  color: var(--brand);
-}
+.highlight-2, .brand-2 { color: var(--brand); }
 
-/* Navigation */
-
+/* Nav */
 nav { position: relative; }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 22px;
+  gap: 18px;
   align-items: center;
 }
 
@@ -82,14 +64,12 @@ nav { position: relative; }
   text-decoration: none;
   color: var(--text);
   font-weight: 500;
-  padding: 8px 14px;
+  padding: 8px 12px;
   border-radius: 10px;
   transition: 0.25s ease;
 }
 
-.nav-links a:hover {
-  background: rgba(255,255,255,0.08);
-}
+.nav-links a:hover { background: rgba(255,255,255,0.08); }
 
 .nav-links a.active {
   background: rgba(31,209,190,0.18);
@@ -97,7 +77,6 @@ nav { position: relative; }
 }
 
 /* Hamburger */
-
 .hamburger {
   display: none;
   flex-direction: column;
@@ -109,19 +88,12 @@ nav { position: relative; }
   background: rgba(255,255,255,0.04);
 }
 
-.hamburger span {
-  width: 26px;
-  height: 2px;
-  background: var(--text);
-}
+.hamburger span { width: 26px; height: 2px; background: var(--text); }
 
-/* Hero Base */
-
+/* Hero base */
 .hero,
-.hero-services,
 .hero-contact,
-.heroinitiative,
-.hero-about {
+.heroinitiative {
   position: relative;
   text-align: center;
   padding: 100px 20px;
@@ -129,8 +101,52 @@ nav { position: relative; }
   color: var(--text);
 }
 
-/* Homepage Dark + Blur */
+.hero h1,
+.hero-contact h1,
+.heroinitiative h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  margin-bottom: 18px;
+}
 
+.hero p,
+.hero-contact p,
+.heroinitiative p {
+  max-width: 900px;
+  margin: 0 auto 22px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* Button row */
+.btn-row {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Inner pages normal overlay */
+.hero-contact::after,
+.heroinitiative::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
+}
+
+.hero-contact h1, .hero-contact p,
+.heroinitiative h1, .heroinitiative p {
+  position: relative;
+  z-index: 2;
+}
+
+/* Index stays darker and more blurry */
 .hero::before {
   content: "";
   position: absolute;
@@ -151,11 +167,24 @@ nav { position: relative; }
   z-index: 1;
 }
 
-/* Inner pages normal brightness */
+.hero h1, .hero p, .hero .btn-row {
+  position: relative;
+  z-index: 2;
+}
 
-.hero-services::after,
-.hero-contact::after,
-.heroinitiative::after,
+/* About hero (shows your picture) */
+.hero-about {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 120px 6%;
+  min-height: 420px;
+  overflow: hidden;
+  background: #0b0b0b url('/nf-1080.jpg') center/cover no-repeat;
+}
+
 .hero-about::after {
   content: "";
   position: absolute;
@@ -164,53 +193,16 @@ nav { position: relative; }
   z-index: 1;
 }
 
-/* Hero Typography */
+.hero-about-content {
+  max-width: 620px;
+  position: relative;
+  z-index: 2;
+}
 
-.hero h1,
-.hero-services h1,
-.hero-contact h1,
-.heroinitiative h1,
 .hero-about h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  line-height: 1.08;
-  margin-bottom: 18px;
-  position: relative;
-  z-index: 2;
-}
-
-.hero p,
-.hero-services p,
-.hero-contact p,
-.heroinitiative p,
-.hero-about p {
-  max-width: 900px;
-  margin: 0 auto 28px;
-  color: var(--muted);
-  font-size: 1.05rem;
-  position: relative;
-  z-index: 2;
-}
-
-/* About Hero Layout */
-
-.hero-about {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: left;
-  padding: 120px 6%;
-  min-height: 420px;
-  background-color: #0b0b0b;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.hero-about-content {
-  max-width: 600px;
-  position: relative;
-  z-index: 2;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  margin-bottom: 14px;
 }
 
 .hero-subtitle {
@@ -220,20 +212,9 @@ nav { position: relative; }
 }
 
 /* Buttons */
-
-.btn-row {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  position: relative;
-  z-index: 2;
-}
-
 .btn-consultation {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 12px 22px;
   border-radius: 999px;
   background: var(--brand);
   color: #061018;
@@ -258,18 +239,12 @@ nav { position: relative; }
 
 .btn-consultation.secondary:hover {
   background: rgba(31,209,190,0.15);
+  transform: translateY(-2px);
 }
 
 /* Sections */
-
-section {
-  padding: 80px 6%;
-}
-
-.contact-section {
-  max-width: 1100px;
-  margin: 0 auto;
-}
+section { padding: 80px 6%; }
+.contact-section { max-width: 1100px; margin: 0 auto; }
 
 h2 {
   font-family: "Montserrat", sans-serif;
@@ -280,12 +255,11 @@ h2 {
 p { margin-bottom: 18px; }
 
 /* Cards */
-
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
-  margin-top: 26px;
+  margin-top: 22px;
 }
 
 .feature-card,
@@ -303,14 +277,7 @@ p { margin-bottom: 18px; }
   border-color: rgba(31,209,190,0.22);
 }
 
-.feature-card h3,
-.service-card h3 {
-  font-family: "Montserrat", sans-serif;
-  margin-bottom: 10px;
-}
-
 /* Forms */
-
 form {
   display: flex;
   flex-direction: column;
@@ -319,12 +286,9 @@ form {
   margin: 0 auto;
 }
 
-label {
-  font-weight: 500;
-}
+label { font-weight: 500; color: var(--text); }
 
-input,
-textarea {
+input, textarea {
   padding: 12px;
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.12);
@@ -332,28 +296,18 @@ textarea {
   color: var(--text);
 }
 
-input:focus,
-textarea:focus {
-  outline: none;
-  border-color: var(--brand);
-}
-
+input:focus, textarea:focus { outline: none; border-color: var(--brand); }
 textarea { min-height: 140px; }
-
-/* Mail links */
 
 a[href^="mailto"] {
   color: var(--brand);
-  font-weight: 500;
+  font-weight: 600;
   transition: 0.25s ease;
 }
 
-a[href^="mailto"]:hover {
-  color: var(--brand-dark);
-}
+a[href^="mailto"]:hover { color: var(--brand-dark); }
 
 /* Footer */
-
 footer {
   margin-top: 60px;
   padding: 30px 6%;
@@ -362,15 +316,10 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-footer p {
-  font-size: 0.92rem;
-  color: var(--muted);
-}
+footer p { font-size: 0.92rem; color: var(--muted); }
 
-/* Mobile */
-
+/* Mobile fixed header and persistent menu */
 @media (max-width: 768px) {
-
   header {
     position: fixed;
     top: 0;
@@ -378,22 +327,18 @@ footer p {
     width: 100%;
   }
 
-  body {
-    padding-top: var(--header-h);
-  }
+  body { padding-top: var(--header-h); }
 
-  .hamburger {
-    display: flex;
-  }
+  .hamburger { display: flex; }
 
   .nav-links {
     display: none;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
     position: fixed;
     top: var(--header-h);
     right: 0;
-    width: 240px;
+    width: 260px;
     padding: 18px;
     background: rgba(11,15,26,0.98);
     border-left: 1px solid rgba(255,255,255,0.10);
@@ -401,12 +346,9 @@ footer p {
     z-index: 9998;
   }
 
-  .nav-links.open {
-    display: flex;
-  }
+  .nav-links.open { display: flex; }
 
   .hero,
-  .hero-services,
   .hero-contact,
   .heroinitiative,
   .hero-about {
@@ -414,8 +356,5 @@ footer p {
     padding: 86px 6% 70px;
   }
 
-  .btn-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  .btn-row { justify-content: flex-start; }
 }

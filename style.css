@@ -415,6 +415,14 @@ footer p {
   padding: 120px 6%;
   min-height: 420px;
   overflow: hidden;
+  background-color: #0b0b0b;
+  background-image: image-set(
+    url('/nf-480.webp') type('image/webp') 1x,
+    url('/nf-1080.jpg') type('image/jpeg') 1x
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .hero-about h1,
@@ -460,5 +468,4 @@ footer p {
   font-size: 1.05rem;
   line-height: 1.6;
 }
-
 

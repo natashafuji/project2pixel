@@ -30,6 +30,7 @@ body {
 }
 
 /* Header */
+
 header {
   min-height: var(--header-h);
   display: flex;
@@ -61,15 +62,13 @@ header {
   font-size: 1.2rem;
 }
 
-.highlight-2 {
-  color: var(--brand);
-}
-
+.highlight-2,
 .brand-2 {
   color: var(--brand);
 }
 
-/* Nav */
+/* Navigation */
+
 nav { position: relative; }
 
 .nav-links {
@@ -98,6 +97,7 @@ nav { position: relative; }
 }
 
 /* Hamburger */
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -115,12 +115,12 @@ nav { position: relative; }
   background: var(--text);
 }
 
-/* Hero base */
+/* Hero Base */
+
 .hero,
 .hero-services,
 .hero-contact,
 .heroinitiative,
-.heroabout,
 .hero-about {
   position: relative;
   text-align: center;
@@ -129,54 +129,8 @@ nav { position: relative; }
   color: var(--text);
 }
 
-.hero h1,
-.hero-services h1,
-.hero-contact h1,
-.heroinitiative h1,
-.heroabout h1,
-.hero-about h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  line-height: 1.08;
-  margin-bottom: 18px;
-}
+/* Homepage Dark + Blur */
 
-.hero p,
-.hero-services p,
-.hero-contact p,
-.heroinitiative p,
-.heroabout p,
-.hero-about p {
-  max-width: 900px;
-  margin: 0 auto 28px;
-  color: var(--muted);
-  font-size: 1.05rem;
-}
-
-.hero a,
-.hero-services a,
-.hero-contact a,
-.heroinitiative a,
-.heroabout a,
-.hero-about a {
-  position: relative;
-  z-index: 2;
-}
-
-/* Inner pages keep normal brightness */
-.hero-services::after,
-.hero-contact::after,
-.heroinitiative::after,
-.heroabout::after,
-.hero-about::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  z-index: 1;
-}
-
-/* Index stays darker and blurred */
 .hero::before {
   content: "";
   position: absolute;
@@ -197,24 +151,86 @@ nav { position: relative; }
   z-index: 1;
 }
 
-/* Keep hero text above overlays */
+/* Inner pages normal brightness */
+
+.hero-services::after,
+.hero-contact::after,
+.heroinitiative::after,
+.hero-about::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
+}
+
+/* Hero Typography */
+
 .hero h1,
-.hero p,
 .hero-services h1,
-.hero-services p,
 .hero-contact h1,
-.hero-contact p,
 .heroinitiative h1,
-.heroinitiative p,
-.heroabout h1,
-.heroabout p,
-.hero-about h1,
-.hero-about p {
+.hero-about h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  margin-bottom: 18px;
   position: relative;
   z-index: 2;
 }
 
+.hero p,
+.hero-services p,
+.hero-contact p,
+.heroinitiative p,
+.hero-about p {
+  max-width: 900px;
+  margin: 0 auto 28px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* About Hero Layout */
+
+.hero-about {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 120px 6%;
+  min-height: 420px;
+  background-color: #0b0b0b;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-about-content {
+  max-width: 600px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-subtitle {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
 /* Buttons */
+
+.btn-row {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+}
+
 .btn-consultation {
   display: inline-block;
   padding: 12px 24px;
@@ -242,10 +258,10 @@ nav { position: relative; }
 
 .btn-consultation.secondary:hover {
   background: rgba(31,209,190,0.15);
-  transform: translateY(-2px);
 }
 
 /* Sections */
+
 section {
   padding: 80px 6%;
 }
@@ -264,6 +280,7 @@ h2 {
 p { margin-bottom: 18px; }
 
 /* Cards */
+
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -292,18 +309,8 @@ p { margin-bottom: 18px; }
   margin-bottom: 10px;
 }
 
-.feature-card ul,
-.service-card ul {
-  margin-top: 12px;
-  padding-left: 18px;
-}
-
-.feature-card li,
-.service-card li {
-  margin-bottom: 8px;
-}
-
 /* Forms */
+
 form {
   display: flex;
   flex-direction: column;
@@ -314,7 +321,6 @@ form {
 
 label {
   font-weight: 500;
-  color: var(--text);
 }
 
 input,
@@ -334,7 +340,8 @@ textarea:focus {
 
 textarea { min-height: 140px; }
 
-/* Links */
+/* Mail links */
+
 a[href^="mailto"] {
   color: var(--brand);
   font-weight: 500;
@@ -346,6 +353,7 @@ a[href^="mailto"]:hover {
 }
 
 /* Footer */
+
 footer {
   margin-top: 60px;
   padding: 30px 6%;
@@ -359,8 +367,10 @@ footer p {
   color: var(--muted);
 }
 
-/* Mobile fixed header and persistent menu */
+/* Mobile */
+
 @media (max-width: 768px) {
+
   header {
     position: fixed;
     top: 0;
@@ -399,73 +409,13 @@ footer p {
   .hero-services,
   .hero-contact,
   .heroinitiative,
-  .heroabout,
   .hero-about {
     text-align: left;
     padding: 86px 6% 70px;
   }
-}
 
-.hero-about {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* push content left */
-  text-align: left;            /* left align text */
-  padding: 120px 6%;
-  min-height: 420px;
-  overflow: hidden;
-  background-color: #0b0b0b;
-  background-image: image-set(
-    url('/nf-480.webp') type('image/webp') 1x,
-    url('/nf-1080.jpg') type('image/jpeg') 1x
-  );
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  .btn-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
-
-.hero-about h1,
-.hero-about p {
-  position: relative;
-  z-index: 2;
-  max-width: 600px;   /* prevent full width overlay */
-}
-
-.hero-about h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  margin-bottom: 18px;
-}
-
-.hero-about p {
-  color: var(--muted);
-  font-size: 1.05rem;
-}
-
-.hero-about {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 120px 6%;
-  text-align: left;
-}
-
-.hero-about-content {
-  max-width: 600px;
-  position: relative;
-  z-index: 2;
-}
-
-.hero-about h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  margin-bottom: 16px;
-}
-
-.hero-subtitle {
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.6;
-}
-

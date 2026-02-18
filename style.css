@@ -22,6 +22,7 @@ body {
   background: linear-gradient(180deg, var(--bg-deep), var(--bg-dark));
   color: var(--text);
   line-height: 1.6;
+  padding-top: var(--header-h);
 }
 
 /* Header */
@@ -34,8 +35,10 @@ header {
   background: rgba(7,10,18,0.90);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,255,255,0.08);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 9999;
 }
 
@@ -205,7 +208,7 @@ nav { position: relative; }
     url('/nf-480.webp') 1x,
     url('/nf-1080.webp') 2x
   );
-  background-position: center top;
+  background-position: 68% 14%;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -214,7 +217,9 @@ nav { position: relative; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.2) 100%);
+  background:
+    radial-gradient(circle at 70% 28%, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0) 55%),
+    linear-gradient(90deg, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.20) 54%, rgba(0,0,0,0.10) 100%);
   z-index: 1;
 }
 
@@ -343,17 +348,18 @@ footer {
 
 footer p { font-size: 0.92rem; color: var(--muted); }
 
+
+/* Laptop framing: keep face + shoulders visible */
+@media (min-width: 992px) and (max-width: 1600px) {
+  .hero-about {
+    min-height: 620px;
+    padding: 132px 6% 92px;
+    background-position: 68% 16%;
+  }
+}
+
 /* Mobile fixed header and persistent menu */
 @media (max-width: 768px) {
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-
-  body { padding-top: var(--header-h); }
-
   .hamburger { display: flex; }
 
   .nav-links {
@@ -379,6 +385,10 @@ footer p { font-size: 0.92rem; color: var(--muted); }
   .hero-about {
     text-align: left;
     padding: 72px 6% 56px;
+  }
+
+  .hero-about {
+    background-position: 72% 18%;
   }
 
   .hero p {

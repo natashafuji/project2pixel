@@ -182,14 +182,22 @@ nav { position: relative; }
   padding: 120px 6%;
   min-height: 420px;
   overflow: hidden;
-  background: #0b0b0b url('/nf-1080.jpg') center/cover no-repeat;
+  background-color: #0b0b0b;
+  background-image: url('/nf-1080.jpg');
+  background-image: image-set(
+    url('/nf-480.webp') 1x,
+    url('/nf-1080.webp') 2x
+  );
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .hero-about::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: linear-gradient(90deg, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.2) 100%);
   z-index: 1;
 }
 

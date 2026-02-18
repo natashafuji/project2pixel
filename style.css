@@ -22,6 +22,7 @@ body {
   background: linear-gradient(180deg, var(--bg-deep), var(--bg-dark));
   color: var(--text);
   line-height: 1.6;
+  padding-top: var(--header-h);
 }
 
 /* Header */
@@ -34,8 +35,10 @@ header {
   background: rgba(7,10,18,0.90);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,255,255,0.08);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 9999;
 }
 
@@ -345,15 +348,6 @@ footer p { font-size: 0.92rem; color: var(--muted); }
 
 /* Mobile fixed header and persistent menu */
 @media (max-width: 768px) {
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-
-  body { padding-top: var(--header-h); }
-
   .hamburger { display: flex; }
 
   .nav-links {

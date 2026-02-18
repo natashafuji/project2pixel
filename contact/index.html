@@ -4,7 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Contact | Project2Pixel</title>
+<meta name="description" content="Partner with Project2Pixel or book an AI transformation session, speaking engagement or advisory conversation.">
 <link rel="stylesheet" href="/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -12,33 +14,31 @@
 <header>
 <div class="logo-container">
 <a href="/">
-<img src="/project2pixel-logo.webp" class="logo" width="150" height="50">
+<img src="/project2pixel-logo.webp" alt="Project2Pixel Logo" class="logo" width="150" height="50">
 </a>
 <span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
 </div>
 
 <nav>
-<div class="hamburger" id="hamburger">
+<div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
 <span></span><span></span><span></span>
 </div>
+
 <ul class="nav-links" id="navLinks">
 <li><a href="/">Home</a></li>
-<li><a href="/about/">About</a></li>
-<li><a href="/initiative/">AI Africa Initiative</a></li>
-<li><a href="/services/">Transformation Services</a></li>
-<li><a href="/speaking/" class="active">Speaking</a></li>
-<li><a href="/partnerships/">Partnerships</a></li>
-<li><a href="/contact/">Contact</a></li>
+<li><a href="/about/">Leadership</a></li>
+<li><a href="/initiative/">Initiative</a></li>
+<li><a href="/services/">Services</a></li>
+<li><a href="/speaking/">Speaking</a></li>
+<li><a href="/partnerships/">Partners</a></li>
+<li><a href="/contact/" class="active">Contact</a></li>
 </ul>
 </nav>
 </header>
 
-<div class="hero-contact"
-style="background:#0b0b0b url('/contact-bg-1080.jpg') center/cover no-repeat;">
-
+<div class="hero-contact" style="background:#0b0b0b url('/contact-bg-1080.jpg') center/cover no-repeat;">
 <h1>Contact</h1>
-<p>Partner with us, host a session or collaborate on AI enablement across Africa.</p>
-
+<p>Partner with us, host a session or collaborate on structured AI adoption across Africa and emerging markets.</p>
 </div>
 
 <section>
@@ -50,10 +50,15 @@ style="background:#0b0b0b url('/contact-bg-1080.jpg') center/cover no-repeat;">
 <input type="email" name="_replyto" required>
 
 <label>Your Message</label>
-<textarea name="message" required></textarea>
+<textarea name="message" placeholder="Tell us what you are trying to build and what support you need" required></textarea>
 
 <button type="submit" class="btn-consultation">Send Message</button>
 </form>
+
+<div class="direct-contact" style="text-align:center; margin-top:26px;">
+<p>📧 <a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
+<p>📍 Centurion, South Africa</p>
+</div>
 </section>
 
 <footer>

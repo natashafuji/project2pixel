@@ -350,20 +350,11 @@ footer p { font-size: 0.92rem; color: var(--muted); }
 
 
 /* Laptop framing: keep face + shoulders visible */
-@media (min-width: 992px) and (max-width: 1600px) {
+@media (min-width: 992px) and (max-width: 1366px) {
   .hero-about {
-    min-height: 620px;
-    padding: 132px 6% 92px;
-    background-position: 68% 16%;
-  }
-}
-
-/* MacBook/wide laptop framing: push portrait up toward header */
-@media (min-width: 1400px) and (max-width: 1900px) {
-  .hero-about {
-    min-height: 640px;
-    padding: 116px 6% 92px;
-    background-position: 68% 40%;
+    min-height: 500px;
+    padding: 132px 6% 88px;
+    background-position: 68% 28%;
   }
 }
 

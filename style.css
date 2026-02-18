@@ -350,11 +350,21 @@ footer p { font-size: 0.92rem; color: var(--muted); }
 
 
 /* Laptop framing: keep face + shoulders visible */
-@media (min-width: 992px) and (max-width: 1366px) {
+@media (min-width: 992px) and (max-width: 1399px) {
   .hero-about {
-    min-height: 500px;
-    padding: 132px 6% 88px;
-    background-position: 68% 28%;
+    min-height: 620px;
+    padding: 132px 6% 92px;
+    background-position: 68% 16%;
+  }
+}
+
+/* MacBook/wide laptop framing: full-bleed, tighter portrait near header */
+@media (min-width: 1400px) and (max-width: 1900px) {
+  .hero-about {
+    min-height: calc(100vh - var(--header-h));
+    padding: 88px 6% 80px;
+    background-size: 125%;
+    background-position: 72% 68%;
   }
 }
 

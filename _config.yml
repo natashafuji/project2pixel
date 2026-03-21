@@ -1,4 +1,6 @@
-url: "https://natashafuji.github.io"
+# Site Settings
+url: "https://project2pixel.co.za"
+
+# Plugins
 plugins:
   - jekyll-sitemap
-

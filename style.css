@@ -574,3 +574,17 @@ footer p { font-size: 0.92rem; color: var(--muted); }
 .cta-section h2 {
   margin-bottom: 12px;
 }
+
+select {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--brand);
+}

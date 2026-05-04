@@ -203,11 +203,7 @@ nav { position: relative; }
   min-height: 420px;
   overflow: hidden;
   background-color: #0b0b0b;
-  background-image: url('/nf-1080.jpg');
-  background-image: image-set(
-    url('/nf-480.webp') 1x,
-    url('/nf-1080.webp') 2x
-  );
+  background-image: url('/founderimage.jpeg');
   background-position: 68% 14%;
   background-size: cover;
   background-repeat: no-repeat;

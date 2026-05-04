@@ -325,6 +325,19 @@ input, textarea {
 input:focus, textarea:focus { outline: none; border-color: var(--brand); }
 textarea { min-height: 140px; }
 
+
+/* Global inline link styling for consistent brand color */
+a {
+  color: var(--brand);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+a:hover {
+  color: var(--brand-dark);
+  text-decoration: underline;
+}
+
 a[href^="mailto"] {
   color: var(--brand);
   font-weight: 600;

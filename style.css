@@ -326,6 +326,11 @@ input:focus, textarea:focus { outline: none; border-color: var(--brand); }
 textarea { min-height: 140px; }
 
 
+.contact-section form .btn-consultation {
+  align-self: flex-start;
+  cursor: pointer;
+}
+
 /* Global inline link styling for consistent brand color */
 a {
   color: var(--brand);

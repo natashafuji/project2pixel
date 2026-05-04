@@ -204,7 +204,7 @@ nav { position: relative; }
   overflow: hidden;
   background-color: #0b0b0b;
   background-image: url('/founderimage.jpeg');
-  background-position: 68% 14%;
+  background-position: 64% 10%;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -350,7 +350,7 @@ footer p { font-size: 0.92rem; color: var(--muted); }
   .hero-about {
     min-height: 620px;
     padding: 132px 6% 92px;
-    background-position: 68% 16%;
+    background-position: 64% 12%;
   }
 }
 
@@ -360,7 +360,7 @@ footer p { font-size: 0.92rem; color: var(--muted); }
     min-height: calc(100vh - var(--header-h));
     padding: 88px 6% 80px;
     background-size: 125%;
-    background-position: 72% 68%;
+    background-position: 68% 22%;
   }
 }
 
@@ -394,7 +394,7 @@ footer p { font-size: 0.92rem; color: var(--muted); }
   }
 
   .hero-about {
-    background-position: 72% 18%;
+    background-position: 66% 12%;
   }
 
   .hero p {

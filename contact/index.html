@@ -1,97 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Project2Pixel</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact | Project2Pixel</title>
+<meta name="description" content="Contact Project2Pixel to explore AI-powered workflows, automation systems, digital support or partnership opportunities.">
+<link rel="stylesheet" href="/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header>
-    <div class="logo-container">
-      <a href="index.html">
-        <img src="images/project2pixel-logo.png" alt="Project2Pixel Logo" class="logo" />
-      </a>
-      <span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
-    </div>
 
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Solutions</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+<div class="logo-container">
+<a href="/">
+<img src="/project2pixel-logo.webp" alt="Project2Pixel Logo" class="logo" width="150" height="50">
+</a>
+<span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
+</div>
 
-  <main>
-    <section class="hero-contact">
-      <h1>Let’s Build Your Digital System</h1>
-      <p>
-        Whether you’re a small business, NGO, or potential partner, we’d love to explore
-        how Project2Pixel can support your growth.
-      </p>
-    </section>
+<nav>
+<div class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</div>
 
-    <section class="contact-section">
-      <div class="section-heading">
-        <p class="eyebrow-dark">Start the conversation</p>
-        <h2>Tell Us What You Need</h2>
-        <p>
-          Share a bit about your business, NGO, or project. We’ll help you identify the right
-          digital systems, automation, and support to move forward.
-        </p>
-      </div>
+<ul class="nav-links" id="navLinks">
+<li><a href="/">Home</a></li>
+<li><a href="/about/">About</a></li>
+<li><a href="/initiative/">AI Initiative</a></li>
+<li><a href="/services/">Programmes</a></li>
+<li><a href="/speaking/">Speaking</a></li>
+<li><a href="/partnerships/">Partners</a></li>
+<li><a href="/contact/" class="active">Contact</a></li>
+</ul>
+</nav>
+</header>
 
-      <form action="https://formspree.io/f/mnqkqrqa" method="POST">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" required />
+<div class="hero-contact" style="background:#0b0b0b url('/contact-bg-1080.jpg') center/cover no-repeat;">
+<h1>Let’s Build Your Digital System</h1>
+<p>
+Whether you're a business, NGO, or potential partner, let’s explore how we can structure your workflows,
+introduce automation, and support your growth.
+</p>
+</div>
 
-        <label for="organisation">Business / Organisation Name</label>
-        <input type="text" id="organisation" name="organisation" />
+<section class="contact-section">
 
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="_replyto" required />
+<h2>Start the Conversation</h2>
 
-        <label for="interest">What do you need help with?</label>
-        <select id="interest" name="interest" required>
-          <option value="">Select an option</option>
-          <option value="Workflow automation">Workflow automation</option>
-          <option value="Website and digital setup">Website and digital setup</option>
-          <option value="AI tools and training">AI tools and training</option>
-          <option value="Monthly business support">Monthly business support</option>
-          <option value="NGO digital enablement">NGO digital enablement</option>
-          <option value="Partnership or funding conversation">Partnership or funding conversation</option>
-        </select>
+<p style="max-width:700px; margin:0 auto;">
+Tell us about your organisation, your goals, and where you feel things are not flowing efficiently.
+We’ll help you identify the right systems, tools and support.
+</p>
 
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" placeholder="Tell us about your goals, challenges, or the systems you need..." required></textarea>
+<form action="https://formspree.io/f/mnqkqrqa" method="POST">
 
-        <button type="submit">Send Message</button>
-      </form>
+<label for="name">Your Name</label>
+<input type="text" id="name" name="name" required>
 
-      <div class="direct-contact">
-        <p>📧 Email: <a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
-        <p>📍 South Africa</p>
-        <p>💬 We aim to respond within 24 hours.</p>
-      </div>
-    </section>
+<label for="org">Business / Organisation</label>
+<input type="text" id="org" name="org">
 
-    <section class="cta-section">
-      <h2>Not sure where to start?</h2>
-      <p>
-        That’s exactly why Project2Pixel exists — to help you turn scattered processes
-        into smart, structured systems.
-      </p>
-      <a href="services.html#packages" class="btn-consultation">View Packages</a>
-    </section>
-  </main>
+<label for="email">Your Email</label>
+<input type="email" id="email" name="_replyto" required>
 
-  <footer>
-    <p>&copy; 2026 Project2Pixel | Smart Systems for Small Businesses and NGOs</p>
-    <p><a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
-  </footer>
+<label for="interest">What do you need help with?</label>
+<select id="interest" name="interest" required>
+<option value="">Select an option</option>
+<option>Workflow automation</option>
+<option>Website & digital setup</option>
+<option>AI tools & training</option>
+<option>Monthly support</option>
+<option>NGO digital systems</option>
+<option>Partnership / funding discussion</option>
+</select>
+
+<label for="message">Your Message</label>
+<textarea id="message" name="message" placeholder="Tell us what you're trying to build or fix..." required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+<div class="direct-contact">
+<p>📧 Email: <a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
+<p>📍 South Africa</p>
+<p>💬 Response time: within 24 hours</p>
+</div>
+
+</section>
+
+<section>
+<h2 style="text-align:center;">Not sure where to start?</h2>
+
+<p style="max-width:700px; margin:0 auto; text-align:center;">
+That’s exactly where we come in. We take what feels messy and turn it into structured systems.
+</p>
+
+<div style="text-align:center; margin-top:30px;">
+<a href="/services/" class="btn-consultation">View Programmes</a>
+</div>
+</section>
+
+<footer>
+<p>&copy; 2026 Project<span class="brand-2">2</span>Pixel | Built by Natasha Fredericks</p>
+<p><a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
+</footer>
+
+<script src="/script.js"></script>
+
 </body>
 </html>

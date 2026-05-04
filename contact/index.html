@@ -1,72 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Contact | Project2Pixel</title>
-<meta name="description" content="Partner with Project2Pixel or book an AI transformation session, speaking engagement or advisory conversation.">
-<link rel="stylesheet" href="/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Project2Pixel</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 
 <body>
+  <header>
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="images/project2pixel-logo.png" alt="Project2Pixel Logo" class="logo" />
+      </a>
+      <span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
+    </div>
 
-<header>
-<div class="logo-container">
-<a href="/">
-<img src="/project2pixel-logo.webp" alt="Project2Pixel Logo" class="logo" width="150" height="50">
-</a>
-<span class="logo-text">Project<span class="highlight-2">2</span>Pixel</span>
-</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Solutions</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<nav>
-<div class="hamburger" id="hamburger">
-<span></span><span></span><span></span>
-</div>
+  <main>
+    <section class="hero-contact">
+      <h1>Let’s Build Your Digital System</h1>
+      <p>
+        Whether you’re a small business, NGO, or potential partner, we’d love to explore
+        how Project2Pixel can support your growth.
+      </p>
+    </section>
 
-<ul class="nav-links" id="navLinks">
-<li><a href="/">Home</a></li>
-<li><a href="/about/">About</a></li>
-<li><a href="/initiative/">AI Initiative</a></li>
-<li><a href="/services/">Programmes</a></li>
-<li><a href="/speaking/">Speaking</a></li>
-<li><a href="/partnerships/">Partners</a></li>
-<li><a href="/contact/" class="active">Contact</a></li>
-</ul>
-</nav>
-</header>
+    <section class="contact-section">
+      <div class="section-heading">
+        <p class="eyebrow-dark">Start the conversation</p>
+        <h2>Tell Us What You Need</h2>
+        <p>
+          Share a bit about your business, NGO, or project. We’ll help you identify the right
+          digital systems, automation, and support to move forward.
+        </p>
+      </div>
 
+      <form action="https://formspree.io/f/mnqkqrqa" method="POST">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required />
 
-<div class="hero-contact" style="background:#0b0b0b url('/contact-bg-1080.jpg') center/cover no-repeat;">
-<h1>Contact</h1>
-<p>Partner with us, host a session or collaborate on structured AI adoption across Africa and emerging markets.</p>
-</div>
+        <label for="organisation">Business / Organisation Name</label>
+        <input type="text" id="organisation" name="organisation" />
 
-<section>
-<form action="https://formspree.io/f/mdkdwjrq" method="POST">
-<label>Your Name</label>
-<input type="text" name="name" required>
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="_replyto" required />
 
-<label>Your Email</label>
-<input type="email" name="_replyto" required>
+        <label for="interest">What do you need help with?</label>
+        <select id="interest" name="interest" required>
+          <option value="">Select an option</option>
+          <option value="Workflow automation">Workflow automation</option>
+          <option value="Website and digital setup">Website and digital setup</option>
+          <option value="AI tools and training">AI tools and training</option>
+          <option value="Monthly business support">Monthly business support</option>
+          <option value="NGO digital enablement">NGO digital enablement</option>
+          <option value="Partnership or funding conversation">Partnership or funding conversation</option>
+        </select>
 
-<label>Your Message</label>
-<textarea name="message" placeholder="Tell us what you are trying to build and what support you need" required></textarea>
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" placeholder="Tell us about your goals, challenges, or the systems you need..." required></textarea>
 
-<button type="submit" class="btn-consultation">Send Message</button>
-</form>
+        <button type="submit">Send Message</button>
+      </form>
 
-<div class="direct-contact" style="text-align:center; margin-top:26px;">
-<p>📧 <a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
-<p>📍 Centurion, South Africa</p>
-</div>
-</section>
+      <div class="direct-contact">
+        <p>📧 Email: <a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
+        <p>📍 South Africa</p>
+        <p>💬 We aim to respond within 24 hours.</p>
+      </div>
+    </section>
 
-<footer>
-<p>&copy; 2026 Project<span class="brand-2">2</span>Pixel | Built by Natasha Fredericks</p>
-<p><a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
-</footer>
+    <section class="cta-section">
+      <h2>Not sure where to start?</h2>
+      <p>
+        That’s exactly why Project2Pixel exists — to help you turn scattered processes
+        into smart, structured systems.
+      </p>
+      <a href="services.html#packages" class="btn-consultation">View Packages</a>
+    </section>
+  </main>
 
-<script src="/script.js"></script>
+  <footer>
+    <p>&copy; 2026 Project2Pixel | Smart Systems for Small Businesses and NGOs</p>
+    <p><a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p>
+  </footer>
 </body>
 </html>

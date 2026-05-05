@@ -203,11 +203,11 @@ nav { position: relative; }
   justify-content: flex-start;
   text-align: left;
   padding: 100px 6%;
-  min-height: 460px;
+  min-height: 0;
   overflow: hidden;
   background-color: #0b0b0b;
   background-image: url('/founderimage.jpeg');
-  background-position: center 14%;
+  background-position: 72% 18%;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -371,19 +371,19 @@ footer a:hover { color: var(--brand-dark); text-decoration: underline; }
 /* Laptop framing: keep face + shoulders visible */
 @media (min-width: 992px) and (max-width: 1399px) {
   .hero-about {
-    min-height: 620px;
-    padding: 132px 6% 92px;
-    background-position: 62% 12%;
+    min-height: 0;
+    padding: 100px 6%;
+    background-position: 70% 16%;
   }
 }
 
 /* MacBook/wide laptop framing: full-bleed, tighter portrait near header */
 @media (min-width: 1400px) and (max-width: 1900px) {
   .hero-about {
-    min-height: calc(100vh - var(--header-h));
-    padding: 88px 6% 80px;
-    background-size: 115%;
-    background-position: 64% 20%;
+    min-height: 0;
+    padding: 100px 6%;
+    background-size: cover;
+    background-position: 68% 18%;
   }
 }
 
@@ -422,9 +422,9 @@ footer a:hover { color: var(--brand-dark); text-decoration: underline; }
   }
 
   .hero-about {
-    min-height: 420px;
-    background-size: 132%;
-    background-position: 56% 10%;
+    min-height: 0;
+    background-size: cover;
+    background-position: 64% 14%;
   }
 
   .hero p {

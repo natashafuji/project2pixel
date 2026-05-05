@@ -207,7 +207,7 @@ nav { position: relative; }
   overflow: hidden;
   background-color: #0b0b0b;
   background-image: url('/founderimage.jpeg');
-  background-position: 62% 22%;
+  background-position: 62% 36%;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -373,7 +373,7 @@ footer a:hover { color: var(--brand-dark); text-decoration: underline; }
   .hero-about {
     min-height: 0;
     padding: 100px 6%;
-    background-position: 60% 24%;
+    background-position: 60% 38%;
   }
 }
 
@@ -383,7 +383,7 @@ footer a:hover { color: var(--brand-dark); text-decoration: underline; }
     min-height: 0;
     padding: 100px 6%;
     background-size: cover;
-    background-position: 58% 22%;
+    background-position: 58% 36%;
   }
 }
 
@@ -424,7 +424,7 @@ footer a:hover { color: var(--brand-dark); text-decoration: underline; }
   .hero-about {
     min-height: 0;
     background-size: cover;
-    background-position: 56% 18%;
+    background-position: 56% 30%;
   }
 
   .hero p {

@@ -152,19 +152,6 @@ nav { position: relative; }
   z-index: 2;
 }
 
-/* Index stays darker and more blurry */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: inherit;
-  background-size: cover;
-  background-position: center;
-  filter: blur(4px);
-  transform: scale(1.12);
-  z-index: 0;
-}
-
 .hero::after {
   content: "";
   position: absolute;

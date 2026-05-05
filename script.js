@@ -27,3 +27,30 @@ if (hamburger && navLinks) {
     if (e.key === "Escape") closeMenu()
   })
 }
+
+const highlightProject2Pixel = () => {
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT)
+  const textNodes = []
+
+  while (walker.nextNode()) {
+    const node = walker.currentNode
+    if (!node.nodeValue.includes("Project2Pixel")) continue
+
+    const parent = node.parentElement
+    if (!parent) continue
+    if (parent.closest("script, style, title, meta")) continue
+    if (parent.classList.contains("logo-text")) continue
+
+    textNodes.push(node)
+  }
+
+  textNodes.forEach((node) => {
+    const wrapper = document.createElement("span")
+    wrapper.innerHTML = node.nodeValue.replaceAll("Project2Pixel", 'Project<span class="brand-2">2</span>Pixel')
+    node.parentNode.replaceChild(wrapper, node)
+  })
+}
+
+if (document.body) {
+  highlightProject2Pixel()
+}

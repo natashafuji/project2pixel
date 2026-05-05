@@ -207,7 +207,7 @@ nav { position: relative; }
   overflow: hidden;
   background-color: #0b0b0b;
   background-image: url('/founderimage.jpeg');
-  background-position: 62% 36%;
+  background-position: 84% 34%;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -218,7 +218,7 @@ nav { position: relative; }
   inset: 0;
   background:
     radial-gradient(circle at 32% 28%, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0) 55%),
-    linear-gradient(90deg, rgba(0,0,0,0.56) 0%, rgba(0,0,0,0.30) 48%, rgba(0,0,0,0.14) 100%);
+    linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.48) 42%, rgba(0,0,0,0.18) 68%, rgba(0,0,0,0.08) 100%);
   z-index: 1;
 }
 
@@ -373,7 +373,7 @@ footer a:hover { color: var(--brand-dark); text-decoration: underline; }
   .hero-about {
     min-height: 0;
     padding: 100px 6%;
-    background-position: 60% 38%;
+    background-position: 82% 36%;
   }
 }
 
@@ -383,7 +383,7 @@ footer a:hover { color: var(--brand-dark); text-decoration: underline; }
     min-height: 0;
     padding: 100px 6%;
     background-size: cover;
-    background-position: 58% 36%;
+    background-position: 80% 35%;
   }
 }
 
@@ -424,7 +424,7 @@ footer a:hover { color: var(--brand-dark); text-decoration: underline; }
   .hero-about {
     min-height: 0;
     background-size: cover;
-    background-position: 56% 30%;
+    background-position: 72% 28%;
   }
 
   .hero p {

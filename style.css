@@ -247,9 +247,9 @@ nav { position: relative; }
   transition: 0.25s ease;
   box-shadow: 0 10px 30px rgba(0,0,0,0.30);
 }
-
 .btn-consultation:hover {
   background: var(--brand-dark);
+  color: #061018;
   transform: translateY(-2px);
 }
 
@@ -262,6 +262,7 @@ nav { position: relative; }
 
 .btn-consultation.secondary:hover {
   background: rgba(31,209,190,0.15);
+  color: var(--brand);
   transform: translateY(-2px);
 }
 

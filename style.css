@@ -165,6 +165,13 @@ nav { position: relative; }
   z-index: 2;
 }
 
+.hero-capability-cta {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: 25px;
+}
+
 .hero-lead {
   max-width: 880px;
   margin: 20px auto;

@@ -609,3 +609,20 @@ select:focus {
   outline: none;
   border-color: var(--brand);
 }
+
+.airtable-form-wrapper {
+max-width: 1000px;
+margin: 0 auto;
+padding: 20px;
+background: rgba(255,255,255,0.02);
+border-radius: 20px;
+backdrop-filter: blur(8px);
+}
+
+.airtable-form-wrapper iframe {
+width: 100%;
+min-height: 850px;
+border: none;
+border-radius: 20px;
+overflow: hidden;
+}

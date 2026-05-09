@@ -121,37 +121,44 @@
 
   <script>
 
-    window.addEventListener("message", function(e) {
+window.addEventListener("message", function(e) {
 
-      if (e.data.event === "calendly.event_scheduled") {
+  if (e.data.event === "calendly.event_scheduled") {
 
-        const payload = e.data.payload || {};
+    console.log("Calendly Payload:", e.data);
 
-        const invitee = payload.invitee || {};
+    const payload = e.data.payload || {};
 
-        const clientName = invitee.name || "Client";
+    const clientName =
+      payload.invitee?.name ||
+      payload.name ||
+      payload.questions_and_answers?.name ||
+      "";
 
-        const clientEmail = invitee.email || "";
+    const clientEmail =
+      payload.invitee?.email ||
+      payload.email ||
+      "";
 
-        const eventStart =
-          payload.event_start_time ||
-          payload.start_time ||
-          payload.scheduled_event?.start_time ||
-          "";
+    const eventStart =
+      payload.event_start_time ||
+      payload.start_time ||
+      payload.scheduled_event?.start_time ||
+      "";
 
-        const redirectUrl =
-          "https://www.project2pixel.co.za/thank-you.html" +
-          "?name=" + encodeURIComponent(clientName) +
-          "&email=" + encodeURIComponent(clientEmail) +
-          "&time=" + encodeURIComponent(eventStart);
+    const redirectUrl =
+      "https://www.project2pixel.co.za/thank-you.html" +
+      "?name=" + encodeURIComponent(clientName) +
+      "&email=" + encodeURIComponent(clientEmail) +
+      "&time=" + encodeURIComponent(eventStart);
 
-        window.location.href = redirectUrl;
+    window.location.href = redirectUrl;
 
-      }
+  }
 
-    });
+});
 
-  </script>
+</script>
 
 </body>
 </html>

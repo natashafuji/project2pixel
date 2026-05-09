@@ -7,19 +7,81 @@
   <meta name="robots" content="noindex, nofollow">
 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:Arial,sans-serif;background:#f3f4f6;color:#111827;}
-    .booking-wrapper{width:100%;min-height:100vh;padding:40px 20px;display:flex;justify-content:center;align-items:center;}
-    .booking-card{width:100%;max-width:1200px;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 35px rgba(0,0,0,.08);}
-    .booking-header{background:#000;padding:35px 20px;text-align:center;}
-    .booking-header img{width:180px;max-width:100%;margin-bottom:18px;}
-    .booking-header h1{color:#fff;font-size:34px;margin-bottom:10px;}
-    .booking-header p{color:#d1d5db;font-size:16px;max-width:700px;margin:auto;line-height:1.6;}
-    .calendly-inline-widget{min-width:320px;height:850px;}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:Arial,sans-serif;
+      background:#f3f4f6;
+      color:#111827;
+    }
+
+    .booking-wrapper{
+      width:100%;
+      min-height:100vh;
+      padding:40px 20px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .booking-card{
+      width:100%;
+      max-width:1200px;
+      background:#fff;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 10px 35px rgba(0,0,0,.08);
+    }
+
+    .booking-header{
+      background:#000;
+      padding:35px 20px;
+      text-align:center;
+    }
+
+    .booking-header img{
+      width:180px;
+      max-width:100%;
+      margin-bottom:18px;
+    }
+
+    .booking-header h1{
+      color:#fff;
+      font-size:34px;
+      margin-bottom:10px;
+    }
+
+    .booking-header p{
+      color:#d1d5db;
+      font-size:16px;
+      max-width:700px;
+      margin:auto;
+      line-height:1.6;
+    }
+
+    .calendly-inline-widget{
+      min-width:320px;
+      height:850px;
+    }
+
     @media(max-width:768px){
-      .booking-header img{width:140px;}
-      .booking-header h1{font-size:28px;}
-      .calendly-inline-widget{height:900px;}
+
+      .booking-header img{
+        width:140px;
+      }
+
+      .booking-header h1{
+        font-size:28px;
+      }
+
+      .calendly-inline-widget{
+        height:900px;
+      }
+
     }
   </style>
 </head>
@@ -27,33 +89,49 @@
 <body>
 
   <div class="booking-wrapper">
+
     <div class="booking-card">
+
       <div class="booking-header">
+
         <img src="https://raw.githubusercontent.com/natashafuji/project2pixel/main/project2pixel-logo-480.png" alt="Project2Pixel Logo">
+
         <h1>Book a Discovery Call</h1>
-        <p>Let’s discuss your business goals, website requirements, automation needs, workflow systems or digital strategy.</p>
+
+        <p>
+          Let’s discuss your business goals, website requirements,
+          automation needs, workflow systems or digital strategy.
+        </p>
+
       </div>
 
-      <div class="calendly-inline-widget"
-           data-url="https://calendly.com/project2pixel-info/30min">
+      <div
+        class="calendly-inline-widget"
+        data-url="https://calendly.com/project2pixel-info/30min">
       </div>
+
     </div>
+
   </div>
 
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script
+    src="https://assets.calendly.com/assets/external/widget.js"
+    async>
+  </script>
 
   <script>
-    const params = new URLSearchParams(window.location.search);
-
-    const clientName = params.get("name") || "";
-    const clientEmail = params.get("email") || "";
-
-    sessionStorage.setItem("p2p_client_name", clientName);
-    sessionStorage.setItem("p2p_client_email", clientEmail);
 
     window.addEventListener("message", function(e) {
-      if (e.data.event && e.data.event === "calendly.event_scheduled") {
+
+      if (e.data.event === "calendly.event_scheduled") {
+
         const payload = e.data.payload || {};
+
+        const invitee = payload.invitee || {};
+
+        const clientName = invitee.name || "Client";
+
+        const clientEmail = invitee.email || "";
 
         const eventStart =
           payload.event_start_time ||
@@ -68,8 +146,11 @@
           "&time=" + encodeURIComponent(eventStart);
 
         window.location.href = redirectUrl;
+
       }
+
     });
+
   </script>
 
 </body>

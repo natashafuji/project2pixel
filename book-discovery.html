@@ -2,118 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
   <title>Book a Discovery Call | Project2Pixel</title>
 
-  <meta name="description" content="Book a discovery call with Project2Pixel." />
+  <meta name="description" content="Book a discovery call with Project2Pixel to discuss your business, automation, AI workflows, website development or digital systems needs.">
+
   <meta name="robots" content="noindex, nofollow">
 
+  <link rel="icon" href="project2pixel-logo-480.png">
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    body {
+    body{
       font-family: Arial, sans-serif;
-      background: #f3f4f6;
-      color: #111827;
-      line-height: 1.6;
+      background:#f3f4f6;
+      color:#111827;
     }
 
-    .header {
-      background: #000000;
-      padding: 35px 20px;
-      text-align: center;
+    .booking-wrapper{
+      width:100%;
+      min-height:100vh;
+      padding:40px 20px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
 
-    .header img {
-      width: 180px;
-      max-width: 100%;
-      margin-bottom: 16px;
+    .booking-card{
+      width:100%;
+      max-width:1200px;
+      background:#ffffff;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 10px 35px rgba(0,0,0,0.08);
     }
 
-    .header p {
-      color: #d1d5db;
-      font-size: 15px;
+    .booking-header{
+      background:#000000;
+      padding:35px 20px;
+      text-align:center;
     }
 
-    .intro {
-      max-width: 850px;
-      margin: 50px auto 25px;
-      padding: 0 20px;
-      text-align: center;
+    .booking-header img{
+      width:180px;
+      max-width:100%;
+      margin-bottom:18px;
     }
 
-    .intro h1 {
-      font-size: 42px;
-      margin-bottom: 16px;
-      color: #111827;
+    .booking-header h1{
+      color:#ffffff;
+      font-size:34px;
+      margin-bottom:10px;
     }
 
-    .intro p {
-      font-size: 18px;
-      color: #4b5563;
-      line-height: 1.8;
+    .booking-header p{
+      color:#d1d5db;
+      font-size:16px;
+      max-width:700px;
+      margin:auto;
+      line-height:1.6;
     }
 
-    .info-box {
-      max-width: 900px;
-      margin: 0 auto 35px;
-      padding: 0 20px;
+    .booking-content{
+      padding:0;
     }
 
-    .info-card {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 25px;
-      border-left: 5px solid #20d3cf;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    .calendly-inline-widget{
+      min-width:320px;
+      height:850px;
     }
 
-    .info-card h3 {
-      margin-bottom: 12px;
-      color: #111827;
-    }
+    @media(max-width:768px){
 
-    .info-card p {
-      color: #4b5563;
-      margin-bottom: 10px;
-    }
-
-    .calendly-wrapper {
-      max-width: 1100px;
-      margin: 30px auto 70px;
-      padding: 0 20px;
-    }
-
-    .calendly-box {
-      background: #ffffff;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    .footer {
-      text-align: center;
-      padding: 35px 20px 50px;
-      color: #6b7280;
-      font-size: 14px;
-    }
-
-    .footer strong {
-      color: #111827;
-    }
-
-    @media (max-width: 768px) {
-      .intro h1 {
-        font-size: 32px;
+      .booking-header{
+        padding:30px 20px;
       }
 
-      .intro p {
-        font-size: 17px;
+      .booking-header img{
+        width:140px;
+      }
+
+      .booking-header h1{
+        font-size:28px;
+      }
+
+      .booking-header p{
+        font-size:15px;
+      }
+
+      .calendly-inline-widget{
+        height:900px;
       }
     }
   </style>
@@ -121,64 +105,52 @@
 
 <body>
 
-  <div class="header">
-    <img 
-      src="https://raw.githubusercontent.com/natashafuji/project2pixel/main/project2pixel-logo-480.png" 
-      alt="Project2Pixel Logo"
-    >
+  <div class="booking-wrapper">
 
-    <p>Smart Systems. AI Workflows. Digital Solutions.</p>
-  </div>
+    <div class="booking-card">
 
-  <div class="intro">
-    <h1>Book Your Discovery Call</h1>
+      <div class="booking-header">
 
-    <p>
-      Schedule a Project2Pixel discovery session to discuss your business,
-      workflow challenges, website requirements, automation opportunities,
-      NGO support, or digital transformation goals.
-    </p>
-  </div>
+        <img 
+          src="https://raw.githubusercontent.com/natashafuji/project2pixel/main/project2pixel-logo-480.png" 
+          alt="Project2Pixel Logo"
+        >
 
-  <div class="info-box">
-    <div class="info-card">
+        <h1>Book a Discovery Call</h1>
 
-      <h3>What To Expect</h3>
+        <p>
+          Let’s discuss your business goals, website requirements, automation needs, 
+          workflow systems or digital strategy and see how Project2Pixel can assist.
+        </p>
 
-      <p>✔ A focused strategy discussion around your business or project needs.</p>
-
-      <p>✔ Guidance on possible workflow, automation, website, or digital solutions.</p>
-
-      <p>✔ A Google Meet link will automatically be sent after booking.</p>
-
-      <p>✔ You’ll receive confirmation and reminder emails before the session.</p>
-
-    </div>
-  </div>
-
-  <div class="calendly-wrapper">
-    <div class="calendly-box">
-
-      <div 
-        class="calendly-inline-widget" 
-        data-url="https://calendly.com/project2pixel-info/30min"
-        style="min-width:320px;height:780px;">
       </div>
 
-      <script 
-        type="text/javascript" 
-        src="https://assets.calendly.com/assets/external/widget.js" 
-        async>
-      </script>
+      <div class="booking-content">
+
+        <div 
+          class="calendly-inline-widget" 
+          data-url="https://calendly.com/project2pixel-info/30min">
+        </div>
+
+      </div>
 
     </div>
+
   </div>
 
-  <div class="footer">
-    <p><strong>Project2Pixel</strong></p>
-    <p>info@project2pixel.co.za</p>
-    <p>https://project2pixel.co.za</p>
-  </div>
+  <script 
+    type="text/javascript" 
+    src="https://assets.calendly.com/assets/external/widget.js" 
+    async>
+  </script>
+
+  <script>
+    window.addEventListener("message", function(e) {
+      if (e.data.event && e.data.event === "calendly.event_scheduled") {
+        window.location.href = "https://www.project2pixel.co.za/thank-you.html";
+      }
+    });
+  </script>
 
 </body>
 </html>

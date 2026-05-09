@@ -233,14 +233,6 @@
           </p>
         </div>
 
-        <div class="info-box">
-          <h3>What Happens Next?</h3>
-
-          <p>✔ A Google Meet invitation has been sent to your email.</p>
-          <p>✔ Your booking has been added to the Project2Pixel workflow system.</p>
-          <p>✔ We’ll review your project information before the discovery session.</p>
-        </div>
-
         <div class="booking-details">
           <p>
             <strong>Meeting Email:</strong>
@@ -251,6 +243,14 @@
             <strong>Discovery Call Time:</strong>
             <span id="meeting-time">Check your confirmation email for the final time.</span>
           </p>
+        </div>
+
+        <div class="info-box">
+          <h3>What Happens Next?</h3>
+
+          <p>✔ A Google Meet invitation has been sent to your email.</p>
+          <p>✔ Your booking has been added to the Project2Pixel workflow system.</p>
+          <p>✔ We’ll review your project information before the discovery session.</p>
         </div>
 
         <div class="steps">
@@ -309,13 +309,16 @@
     const name =
       params.get("name") ||
       params.get("invitee_full_name") ||
-      params.get("invitee_first_name");
+      params.get("invitee_first_name") ||
+      sessionStorage.getItem("p2p_client_name");
 
     const email =
       params.get("email") ||
-      params.get("invitee_email");
+      params.get("invitee_email") ||
+      sessionStorage.getItem("p2p_client_email");
 
     const eventTime =
+      params.get("time") ||
       params.get("event_start_time") ||
       params.get("start_time") ||
       params.get("event_start");

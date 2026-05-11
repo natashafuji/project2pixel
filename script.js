@@ -34,7 +34,7 @@ const highlightProject2Pixel = () => {
 
   while (walker.nextNode()) {
     const node = walker.currentNode
-    if (!node.nodeValue.includes("Project2Pixel")) continue
+    if (!/Project\s*2\s*Pixel/.test(node.nodeValue)) continue
 
     const parent = node.parentElement
     if (!parent) continue
@@ -46,7 +46,7 @@ const highlightProject2Pixel = () => {
 
   textNodes.forEach((node) => {
     const wrapper = document.createElement("span")
-    wrapper.innerHTML = node.nodeValue.replaceAll("Project2Pixel", 'Project<span class="brand-2">2</span>Pixel')
+    wrapper.innerHTML = node.nodeValue.replace(/Project\s*2\s*Pixel/g, 'Project<span class="brand-2">2</span>Pixel')
     node.parentNode.replaceChild(wrapper, node)
   })
 }

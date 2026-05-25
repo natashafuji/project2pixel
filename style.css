@@ -313,6 +313,16 @@ p { margin-bottom: 18px; }
 
 .solution-packages .service-card .btn-consultation {
   margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 78%;
+  height: 52px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .solution-packages .service-card ul {
@@ -320,7 +330,7 @@ p { margin-bottom: 18px; }
 }
 
 .solution-packages .service-card ul.extra-button-gap {
-  margin-bottom: 34px;
+  margin-bottom: 40px;
 }
 
 /* Forms */

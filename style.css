@@ -301,6 +301,28 @@ p { margin-bottom: 18px; }
   border-color: rgba(31,209,190,0.22);
 }
 
+.solution-packages .features {
+  align-items: stretch;
+}
+
+.solution-packages .service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.solution-packages .service-card .btn-consultation {
+  margin-top: auto;
+}
+
+.solution-packages .service-card ul {
+  margin-bottom: 18px;
+}
+
+.solution-packages .service-card ul.extra-button-gap {
+  margin-bottom: 34px;
+}
+
 /* Forms */
 form {
   display: flex;

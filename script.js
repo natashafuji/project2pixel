@@ -51,10 +51,33 @@ const highlightProject2Pixel = () => {
 
   textNodes.forEach((node) => {
     const wrapper = document.createElement("span");
-    wrapper.innerHTML = node.nodeValue.replace(
-      /Project\s*2\s*Pixel/g,
-      'Project<span class="brand-2">2</span>Pixel',
-    );
+    const text = node.nodeValue;
+    const projectNamePattern = /Project\s*2\s*Pixel/g;
+    let lastIndex = 0;
+    let match;
+
+    while ((match = projectNamePattern.exec(text)) !== null) {
+      if (match.index > lastIndex) {
+        wrapper.appendChild(
+          document.createTextNode(text.slice(lastIndex, match.index)),
+        );
+      }
+
+      wrapper.appendChild(document.createTextNode("Project"));
+
+      const highlightedTwo = document.createElement("span");
+      highlightedTwo.className = "brand-2";
+      highlightedTwo.textContent = "2";
+      wrapper.appendChild(highlightedTwo);
+
+      wrapper.appendChild(document.createTextNode("Pixel"));
+      lastIndex = projectNamePattern.lastIndex;
+    }
+
+    if (lastIndex < text.length) {
+      wrapper.appendChild(document.createTextNode(text.slice(lastIndex)));
+    }
+
     node.parentNode.replaceChild(wrapper, node);
   });
 };

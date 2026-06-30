@@ -1,3 +1,7 @@
+// TODO: Add Meta Pixel ID here
+// TODO: Add GA4 Measurement ID here
+// TODO: Add Google Tag Manager ID here
+
 const hamburger = document.getElementById("hamburger")
 const navLinks = document.getElementById("navLinks")
 

@@ -688,3 +688,18 @@ select:focus {
 .direct-contact p:last-child {
   margin-bottom: 0;
 }
+
+.direct-booking-cta {
+  margin: 28px auto 0;
+  padding: 24px;
+  max-width: 760px;
+  text-align: center;
+  background: rgba(31,209,190,0.08);
+  border: 1px solid rgba(31,209,190,0.22);
+  border-radius: 18px;
+}
+
+.direct-booking-cta h3 {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 8px;
+}

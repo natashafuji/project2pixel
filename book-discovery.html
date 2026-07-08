@@ -15,7 +15,7 @@
 
     body{
       font-family:Arial,sans-serif;
-      background:#f3f4f6;
+      background:linear-gradient(180deg,#070A12,#0B0F1A);
       color:#111827;
     }
 
@@ -34,11 +34,12 @@
       background:#fff;
       border-radius:20px;
       overflow:hidden;
-      box-shadow:0 10px 35px rgba(0,0,0,.08);
+      box-shadow:0 20px 60px rgba(0,0,0,.35);
+      border:1px solid rgba(31,209,190,.2);
     }
 
     .booking-header{
-      background:#000;
+      background:radial-gradient(circle at top,rgba(31,209,190,.18),transparent 36%),#000;
       padding:35px 20px;
       text-align:center;
     }
@@ -61,6 +62,43 @@
       max-width:700px;
       margin:auto;
       line-height:1.6;
+    }
+
+    .booking-button{
+      display:inline-block;
+      margin-top:8px;
+      padding:13px 24px;
+      border-radius:999px;
+      background:#1FD1BE;
+      color:#061018;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .booking-button:hover{
+      background:#17B8A6;
+    }
+
+    .call-details{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:14px;
+      padding:24px;
+      background:#071018;
+      color:#fff;
+    }
+
+    .call-details div{
+      border:1px solid rgba(31,209,190,.22);
+      border-radius:14px;
+      padding:16px;
+      background:rgba(255,255,255,.04);
+    }
+
+    .call-details strong{
+      color:#1FD1BE;
+      display:block;
+      margin-bottom:6px;
     }
 
     .calendly-inline-widget{
@@ -96,13 +134,20 @@
 
         <img src="/project2pixel-logo-480.png" alt="Project2Pixel Logo">
 
-        <h1>Book a Discovery Call</h1>
+        <h1>Let’s Build Something Great Together</h1>
 
         <p>
-          Let’s discuss your business goals, operational systems,
-          workflow requirements, automation needs or digital transformation priorities.
+          Book a free 30-minute discovery call with Project<span style="color:#1FD1BE;">2</span>Pixel. There is no obligation — we’ll discuss your goals, needs, budget and practical next steps for your website, systems, automation or launch support.
         </p>
 
+        <a href="https://calendly.com/project2pixel-info/30min" class="booking-button">Book Your Free Discovery Call</a>
+
+      </div>
+
+      <div class="call-details">
+        <div><strong>30 minutes</strong>A focused call to understand what you need.</div>
+        <div><strong>No obligation</strong>You can ask questions before committing to anything.</div>
+        <div><strong>Clear next steps</strong>We discuss goals, budget, timelines and the best way forward.</div>
       </div>
 
       <div

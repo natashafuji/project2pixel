@@ -49,9 +49,35 @@ const highlightProject2Pixel = () => {
   }
 
   textNodes.forEach((node) => {
-    const wrapper = document.createElement("span")
-    wrapper.innerHTML = node.nodeValue.replace(/Project\s*2\s*Pixel/g, 'Project<span class="brand-2">2</span>Pixel')
-    node.parentNode.replaceChild(wrapper, node)
+    const fragment = document.createDocumentFragment()
+    const pattern = /Project\s*2\s*Pixel/g
+    const text = node.nodeValue
+    let lastIndex = 0
+    let match = pattern.exec(text)
+
+    while (match) {
+      if (match.index > lastIndex) {
+        fragment.appendChild(document.createTextNode(text.slice(lastIndex, match.index)))
+      }
+
+      fragment.appendChild(document.createTextNode("Project"))
+
+      const highlightedTwo = document.createElement("span")
+      highlightedTwo.classList.add("brand-2")
+      highlightedTwo.appendChild(document.createTextNode("2"))
+      fragment.appendChild(highlightedTwo)
+
+      fragment.appendChild(document.createTextNode("Pixel"))
+
+      lastIndex = pattern.lastIndex
+      match = pattern.exec(text)
+    }
+
+    if (lastIndex < text.length) {
+      fragment.appendChild(document.createTextNode(text.slice(lastIndex)))
+    }
+
+    node.parentNode.replaceChild(fragment, node)
   })
 }
 

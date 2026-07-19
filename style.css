@@ -706,18 +706,6 @@ select:focus {
 
 /* Agency restoration refinements */
 .hamburger { color: var(--text); }
-.nav-links .nav-cta {
-  background: var(--brand);
-  color: #061018;
-  font-weight: 800;
-  border: 1px solid var(--brand);
-}
-.nav-links .nav-cta:hover,
-.nav-links .nav-cta.active {
-  background: var(--brand-dark);
-  color: #061018;
-  text-decoration: none;
-}
 .btn-consultation,
 .btn-card,
 .btn-secondary {
@@ -790,10 +778,61 @@ select:focus {
   .logo-text { font-size: 1rem; }
   .logo { height: 38px; }
   .nav-links a { display: block; }
-  .nav-links .nav-cta { text-align: center; }
   .btn-row { justify-content: center; }
   .hero, .hero-contact, .hero-services, .booking-hero { text-align: center; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+
+/* Refinement updates */
+.logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.logo-container { min-width: 48px; }
+.footer-logo {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+}
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 28px;
+  align-items: stretch;
+}
+.price-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.price-card h4 {
+  margin-top: 12px;
+  margin-bottom: 6px;
+  color: var(--brand);
+}
+.price-card ul {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+.price-card .btn-card {
+  margin-top: auto;
+  align-self: center;
+}
+.pricing-note {
+  margin-top: 28px;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+.pricing-note ul { padding-left: 22px; }
+.compact-list .feature-card { min-height: 0; }
+@media (max-width: 768px) {
+  .nav-links { width: min(260px, 100vw); }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .footer-logo { margin: 0 auto; }
 }

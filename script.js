@@ -22,6 +22,10 @@ if (hamburger && navLinks) {
 
   hamburger.addEventListener("click", toggleMenu)
 
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu)
+  })
+
   document.addEventListener("click", (e) => {
     const clickedInside = navLinks.contains(e.target) || hamburger.contains(e.target)
     if (!clickedInside) closeMenu()
@@ -83,4 +87,10 @@ const highlightProject2Pixel = () => {
 
 if (document.body) {
   highlightProject2Pixel()
+}
+
+
+const currentYear = document.getElementById("currentYear")
+if (currentYear) {
+  currentYear.textContent = String(new Date().getFullYear())
 }

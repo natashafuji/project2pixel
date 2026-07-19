@@ -703,3 +703,97 @@ select:focus {
   font-family: "Montserrat", sans-serif;
   margin-bottom: 8px;
 }
+
+/* Agency restoration refinements */
+.hamburger { color: var(--text); }
+.nav-links .nav-cta {
+  background: var(--brand);
+  color: #061018;
+  font-weight: 800;
+  border: 1px solid var(--brand);
+}
+.nav-links .nav-cta:hover,
+.nav-links .nav-cta.active {
+  background: var(--brand-dark);
+  color: #061018;
+  text-decoration: none;
+}
+.btn-consultation,
+.btn-card,
+.btn-secondary {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.2;
+}
+:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 3px;
+}
+.improve-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+.improve-grid > .feature-card {
+  grid-column: span 2;
+  min-height: 190px;
+}
+.improve-grid > .feature-card:nth-child(4) { grid-column: 2 / span 2; }
+.improve-grid > .feature-card:nth-child(5) { grid-column: 4 / span 2; }
+.service-list {
+  display: grid;
+  gap: 24px;
+  margin-top: 28px;
+}
+.service-detail {
+  display: grid;
+  gap: 8px;
+}
+.form-note {
+  max-width: 760px;
+  margin: 18px auto 0;
+  color: var(--muted);
+  font-size: .95rem;
+}
+.booking-hero {
+  text-align: center;
+  background: radial-gradient(circle at top, rgba(31,209,190,.18), transparent 34%), #070A12;
+}
+.booking-logo,
+.footer-logo { height: auto; max-width: 180px; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto 20px;
+  text-align: left;
+}
+.footer-heading {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+.footer-meta { text-align: center; }
+@media (max-width: 900px) {
+  .improve-grid { grid-template-columns: 1fr; }
+  .improve-grid > .feature-card,
+  .improve-grid > .feature-card:nth-child(4),
+  .improve-grid > .feature-card:nth-child(5) { grid-column: auto; }
+  .footer-grid { grid-template-columns: 1fr; text-align: center; }
+}
+@media (max-width: 768px) {
+  html, body { overflow-x: hidden; }
+  .logo-text { font-size: 1rem; }
+  .logo { height: 38px; }
+  .nav-links a { display: block; }
+  .nav-links .nav-cta { text-align: center; }
+  .btn-row { justify-content: center; }
+  .hero, .hero-contact, .hero-services, .booking-hero { text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}

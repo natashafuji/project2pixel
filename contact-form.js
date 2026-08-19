@@ -22,6 +22,13 @@ const initialiseEnquiryForm = ({
   }
   const requestedService = new URLSearchParams(windowRef.location.search).get("service")
   if (serviceMap[requestedService]) serviceSelect.value = serviceMap[requestedService]
+  const isDevelopment = ["localhost", "127.0.0.1", "::1"].includes(windowRef.location.hostname)
+
+  const logDiagnostic = (details) => {
+    if (isDevelopment && windowRef.console?.info) {
+      windowRef.console.info("FormSubmit diagnostic", details)
+    }
+  }
 
   enquiryForm.addEventListener("submit", async (event) => {
     event.preventDefault()
@@ -41,17 +48,30 @@ const initialiseEnquiryForm = ({
         body: new FormDataRef(enquiryForm),
         signal: controller.signal,
       })
-      const result = await response.json().catch(() => ({}))
+      let responseWasMalformed = false
+      const result = await response.json().catch(() => {
+        responseWasMalformed = true
+        return {}
+      })
       const wasDelivered = result.success === true || result.success === "true"
+      logDiagnostic({
+        httpStatus: response.status,
+        responseOk: response.ok,
+        success: result.success,
+        message: result.message,
+        error: result.error,
+        responseWasMalformed,
+      })
       if (!response.ok || !wasDelivered) throw new Error("Delivery failed")
 
       enquiryForm.reset()
       status.className = "form-status success"
       status.textContent = "Thank you. Your enquiry has been received and we'll be in touch."
       status.focus()
-    } catch {
+    } catch (error) {
+      logDiagnostic({ requestFailed: true, failureType: error?.name || "Error" })
       status.className = "form-status error"
-      status.textContent = "We couldn't send your enquiry right now. Please contact us directly by email instead."
+      status.textContent = "Your enquiry could not be sent right now. Please use the email link below or book a discovery call and we'll be happy to assist you."
       status.focus()
     } finally {
       windowRef.clearTimeout(timeout)

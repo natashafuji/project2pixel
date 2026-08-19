@@ -94,3 +94,48 @@ const currentYear = document.getElementById("currentYear")
 if (currentYear) {
   currentYear.textContent = String(new Date().getFullYear())
 }
+
+const enquiryForm = document.querySelector("[data-enquiry-form]")
+
+if (enquiryForm) {
+  const status = enquiryForm.querySelector("[data-form-status]")
+  const submitButton = enquiryForm.querySelector('button[type="submit"]')
+  const serviceSelect = enquiryForm.querySelector("#service")
+  const serviceMap = {
+    "business-support": "Executive & Business Support",
+    websites: "Websites & Digital Presence",
+    "crm-systems": "CRM & Business Systems",
+    "workflow-automation": "Workflow & Automation",
+    "digital-care": "Website & Digital Care",
+  }
+  const requestedService = new URLSearchParams(window.location.search).get("service")
+  if (serviceMap[requestedService]) serviceSelect.value = serviceMap[requestedService]
+
+  enquiryForm.addEventListener("submit", async (event) => {
+    event.preventDefault()
+    if (!enquiryForm.reportValidity()) return
+
+    submitButton.disabled = true
+    status.className = "form-status"
+    status.textContent = "Sending your enquiry…"
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/info@project2pixel.co.za", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(enquiryForm),
+      })
+      const result = await response.json().catch(() => ({}))
+      if (!response.ok || result.success === false) throw new Error("Delivery failed")
+
+      enquiryForm.reset()
+      status.className = "form-status success"
+      status.textContent = "Thank you. Your enquiry has been received and we'll be in touch."
+    } catch (error) {
+      status.className = "form-status error"
+      status.innerHTML = `We couldn't send your enquiry right now. Please contact us directly by email at <a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a> instead.`
+    } finally {
+      submitButton.disabled = false
+    }
+  })
+}

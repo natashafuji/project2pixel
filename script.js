@@ -138,9 +138,11 @@ if (enquiryForm) {
       enquiryForm.reset()
       status.className = "form-status success"
       status.textContent = "Thank you. Your enquiry has been received and we'll be in touch."
+      status.focus()
     } catch {
       status.className = "form-status error"
       status.textContent = "We couldn't send your enquiry right now. Please contact us directly by email instead."
+      status.focus()
     } finally {
       window.clearTimeout(timeout)
       submitButton.disabled = false

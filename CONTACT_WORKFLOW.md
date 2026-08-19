@@ -10,6 +10,8 @@ FormSubmit requires the inbox owner to activate the form from the confirmation e
 
 The form uses native browser validation, FormSubmit's CAPTCHA setting and a honeypot field. No inbox credentials or private secrets are stored in the repository or sent to the browser.
 
+Run `node scripts/test-contact-form.mjs` after changing the form handler. The dependency-free check exercises successful delivery, provider-declared failure, malformed responses and service preselection against the production handler.
+
 ## Replacing the delivery service later
 
 The form `action` and the `data-enquiry-form` submit handler in `script.js` are the integration points for a future server endpoint, CRM, database or automation platform. Keep the existing field names when replacing the delivery target so downstream mapping remains straightforward.

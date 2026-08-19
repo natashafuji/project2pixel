@@ -1,6 +1,6 @@
 # Contact enquiry workflow
 
-The contact form posts structured enquiry data to FormSubmit's HTTPS endpoint for delivery to `info@project2pixel.co.za`. The browser submits name, email, company, phone, service and message fields. `script.js` owns the delivery adapter and displays success only after the endpoint returns a successful response; network or service errors display the direct-email fallback.
+The contact form posts structured enquiry data to FormSubmit's HTTPS endpoint for delivery to `info@project2pixel.co.za`. The browser submits name, email, company, phone, service and message fields. `script.js` derives the AJAX endpoint from the form action, accepts only FormSubmit's explicit success value, and treats rejected, malformed or timed-out requests as failures.
 
 ## One-time launch step
 
@@ -12,4 +12,4 @@ The form uses native browser validation, FormSubmit's CAPTCHA setting and a hone
 
 ## Replacing the delivery service later
 
-The `data-enquiry-form` submit handler in `script.js` is the integration point for a future server endpoint, CRM, database or automation platform. Keep the existing field names when replacing the `fetch` target so downstream mapping remains straightforward.
+The form `action` and the `data-enquiry-form` submit handler in `script.js` are the integration points for a future server endpoint, CRM, database or automation platform. Keep the existing field names when replacing the delivery target so downstream mapping remains straightforward.

@@ -119,22 +119,30 @@ if (enquiryForm) {
     status.className = "form-status"
     status.textContent = "Sending your enquiry…"
 
+    const deliveryUrl = new URL(enquiryForm.action)
+    deliveryUrl.pathname = `/ajax${deliveryUrl.pathname}`
+    const controller = new AbortController()
+    const timeout = window.setTimeout(() => controller.abort(), 15000)
+
     try {
-      const response = await fetch("https://formsubmit.co/ajax/info@project2pixel.co.za", {
+      const response = await fetch(deliveryUrl, {
         method: "POST",
         headers: { Accept: "application/json" },
         body: new FormData(enquiryForm),
+        signal: controller.signal,
       })
       const result = await response.json().catch(() => ({}))
-      if (!response.ok || result.success === false) throw new Error("Delivery failed")
+      const wasDelivered = result.success === true || result.success === "true"
+      if (!response.ok || !wasDelivered) throw new Error("Delivery failed")
 
       enquiryForm.reset()
       status.className = "form-status success"
       status.textContent = "Thank you. Your enquiry has been received and we'll be in touch."
-    } catch (error) {
+    } catch {
       status.className = "form-status error"
-      status.innerHTML = `We couldn't send your enquiry right now. Please contact us directly by email at <a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a> instead.`
+      status.textContent = "We couldn't send your enquiry right now. Please contact us directly by email instead."
     } finally {
+      window.clearTimeout(timeout)
       submitButton.disabled = false
     }
   })

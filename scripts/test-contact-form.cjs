@@ -35,7 +35,8 @@ const serviceMappings = {
 }
 
 for (const [parameter, option] of Object.entries(serviceMappings)) {
-  assert.match(sharedScript, new RegExp(`(?:"${parameter}"|${parameter}): "${option.replace(/[&]/g, "&")}"`))
+  assert.match(sharedScript, new RegExp(`case "${parameter}":[\\s\\S]*?selectedService = "${option}"`))
   assert.match(form, new RegExp(`<option value="${option.replace(/&/g, "&amp;")}">${option.replace(/&/g, "&amp;")}</option>`))
 }
 assert.match(sharedScript, /new URLSearchParams\(window\.location\.search\)\.get\("service"\)/)
+assert.doesNotMatch(sharedScript, /serviceOptions\s*\[/)

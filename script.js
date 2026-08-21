@@ -98,15 +98,26 @@ if (currentYear) {
 const serviceSelect = document.getElementById("service")
 
 if (serviceSelect) {
-  const serviceOptions = {
-    "business-support": "Executive & Business Support",
-    websites: "Websites & Digital Presence",
-    "crm-systems": "CRM & Business Systems",
-    "workflow-automation": "Workflow & Automation",
-    "digital-care": "Website & Digital Care",
-  }
   const requestedService = new URLSearchParams(window.location.search).get("service")
-  const selectedService = serviceOptions[requestedService]
+  let selectedService = ""
+
+  switch (requestedService) {
+    case "business-support":
+      selectedService = "Executive & Business Support"
+      break
+    case "websites":
+      selectedService = "Websites & Digital Presence"
+      break
+    case "crm-systems":
+      selectedService = "CRM & Business Systems"
+      break
+    case "workflow-automation":
+      selectedService = "Workflow & Automation"
+      break
+    case "digital-care":
+      selectedService = "Website & Digital Care"
+      break
+  }
 
   if (selectedService) {
     serviceSelect.value = selectedService

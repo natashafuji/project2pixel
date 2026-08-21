@@ -24,3 +24,19 @@ assert.doesNotMatch(contactPage, /formsubmit\.co\/ajax\//)
 assert.doesNotMatch(contactPage, /contact-form\.js/)
 
 console.log("Contact form static checks passed")
+
+const sharedScript = fs.readFileSync(path.join(__dirname, "../script.js"), "utf8")
+const serviceMappings = {
+  "business-support": "Executive & Business Support",
+  websites: "Websites & Digital Presence",
+  "crm-systems": "CRM & Business Systems",
+  "workflow-automation": "Workflow & Automation",
+  "digital-care": "Website & Digital Care",
+}
+
+for (const [parameter, option] of Object.entries(serviceMappings)) {
+  assert.match(sharedScript, new RegExp(`case "${parameter}":[\\s\\S]*?selectedService = "${option}"`))
+  assert.match(form, new RegExp(`<option value="${option.replace(/&/g, "&amp;")}">${option.replace(/&/g, "&amp;")}</option>`))
+}
+assert.match(sharedScript, /new URLSearchParams\(window\.location\.search\)\.get\("service"\)/)
+assert.doesNotMatch(sharedScript, /serviceOptions\s*\[/)

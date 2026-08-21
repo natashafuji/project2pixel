@@ -94,3 +94,32 @@ const currentYear = document.getElementById("currentYear")
 if (currentYear) {
   currentYear.textContent = String(new Date().getFullYear())
 }
+
+const serviceSelect = document.getElementById("service")
+
+if (serviceSelect) {
+  const requestedService = new URLSearchParams(window.location.search).get("service")
+  let selectedService = ""
+
+  switch (requestedService) {
+    case "business-support":
+      selectedService = "Executive & Business Support"
+      break
+    case "websites":
+      selectedService = "Websites & Digital Presence"
+      break
+    case "crm-systems":
+      selectedService = "CRM & Business Systems"
+      break
+    case "workflow-automation":
+      selectedService = "Workflow & Automation"
+      break
+    case "digital-care":
+      selectedService = "Website & Digital Care"
+      break
+  }
+
+  if (selectedService) {
+    serviceSelect.value = selectedService
+  }
+}

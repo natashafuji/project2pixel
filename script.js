@@ -1,5 +1,4 @@
 // TODO: Add Meta Pixel ID here
-// TODO: Add GA4 Measurement ID here
 // TODO: Add Google Tag Manager ID here
 
 const hamburger = document.getElementById("hamburger")
@@ -123,3 +122,106 @@ if (serviceSelect) {
     serviceSelect.value = selectedService
   }
 }
+
+
+// Google Analytics loads only after the visitor accepts analytics cookies.
+const ANALYTICS_ID = "G-PJ6ERE5BK4"
+const ANALYTICS_CONSENT_KEY = "project2pixel_analytics_consent"
+
+const getAnalyticsConsent = () => {
+  try {
+    return localStorage.getItem(ANALYTICS_CONSENT_KEY)
+  } catch {
+    return null
+  }
+}
+
+const setAnalyticsConsent = (value) => {
+  try {
+    localStorage.setItem(ANALYTICS_CONSENT_KEY, value)
+  } catch {
+    // Keep the visitor's choice for the current page when storage is unavailable.
+  }
+}
+
+const loadGoogleAnalytics = () => {
+  if (document.querySelector("script[data-project2pixel-analytics]")) return
+
+  window.dataLayer = window.dataLayer || []
+  window.gtag = function () {
+    window.dataLayer.push(arguments)
+  }
+  window.gtag("js", new Date())
+  window.gtag("config", ANALYTICS_ID, { anonymize_ip: true })
+
+  const analytics = document.createElement("script")
+  analytics.async = true
+  analytics.dataset.project2pixelAnalytics = "true"
+  analytics.src = `https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}`
+  document.head.appendChild(analytics)
+}
+
+const removeAnalyticsCookies = () => {
+  document.cookie
+    .split(";")
+    .map((cookie) => cookie.split("=")[0].trim())
+    .filter((name) => name.startsWith("_ga"))
+    .forEach((name) => {
+      document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Lax`
+      document.cookie = `${name}=; Max-Age=0; path=/; domain=${location.hostname}; SameSite=Lax`
+    })
+}
+
+const showCookieBanner = () => {
+  document.querySelector(".cookie-banner")?.remove()
+
+  const banner = document.createElement("section")
+  banner.className = "cookie-banner"
+  banner.setAttribute("role", "dialog")
+  banner.setAttribute("aria-label", "Analytics cookie preferences")
+  banner.innerHTML = `
+    <div>
+      <strong>Your privacy choices</strong>
+      <p>Project2Pixel would like to use Google Analytics to understand how visitors use this website. Analytics will only load if you accept. Read our <a href="/privacy.html">Privacy Policy</a>.</p>
+    </div>
+    <div class="cookie-actions">
+      <button type="button" class="cookie-reject">Reject</button>
+      <button type="button" class="cookie-accept">Accept analytics</button>
+    </div>
+  `
+
+  banner.querySelector(".cookie-accept").addEventListener("click", () => {
+    setAnalyticsConsent("accepted")
+    loadGoogleAnalytics()
+    banner.remove()
+  })
+
+  banner.querySelector(".cookie-reject").addEventListener("click", () => {
+    setAnalyticsConsent("rejected")
+    removeAnalyticsCookies()
+    banner.remove()
+  })
+
+  document.body.appendChild(banner)
+  banner.querySelector(".cookie-accept").focus()
+}
+
+const addCookieSettingsControl = () => {
+  const footer = document.querySelector("footer")
+  if (!footer || footer.querySelector(".cookie-settings")) return
+
+  const button = document.createElement("button")
+  button.type = "button"
+  button.className = "cookie-settings"
+  button.textContent = "Cookie settings"
+  button.addEventListener("click", showCookieBanner)
+  footer.appendChild(button)
+}
+
+const analyticsConsent = getAnalyticsConsent()
+if (analyticsConsent === "accepted") {
+  loadGoogleAnalytics()
+} else if (analyticsConsent !== "rejected") {
+  showCookieBanner()
+}
+addCookieSettingsControl()

@@ -225,3 +225,54 @@ if (analyticsConsent === "accepted") {
   showCookieBanner()
 }
 addCookieSettingsControl()
+
+
+// Consent-aware lead and CTA conversion tracking.
+const trackAnalyticsEvent = (eventName, parameters = {}) => {
+  if (getAnalyticsConsent() !== "accepted") return
+  loadGoogleAnalytics()
+  if (typeof window.gtag === "function") {
+    window.gtag("event", eventName, parameters)
+  }
+}
+
+const enquiryForm = document.querySelector(".enquiry-form")
+if (enquiryForm) {
+  enquiryForm.addEventListener("submit", () => {
+    try {
+      sessionStorage.setItem("project2pixel_lead_submitted", "true")
+    } catch {
+      // The thank-you page will still work if session storage is unavailable.
+    }
+  })
+}
+
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("a")
+  if (!link) return
+
+  const href = link.getAttribute("href") || ""
+  const label = link.textContent.trim().replace(/\s+/g, " ").slice(0, 100)
+
+  if (href.startsWith("mailto:")) {
+    trackAnalyticsEvent("contact_click", { contact_method: "email", link_text: label })
+  } else if (href.includes("calendly.com")) {
+    trackAnalyticsEvent("book_discovery_call", { link_text: label })
+  } else if (href.startsWith("/contact")) {
+    trackAnalyticsEvent("cta_click", { cta_destination: "contact", link_text: label })
+  }
+})
+
+if (window.location.pathname.endsWith("/thank-you.html")) {
+  let confirmedSubmission = false
+  try {
+    confirmedSubmission = sessionStorage.getItem("project2pixel_lead_submitted") === "true"
+    if (confirmedSubmission) sessionStorage.removeItem("project2pixel_lead_submitted")
+  } catch {
+    confirmedSubmission = false
+  }
+
+  if (confirmedSubmission) {
+    trackAnalyticsEvent("generate_lead", { method: "website_enquiry_form" })
+  }
+}

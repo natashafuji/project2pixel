@@ -934,3 +934,13 @@ footer {
   .cookie-actions { width: 100%; }
   .cookie-actions button { flex: 1; }
 }
+
+.form-response-time {
+  display: inline-block;
+  margin: 12px 0 0 14px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+@media (max-width: 480px) {
+  .form-response-time { margin: 12px 0 0; }
+}

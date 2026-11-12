@@ -1,16 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 835 160" role="img" aria-labelledby="logoTitle">
-<title id="logoTitle">Project2Pixel</title>
-<g fill="#25e2cd">
-<rect x="38" y="17" width="23" height="23"/>
-<rect x="61" y="40" width="23" height="23"/>
-<rect x="15" y="63" width="23" height="23"/>
-<rect x="38" y="63" width="23" height="23"/>
-<path d="M84 63H111L150 102L111 141H61V118H84V86H61V63H84Z"/>
-</g>
-<path d="M172 40V137" stroke="#fff" stroke-width="2.5" opacity=".9"/>
-<g font-family="Montserrat,Arial,Helvetica,sans-serif" font-weight="800" font-size="77" letter-spacing="-3">
-<text x="193" y="111" fill="#fff">Project</text>
-<text x="480" y="111" fill="#25e2cd">2</text>
-<text x="527" y="111" fill="#fff">Pixel</text>
-</g>
+  <title id="logoTitle">Project2Pixel</title>
+  <g fill="#25e2cd">
+    <rect x="38" y="17" width="23" height="23"/>
+    <rect x="61" y="40" width="23" height="23"/>
+    <rect x="15" y="63" width="23" height="23"/>
+    <rect x="38" y="63" width="23" height="23"/>
+    <path d="M84 63H111L150 102L111 141H61V118H84V86H61V63H84Z"/>
+  </g>
+  <text x="174" y="111" fill="#fff" font-family="Montserrat,Arial,Helvetica,sans-serif" font-weight="800" font-size="77" letter-spacing="-3">Project<tspan fill="#25e2cd">2</tspan>Pixel</text>
 </svg>

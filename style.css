@@ -46,13 +46,16 @@ header {
 }
 .logo {
   display: block;
-  width: clamp(190px, 21vw, 265px);
+  width: clamp(240px, 24vw, 340px);
   height: auto;
   max-width: 100%;
   object-fit: contain;
 }
+@media (max-width: 768px) {
+  .logo { width: 230px; }
+}
 @media (max-width: 420px) {
-  .logo { width: 185px; }
+  .logo { width: 200px; }
 }
 .nav-links {
   list-style: none;

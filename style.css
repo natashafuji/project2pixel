@@ -461,9 +461,11 @@ footer {
   gap: 45px;
 }
 .footer-logo {
-  height: 55px;
-  width: auto;
-  margin-bottom: 14px;
+  display: block;
+  width: clamp(205px, 20vw, 260px);
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 18px;
 }
 .footer-heading {
   font-size: 1rem;
@@ -989,4 +991,19 @@ footer {
 .services-showcase > .featured-service-card {display:flex;flex-direction:column}
 .services-showcase > .featured-service-card p:not(.eyebrow){margin:0 0 14px}
 .services-showcase > .featured-service-card .btn-card{white-space:normal}
+}
+
+/* Enquiry-automation page: more compact rhythm without affecting other pages. */
+.service-detail-page > section:not(.hero-services) { padding-block: 54px; }
+.service-detail-page > .cta-section { padding-block: 70px; }
+.service-detail-page .features,
+.service-detail-page .steps { margin-top: 22px; }
+.service-detail-page .offer-layout { margin-top: 8px; }
+.service-detail-page .offer-price { font-size: clamp(1.5rem, 2.2vw, 2.1rem); line-height: 1.3; }
+.service-detail-page .offer-price .price-prefix { font-size: .66em; font-weight: 700; color: var(--muted); }
+.service-detail-page .offer-price .price-amount { white-space: nowrap; }
+@media (max-width: 650px) {
+  .service-detail-page > section:not(.hero-services) { padding-block: 42px; }
+  .service-detail-page > .cta-section { padding-block: 56px; }
+  .service-detail-page .offer-price { font-size: clamp(1.35rem, 5.4vw, 1.85rem); }
 }

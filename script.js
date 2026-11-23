@@ -101,6 +101,9 @@ if (serviceSelect) {
   let selectedService = ""
 
   switch (requestedService) {
+    case "business-enquiry-automation":
+      selectedService = "Business Enquiry & Follow-Up System"
+      break
     case "business-support":
       selectedService = "Executive & Business Support"
       break

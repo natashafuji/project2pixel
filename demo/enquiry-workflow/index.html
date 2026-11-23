@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Interactive Enquiry Workflow Demo | Project2Pixel</title>
+<meta name="description" content="Try Project2Pixel's simulated enquiry-to-CRM workflow using fictional leads.">
+<link rel="stylesheet" href="/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+.demo-main{max-width:1180px;margin:0 auto;padding:58px 5% 95px}
+.demo-main h1{font-size:clamp(2rem,4vw,3.45rem);margin-bottom:18px}
+.demo-main h2{font-size:clamp(1.25rem,2vw,1.65rem)}
+.demo-lead{max-width:850px;color:var(--muted)}
+.demo-note{border-left:3px solid var(--brand);background:rgba(37,226,205,.07);padding:13px 18px;border-radius:0 10px 10px 0;font-size:.9rem;margin:25px 0 30px;color:#d7eae9}
+.demo-grid{display:grid;grid-template-columns:minmax(270px,1fr) minmax(0,1.6fr);gap:24px;align-items:start}
+.demo-panel{background:var(--surface);border:1px solid var(--border);border-radius:17px;padding:clamp(20px,2.7vw,28px)}
+.demo-panel h2{margin-bottom:12px}
+.demo-field{margin-bottom:15px}
+.demo-field label{font-weight:600;font-size:.87rem;display:block;margin-bottom:6px}
+.demo-field input,.demo-field select,.demo-field textarea,.demo-search{display:block;width:100%;font:inherit;border:1px solid rgba(255,255,255,.2);background:#101722;color:#fff;border-radius:9px;padding:10px 12px}
+.demo-field textarea{min-height:80px;resize:vertical}
+.demo-field :focus,.demo-search:focus,.demo-action:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.demo-action{font:700 .9rem Poppins,sans-serif;border-radius:999px;border:1px solid var(--brand);background:transparent;color:var(--brand);padding:9px 14px;cursor:pointer}
+.demo-action.primary{color:#071219;background:var(--brand)}
+.demo-action:hover{background:rgba(37,226,205,.12)}
+.demo-action.primary:hover{background:var(--brand-dark)}
+.demo-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0 20px}
+.demo-stat{padding:15px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,.025)}
+.demo-stat strong{font:800 1.6rem Montserrat,sans-serif;display:block}
+.demo-stat span{font-size:.78rem;color:var(--muted)}
+.demo-toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+.demo-search{flex:1;min-width:160px}
+.demo-list{display:grid;gap:12px;max-height:620px;overflow:auto}
+.demo-lead-card{padding:16px;border:1px solid var(--border);border-radius:12px;background:#10151f}
+.demo-card-head{display:flex;justify-content:space-between;gap:12px;align-items:start}
+.demo-card-head h3{font-size:1rem;margin:0 0 5px}
+.demo-card-head p,.demo-lead-card p{color:var(--muted);font-size:.86rem;margin:0 0 9px}
+.demo-status{color:var(--brand);font-size:.8rem;font-weight:700;border:1px solid rgba(37,226,205,.35);padding:4px 9px;border-radius:999px;white-space:nowrap}
+.demo-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.demo-actions select{background:#101722;color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:8px}
+.demo-timeline{margin-top:22px;border-top:1px solid var(--border);padding-top:20px}
+.demo-events{list-style:none;padding:0;display:grid;gap:9px;margin-top:10px}
+.demo-events li{border-left:2px solid var(--brand);padding-left:12px;color:var(--muted);font-size:.85rem}
+.demo-events strong{color:#fff}
+.demo-empty{color:var(--muted);padding:20px}
+.demo-back{display:inline-block;margin-bottom:22px}
+.demo-helper{font-size:.79rem;color:var(--muted);margin-top:10px}
+@media(max-width:860px){.demo-grid{grid-template-columns:1fr}}
+@media(max-width:500px){.demo-summary{grid-template-columns:1fr 1fr}.demo-card-head{flex-direction:column}.demo-main{padding-top:35px}}
+</style>
+</head>
+<body>
+<header><div class="logo-container"><a href="/"><img src="/project2pixel-horizontal-logo.svg" alt="Project2Pixel" class="logo"></a></div>
+<nav aria-label="Primary navigation"><button class="hamburger" id="hamburger" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="Open navigation menu"><span></span><span></span><span></span></button><ul class="nav-links" id="navLinks"><li><a href="/">Home</a></li><li><a href="/services/" class="active">Services</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav></header>
+<main class="demo-main">
+<a class="demo-back" href="/services/business-enquiry-automation/">← Back to enquiry automation</a>
+<p class="eyebrow">Interactive sample workflow</p>
+<h1>From Customer Enquiry to Organised Follow-Up</h1>
+<p class="demo-lead">See how a new enquiry can become a tracked opportunity, receive a suggested acknowledgement and progress through a simple sales pipeline. Add a fictional enquiry, update its stage and schedule a simulated reminder.</p>
+<div class="demo-note"><strong>Demonstration only:</strong> All people and businesses shown are fictional. Everything happens in this browser session. No enquiry details are sent to a server or saved after you leave this page, and no real emails, SMS messages or reminders are sent. Please don't enter real customer information.</div>
+<div class="demo-grid">
+<section class="demo-panel" aria-labelledby="new-title">
+<h2 id="new-title">1. Capture a new enquiry</h2>
+<form id="demo-form">
+<div class="demo-field"><label for="d-name">Fictional contact name</label><input id="d-name" name="name" required maxlength="70" placeholder="e.g. Alex Mokoena"></div>
+<div class="demo-field"><label for="d-business">Fictional business</label><input id="d-business" name="business" required maxlength="90" placeholder="e.g. Sample Training Co."></div>
+<div class="demo-field"><label for="d-service">Service of interest</label><select id="d-service" name="service"><option>CRM Setup</option><option>Workflow Automation</option><option>Training &amp; Support</option><option>Website &amp; Digital Care</option></select></div>
+<div class="demo-field"><label for="d-message">What does the business need?</label><textarea id="d-message" name="message" required maxlength="280" placeholder="e.g. We lose track of incoming requests."></textarea></div>
+<button class="demo-action primary" type="submit">Capture Sample Enquiry</button>
+</form>
+<div class="demo-timeline" aria-live="polite">
+<h2>2. Simulated activity</h2>
+<p class="demo-helper">An acknowledgement and lead capture will appear here after submitting. These are example actions, not real notifications.</p>
+<ul id="demo-events" class="demo-events"><li>Demo ready. Add a fictional enquiry to see the process.</li></ul>
+</div>
+</section>
+<section class="demo-panel" aria-labelledby="crm-title">
+<h2 id="crm-title">3. CRM Pipeline Dashboard</h2>
+<div class="demo-summary" aria-live="polite"><div class="demo-stat"><strong id="metric-total">0</strong><span>Total enquiries</span></div><div class="demo-stat"><strong id="metric-open">0</strong><span>Open leads</span></div><div class="demo-stat"><strong id="metric-won">0</strong><span>Won opportunities</span></div></div>
+<div class="demo-toolbar"><input class="demo-search" id="demo-search" aria-label="Search sample leads" placeholder="Search sample leads">
+<button class="demo-action" type="button" id="demo-reset">Reset Sample Data</button></div>
+<div id="demo-leads" class="demo-list" aria-live="polite"></div>
+</section>
+</div>
+<section class="cta-section" style="margin-top:40px;border-radius:18px"><h2>Want a Workflow Like This for Your Business?</h2><p>Project2Pixel can scope a real system for your own tools and processes. The demo is an illustration—not an off-the-shelf product.</p><div class="btn-row"><a class="btn-consultation" href="https://calendly.com/project2pixel-info/30min" target="_blank" rel="noopener noreferrer">Book a Free Discovery Call</a><a class="btn-consultation secondary" href="/contact/?service=business-enquiry-automation">Ask About This Service</a></div></section>
+</main>
+<footer><div class="footer-grid"><div><img src="/project2pixel-horizontal-logo.svg" alt="Project2Pixel logo" class="footer-logo" width="835" height="160"><p>Project2Pixel provides practical business support and digital solutions for growing organisations.</p></div><div><h2 class="footer-heading">Navigate</h2><p><a href="/">Home</a> · <a href="/services/">Services</a> · <a href="/about/">About</a> · <a href="/contact/">Contact</a></p><p><a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a> · <a href="/cancellation.html">Cancellation Policy</a> · <a href="/compliance.html">Compliance</a></p></div><div><h2 class="footer-heading">Contact</h2><p><a href="mailto:info@project2pixel.co.za">info@project2pixel.co.za</a></p><p>Centurion, Gauteng, South Africa</p><p>Supporting clients remotely.</p></div></div><p class="footer-meta">© <span id="currentYear">2026</span> Project2Pixel (Pty) Ltd. Reg: 2025/625844/07.</p></footer>
+<script src="/script.js"></script>
+<script>
+(() => {
+"use strict";
+const seed=[
+{id:1,name:"Lebo Naidoo",business:"BrightPath Training (sample)",service:"CRM Setup",message:"Need a way to track course enquiries.",status:"New",reminder:false},
+{id:2,name:"Thandi Maseko",business:"Summit Consulting (sample)",service:"Workflow Automation",message:"Would like follow-ups after quotations.",status:"Quoted",reminder:true},
+{id:3,name:"Sam Jacobs",business:"Oak & Co (sample)",service:"Website & Digital Care",message:"Help with enquiry form notifications.",status:"Won",reminder:false}
+];
+let leads=seed.map(x=>({...x})),seq=4;
+const form=document.getElementById("demo-form"),list=document.getElementById("demo-leads"),events=document.getElementById("demo-events"),search=document.getElementById("demo-search");
+const statuses=["New","Contacted","Quoted","Follow-up","Won","Lost"];
+function node(tag,txt,className){const el=document.createElement(tag);if(txt!==undefined)el.textContent=txt;if(className)el.className=className;return el;}
+function record(message){const li=node("li",message);events.prepend(li);while(events.children.length>6)events.lastElementChild.remove();}
+function render(){
+document.getElementById("metric-total").textContent=leads.length;
+document.getElementById("metric-open").textContent=leads.filter(x=>!["Won","Lost"].includes(x.status)).length;
+document.getElementById("metric-won").textContent=leads.filter(x=>x.status==="Won").length;
+list.replaceChildren();
+const q=search.value.toLocaleLowerCase().trim(),filtered=leads.filter(x=>[x.name,x.business,x.service,x.status].join(" ").toLocaleLowerCase().includes(q));
+if(!filtered.length){list.append(node("p","No matching sample leads.","demo-empty"));return;}
+filtered.forEach(lead=>{
+const card=node("article",undefined,"demo-lead-card");
+const head=node("div",undefined,"demo-card-head"),text=node("div"),title=node("h3",lead.name+" · "+lead.business),service=node("p",lead.service),badge=node("span",lead.status,"demo-status");
+text.append(title,service);head.append(text,badge);card.append(head,node("p",lead.message));
+const actions=node("div",undefined,"demo-actions"),select=node("select");select.setAttribute("aria-label","Update status for "+lead.business);
+statuses.forEach(v=>{const opt=node("option",v);opt.value=v;opt.selected=v===lead.status;select.append(opt);});
+select.addEventListener("change",()=>{lead.status=select.value;record(lead.business+" moved to "+lead.status+".");render();});
+const reminder=node("button",lead.reminder?"Reminder simulated ✓":"Simulate follow-up reminder","demo-action");reminder.type="button";
+reminder.addEventListener("click",()=>{lead.reminder=true;record("Sample follow-up task noted for "+lead.business+" (not scheduled externally).");render();});
+actions.append(select,reminder);card.append(actions);list.append(card);
+});
+}
+form.addEventListener("submit",e=>{
+e.preventDefault();
+if(!form.reportValidity())return;
+const fd=new FormData(form),name=String(fd.get("name")).trim(),business=String(fd.get("business")).trim(),message=String(fd.get("message")).trim();
+if(!name||!business||!message)return;
+leads.unshift({id:seq++,name:name.slice(0,70),business:business.slice(0,90),service:String(fd.get("service")),message:message.slice(0,280),status:"New",reminder:false});
+record("Sample lead captured: "+business+".");
+record("Example acknowledgement drafted for "+name+": Thank you for your enquiry. Our team will review your request.");
+form.reset();search.value="";render();
+});
+search.addEventListener("input",render);
+document.getElementById("demo-reset").addEventListener("click",()=>{leads=seed.map(x=>({...x}));seq=4;events.replaceChildren(node("li","Sample data restored. Nothing was saved or sent."));search.value="";form.reset();render();});
+render();
+})();
+</script>
+</body></html>
